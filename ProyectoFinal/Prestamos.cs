@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DAL;
 using Entidades;
 using BLL;
+using ProyectoFinal.RegistroCliente;
+using ProyectoFinal.Consultas;
+
 
 namespace ProyectoFinal
 {
@@ -30,23 +33,16 @@ namespace ProyectoFinal
 
         }
 
-        private void Guardar_Click(object sender, EventArgs e)
+        private void nuevoPrestarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
-
-            usuario.UsuarioId = 0;
-           // usuario.Nombre = textNombre.Text;
-            //usuario.Contraseña = textContraseña.Text;
-
-            if (UsuariosBLL.Insertar(usuario))
-            {
-                MessageBox.Show("Guardo Bien");
-            }
+            RegistroCliente.RegistroCliente rUsuarios = new RegistroCliente.RegistroCliente();
+            rUsuarios.Show();
         }
 
-        private void NewButton_Click(object sender, EventArgs e)
+        private void consultaPrestarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ConsultasCliente cc = new ConsultasCliente();
+            cc.Show();
         }
     }
 }
