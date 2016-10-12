@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinal
+namespace ProyectoFinal.RegistroCliente
 {
-    public partial class Form1 : Form
+    public partial class Registro_De_Usuarios : Form
     {
-        public Form1()
+        public Registro_De_Usuarios()
         {
             InitializeComponent();
         }
