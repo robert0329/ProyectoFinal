@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal
 {
-    partial class Prestamos
+    partial class FormularioPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,8 @@
         {
             this.prestariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,24 +48,33 @@
             // 
             this.prestariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPrestarioToolStripMenuItem,
-            this.modificarPrestarioToolStripMenuItem,
-            this.consultaPrestarioToolStripMenuItem});
+            this.consultaPrestarioToolStripMenuItem,
+            this.nuevoGaranteToolStripMenuItem,
+            this.consultaGaranteToolStripMenuItem});
             this.prestariosToolStripMenuItem.Name = "prestariosToolStripMenuItem";
             this.prestariosToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.prestariosToolStripMenuItem.Text = "Prestarios";
+            this.prestariosToolStripMenuItem.Text = "&Prestarios";
             // 
             // nuevoPrestarioToolStripMenuItem
             // 
             this.nuevoPrestarioToolStripMenuItem.Name = "nuevoPrestarioToolStripMenuItem";
-            this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.nuevoPrestarioToolStripMenuItem.Text = "Nuevo Prestario";
+            this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.nuevoPrestarioToolStripMenuItem.Text = "&Nuevo Prestario";
             this.nuevoPrestarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoPrestarioToolStripMenuItem_Click);
             // 
-            // modificarPrestarioToolStripMenuItem
+            // consultaPrestarioToolStripMenuItem
             // 
-            this.modificarPrestarioToolStripMenuItem.Name = "modificarPrestarioToolStripMenuItem";
-            this.modificarPrestarioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.modificarPrestarioToolStripMenuItem.Text = "Modificar Prestario";
+            this.consultaPrestarioToolStripMenuItem.Name = "consultaPrestarioToolStripMenuItem";
+            this.consultaPrestarioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.consultaPrestarioToolStripMenuItem.Text = "&Consulta Prestario";
+            this.consultaPrestarioToolStripMenuItem.Click += new System.EventHandler(this.consultaPrestarioToolStripMenuItem_Click);
+            // 
+            // nuevoGaranteToolStripMenuItem
+            // 
+            this.nuevoGaranteToolStripMenuItem.Name = "nuevoGaranteToolStripMenuItem";
+            this.nuevoGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.nuevoGaranteToolStripMenuItem.Text = "Nuevo Garante";
+            this.nuevoGaranteToolStripMenuItem.Click += new System.EventHandler(this.nuevoGaranteToolStripMenuItem_Click);
             // 
             // prestamosToolStripMenuItem
             // 
@@ -82,6 +92,7 @@
             this.nuevoDesembolsoToolStripMenuItem.Name = "nuevoDesembolsoToolStripMenuItem";
             this.nuevoDesembolsoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.nuevoDesembolsoToolStripMenuItem.Text = "Nuevo Desembolso";
+            this.nuevoDesembolsoToolStripMenuItem.Click += new System.EventHandler(this.nuevoDesembolsoToolStripMenuItem_Click);
             // 
             // modificacionDesembolsoToolStripMenuItem
             // 
@@ -127,14 +138,14 @@
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
-            // consultaPrestarioToolStripMenuItem
+            // consultaGaranteToolStripMenuItem
             // 
-            this.consultaPrestarioToolStripMenuItem.Name = "consultaPrestarioToolStripMenuItem";
-            this.consultaPrestarioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.consultaPrestarioToolStripMenuItem.Text = "Consulta Prestario";
-            this.consultaPrestarioToolStripMenuItem.Click += new System.EventHandler(this.consultaPrestarioToolStripMenuItem_Click);
+            this.consultaGaranteToolStripMenuItem.Name = "consultaGaranteToolStripMenuItem";
+            this.consultaGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.consultaGaranteToolStripMenuItem.Text = "Consulta Garante";
+            this.consultaGaranteToolStripMenuItem.Click += new System.EventHandler(this.consultaGaranteToolStripMenuItem_Click);
             // 
-            // Prestamos
+            // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +153,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Prestamos";
+            this.Name = "FormularioPrincipal";
             this.Text = "Prestamos Mariant";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -154,7 +165,6 @@
         #endregion
         private System.Windows.Forms.ToolStripMenuItem prestariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoPrestarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoDesembolsoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificacionDesembolsoToolStripMenuItem;
@@ -164,6 +174,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ToolStripMenuItem consultaPrestarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoGaranteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaGaranteToolStripMenuItem;
     }
 }
 

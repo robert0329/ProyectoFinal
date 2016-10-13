@@ -37,7 +37,7 @@ namespace ProyectoFinal.RegistroCliente
 
             return usuario;
         }
-
+        
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
@@ -48,7 +48,7 @@ namespace ProyectoFinal.RegistroCliente
             {
                 Nuevobutton.PerformClick();
 
-                MessageBox.Show("Guardo. ehehehehe");
+                MessageBox.Show("Guardodo con exito");
             }
         }
     }

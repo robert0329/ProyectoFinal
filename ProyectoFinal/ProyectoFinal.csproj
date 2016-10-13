@@ -70,10 +70,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDatosDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
+    <Compile Include="AcuerdoDePagos\Acuerdos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcuerdoDePagos\Acuerdos.Designer.cs">
+      <DependentUpon>Acuerdos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultasGarante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultasGarante.Designer.cs">
+      <DependentUpon>ConsultasGarante.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\ConsultasCliente.cs">
       <SubType>Form</SubType>
@@ -81,14 +88,20 @@
     <Compile Include="Consultas\ConsultasCliente.Designer.cs">
       <DependentUpon>ConsultasCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prestamos.cs">
+    <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prestamos.Designer.cs">
-      <DependentUpon>Prestamos.cs</DependentUpon>
+    <Compile Include="FormularioPrincipal.Designer.cs">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro Garantes\RegistroGarante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro Garantes\RegistroGarante.Designer.cs">
+      <DependentUpon>RegistroGarante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +109,14 @@
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\ConsultasGarante.resx">
+      <DependentUpon>ConsultasGarante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultasCliente.resx">
       <DependentUpon>ConsultasCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prestamos.resx">
-      <DependentUpon>Prestamos.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,20 +127,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registro Garantes\RegistroGarante.resx">
+      <DependentUpon>RegistroGarante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BaseDatosDataSet.xsc">
-      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BaseDatosDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaseDatosDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BaseDatosDataSet.xss">
-      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,6 +182,7 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -11,14 +11,15 @@ using DAL;
 using Entidades;
 using BLL;
 using ProyectoFinal.RegistroCliente;
+using ProyectoFinal.RegistroGarantes;
 using ProyectoFinal.Consultas;
 
 
 namespace ProyectoFinal
 {
-    public partial class Prestamos : Form
+    public partial class FormularioPrincipal : Form
     {
-        public Prestamos()
+        public FormularioPrincipal()
         {
             InitializeComponent();
         }
@@ -43,6 +44,24 @@ namespace ProyectoFinal
         {
             ConsultasCliente cc = new ConsultasCliente();
             cc.Show();
+        }
+
+
+        private void nuevoDesembolsoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nuevoGaranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroGarante g = new RegistroGarante();
+            g.Show();
+        }
+
+        private void consultaGaranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultasGarante cg = new ConsultasGarante();
+            cg.Show();
         }
     }
 }

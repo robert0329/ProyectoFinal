@@ -16,5 +16,8 @@ namespace DAL
         }
 
         public virtual DbSet<Usuarios> Usuario { get; set; }
+        
+        public virtual DbSet<Garante> garante { get; set; }
     }
+    
 }
