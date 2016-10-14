@@ -49,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Garante.cs" />
-    <Compile Include="Usuarios.cs" />
+    <Compile Include="Garantes.cs" />
+    <Compile Include="Clientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

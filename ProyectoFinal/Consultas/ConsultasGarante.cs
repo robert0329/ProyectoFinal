@@ -17,15 +17,15 @@ namespace ProyectoFinal.Consultas
         {
             InitializeComponent();
         }
-        public List<Garante> lista = new List<Garante>();
+        public List<Garantes> lista = new List<Garantes>();
         
 
-        private void DatosdataGridVieww_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DatosdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void Buscarbutton_Click_1(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(GFiltrotextBox.Text))
             {

@@ -37,45 +37,42 @@
             // 
             // GFiltrotextBox
             // 
-            this.GFiltrotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GFiltrotextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GFiltrotextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.GFiltrotextBox.Location = new System.Drawing.Point(18, 22);
+            this.GFiltrotextBox.Location = new System.Drawing.Point(20, 189);
             this.GFiltrotextBox.Name = "GFiltrotextBox";
-            this.GFiltrotextBox.Size = new System.Drawing.Size(108, 20);
-            this.GFiltrotextBox.TabIndex = 79;
+            this.GFiltrotextBox.Size = new System.Drawing.Size(591, 20);
+            this.GFiltrotextBox.TabIndex = 82;
             // 
             // DatosdataGridVieww
             // 
-            this.DatosdataGridVieww.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DatosdataGridVieww.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DatosdataGridVieww.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosdataGridVieww.Location = new System.Drawing.Point(18, 89);
+            this.DatosdataGridVieww.Location = new System.Drawing.Point(20, 4);
             this.DatosdataGridVieww.Name = "DatosdataGridVieww";
-            this.DatosdataGridVieww.Size = new System.Drawing.Size(655, 276);
-            this.DatosdataGridVieww.TabIndex = 77;
-            this.DatosdataGridVieww.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatosdataGridVieww_CellContentClick);
+            this.DatosdataGridVieww.Size = new System.Drawing.Size(651, 178);
+            this.DatosdataGridVieww.TabIndex = 80;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Buscarbutton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(151, 22);
+            this.Buscarbutton.Location = new System.Drawing.Point(616, 189);
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(55, 52);
-            this.Buscarbutton.TabIndex = 78;
+            this.Buscarbutton.TabIndex = 81;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click_1);
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // ConsultasGarante
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 385);
+            this.ClientSize = new System.Drawing.Size(691, 244);
             this.Controls.Add(this.GFiltrotextBox);
             this.Controls.Add(this.DatosdataGridVieww);
             this.Controls.Add(this.Buscarbutton);
@@ -88,6 +85,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.TextBox GFiltrotextBox;
         private System.Windows.Forms.DataGridView DatosdataGridVieww;
         private System.Windows.Forms.Button Buscarbutton;

@@ -94,12 +94,30 @@
     <Compile Include="FormularioPrincipal.Designer.cs">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro Garantes\RegistroGarante.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro Garantes\RegistroGarante.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Seleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Seleccion.Designer.cs">
+      <DependentUpon>Seleccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro\RegistroDeUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroDeUsuarios.Designer.cs">
+      <DependentUpon>RegistroDeUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\RegistroGarante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroGarante.Designer.cs">
       <DependentUpon>RegistroGarante.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro\RegistroCliente.cs">
@@ -118,6 +136,12 @@
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Seleccion.resx">
+      <DependentUpon>Seleccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -127,7 +151,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registro Garantes\RegistroGarante.resx">
+    <EmbeddedResource Include="Registro\RegistroDeUsuarios.resx">
+      <DependentUpon>RegistroDeUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro\RegistroGarante.resx">
       <DependentUpon>RegistroGarante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\RegistroCliente.resx">

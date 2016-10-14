@@ -18,9 +18,9 @@ namespace ProyectoFinal.RegistroGarantes
         {
             InitializeComponent();
         }
-        private Garante Llenar()
+        private Garantes Llenar()
         {
-            Garante garantes = new Garante();
+            Garantes garantes = new Garantes();
 
             garantes.Nombre = GnombreTextBox.Text;
             garantes.Apellido = GapellidoTextBox.Text;
@@ -33,7 +33,7 @@ namespace ProyectoFinal.RegistroGarantes
         }
         private void GuardarG_Click(object sender, EventArgs e)
         {
-            Garante garantes = new Garante();
+            Garantes garantes = new Garantes();
 
             garantes = Llenar();
 

@@ -10,7 +10,7 @@ namespace BLL
 {
     public class GaranteBLL
     {
-        public static bool Guardar(Garante garante)
+        public static bool Guardar(Garantes garante)
         {
             bool retorno = false;
 
@@ -35,13 +35,13 @@ namespace BLL
         {
             var db = new Conexion();
 
-            Garante Ug = Busqueda(id);
+            Garantes Ug = Busqueda(id);
 
             db.garante.Remove(Ug);
             db.SaveChanges();
         }
 
-        public static Garante Busqueda(int id)
+        public static Garantes Busqueda(int id)
         {
             var db = new Conexion();
 
@@ -49,9 +49,9 @@ namespace BLL
 
         }
 
-        public static List<Garante> GetLista()
+        public static List<Garantes> GetLista()
         {
-            List<Garante> lista = new List<Garante>();
+            List<Garantes> lista = new List<Garantes>();
 
             var db = new Conexion();
 
@@ -61,9 +61,9 @@ namespace BLL
 
         }
 
-        public static List<Garante> GetLista(int GaranteId)
+        public static List<Garantes> GetLista(int GaranteId)
         {
-            List<Garante> list = new List<Garante>();
+            List<Garantes> list = new List<Garantes>();
 
             var db = new Conexion();
 

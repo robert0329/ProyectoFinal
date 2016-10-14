@@ -24,27 +24,27 @@ namespace ProyectoFinal.RegistroCliente
 
         }
 
-        private Usuarios LlenarClase()
+        private Clientes LlenarClase()
         {
-            Usuarios usuario = new Usuarios();
-            
-            usuario.Nombre = NombretextBox.Text;
-            usuario.Apellido = ApellidotextBox.Text;
-            usuario.Direccion = DirecciontextBox.Text;
-            usuario.Telefono = TelefonotextBox.Text;
-            usuario.Cedula = CedulatextBox.Text;
+            Clientes Cliente = new Clientes();
+
+            Cliente.Nombre = NombretextBox.Text;
+            Cliente.Apellido = ApellidotextBox.Text;
+            Cliente.Direccion = DirecciontextBox.Text;
+            Cliente.Telefono = TelefonotextBox.Text;
+            Cliente.Cedula = CedulatextBox.Text;
 
 
-            return usuario;
+            return Cliente;
         }
         
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
+            Clientes Cliente = new Clientes();
 
-            usuario = LlenarClase();
+            Cliente = LlenarClase();
 
-            if (UsuariosBll.Insertar(usuario))
+            if (ClientesBLL.Insertar(Cliente))
             {
                 Nuevobutton.PerformClick();
 
