@@ -33,5 +33,31 @@ namespace ProyectoFinal.Prestamos
         {
             ListarGarante();
         }
+
+        private void Carcular_Click(object sender, EventArgs e)
+        {
+            Double i, k;
+            Double z = Convert.ToDouble(MontotextBox.Text);
+            Double x = Convert.ToDouble(InterestextBox.Text);
+            Double c = Convert.ToDouble(MesesnumericUpDown.Text);
+            Double v = Convert.ToDouble(MontotextBox.Text);
+            Double b = Convert.ToDouble(CantidatextBox.Text);
+
+            i = z * x / 100 * c + v;//Total a pagar
+            k = i / b;// por cuotas
+
+            CuotastextBox.Text = Convert.ToString(k);
+            TotaltextBox.Text = Convert.ToString(i);
+            for (int p = 0; p < 10; p++)
+            {
+                TabladataGridView.DataSource = k;
+                TabladataGridView.DataMember = "Cuotas";
+            }
+        }
+
+        private void GarantecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
