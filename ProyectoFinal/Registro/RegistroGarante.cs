@@ -40,7 +40,7 @@ namespace ProyectoFinal.RegistroGarantes
             {
                 Limpiarbutton.PerformClick();
 
-                MessageBox.Show("Guardodo con exito");
+                MessageBox.Show("Guardado con exito");
             }
         }
 

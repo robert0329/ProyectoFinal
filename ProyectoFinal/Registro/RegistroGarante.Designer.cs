@@ -165,6 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(364, 289);
             this.Controls.Add(this.SexocomboBox);
             this.Controls.Add(this.Sexo);
@@ -179,6 +180,7 @@
             this.Controls.Add(this.GtelefonoTextBox);
             this.Controls.Add(cedulaLabel);
             this.Controls.Add(this.GcedulaTextBox);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "RegistroGarante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroGarante";

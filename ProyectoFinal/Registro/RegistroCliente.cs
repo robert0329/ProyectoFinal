@@ -46,13 +46,18 @@ namespace ProyectoFinal.RegistroCliente
             {
                 Nuevobutton.PerformClick();
 
-                MessageBox.Show("Guardodo con exito");
+                MessageBox.Show("Guardado con exito");
             }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
+           NombretextBox.Text = DirecciontextBox.Text = TelefonotextBox.Text = CedulatextBox.Text= SexocomboBox.Text= "";
+        }
 
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

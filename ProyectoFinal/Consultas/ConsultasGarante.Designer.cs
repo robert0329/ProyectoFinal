@@ -39,18 +39,18 @@
             // 
             this.GFiltrotextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GFiltrotextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.GFiltrotextBox.Location = new System.Drawing.Point(20, 189);
+            this.GFiltrotextBox.Location = new System.Drawing.Point(590, 27);
             this.GFiltrotextBox.Name = "GFiltrotextBox";
-            this.GFiltrotextBox.Size = new System.Drawing.Size(591, 20);
+            this.GFiltrotextBox.Size = new System.Drawing.Size(63, 20);
             this.GFiltrotextBox.TabIndex = 82;
             // 
             // DatosdataGridVieww
             // 
             this.DatosdataGridVieww.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DatosdataGridVieww.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosdataGridVieww.Location = new System.Drawing.Point(20, 4);
+            this.DatosdataGridVieww.Location = new System.Drawing.Point(0, 1);
             this.DatosdataGridVieww.Name = "DatosdataGridVieww";
-            this.DatosdataGridVieww.Size = new System.Drawing.Size(651, 178);
+            this.DatosdataGridVieww.Size = new System.Drawing.Size(584, 249);
             this.DatosdataGridVieww.TabIndex = 80;
             // 
             // Buscarbutton
@@ -58,10 +58,10 @@
             this.Buscarbutton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(616, 189);
+            this.Buscarbutton.Location = new System.Drawing.Point(590, 61);
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(55, 52);
+            this.Buscarbutton.Size = new System.Drawing.Size(66, 52);
             this.Buscarbutton.TabIndex = 81;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 244);
+            this.ClientSize = new System.Drawing.Size(690, 249);
             this.Controls.Add(this.GFiltrotextBox);
             this.Controls.Add(this.DatosdataGridVieww);
             this.Controls.Add(this.Buscarbutton);

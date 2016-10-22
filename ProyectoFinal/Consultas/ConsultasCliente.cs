@@ -30,36 +30,10 @@ namespace ProyectoFinal.Consultas
                 lista = BLL.ClientesBLL.GetLista();
             }
 
-            DatosdataGridView.DataSource = lista;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            ConsultaClientedataGridView.DataSource = lista;
         }
         
-
         private void FiltrotextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DatosdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void CamposComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

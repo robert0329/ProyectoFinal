@@ -33,8 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.FiltrotextBox = new System.Windows.Forms.TextBox();
-            this.DatosdataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DatosdataGridView)).BeginInit();
+            this.ConsultaClientedataGridView = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaClientedataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -62,10 +63,10 @@
             this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(607, 30);
+            this.Buscarbutton.Location = new System.Drawing.Point(577, 51);
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(55, 39);
+            this.Buscarbutton.Size = new System.Drawing.Size(63, 39);
             this.Buscarbutton.TabIndex = 69;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -76,38 +77,44 @@
             this.FiltrotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FiltrotextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.FiltrotextBox.Location = new System.Drawing.Point(7, 5);
+            this.FiltrotextBox.Location = new System.Drawing.Point(598, 15);
             this.FiltrotextBox.Name = "FiltrotextBox";
-            this.FiltrotextBox.Size = new System.Drawing.Size(655, 20);
+            this.FiltrotextBox.Size = new System.Drawing.Size(42, 20);
             this.FiltrotextBox.TabIndex = 70;
             this.FiltrotextBox.TextChanged += new System.EventHandler(this.FiltrotextBox_TextChanged);
             // 
-            // DatosdataGridView
+            // ConsultaClientedataGridView
             // 
-            this.DatosdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DatosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosdataGridView.Location = new System.Drawing.Point(7, 74);
-            this.DatosdataGridView.Name = "DatosdataGridView";
-            this.DatosdataGridView.Size = new System.Drawing.Size(655, 276);
-            this.DatosdataGridView.TabIndex = 68;
-            this.DatosdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatosdataGridView_CellContentClick);
+            this.ConsultaClientedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultaClientedataGridView.Location = new System.Drawing.Point(-1, 0);
+            this.ConsultaClientedataGridView.Name = "ConsultaClientedataGridView";
+            this.ConsultaClientedataGridView.Size = new System.Drawing.Size(569, 150);
+            this.ConsultaClientedataGridView.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(574, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "ID";
             // 
             // ConsultasCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 354);
+            this.ClientSize = new System.Drawing.Size(651, 151);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ConsultaClientedataGridView);
             this.Controls.Add(this.FiltrotextBox);
-            this.Controls.Add(this.DatosdataGridView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Buscarbutton);
             this.Name = "ConsultasCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas De Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.DatosdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaClientedataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +125,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.TextBox FiltrotextBox;
-        private System.Windows.Forms.DataGridView DatosdataGridView;
+        private System.Windows.Forms.DataGridView ConsultaClientedataGridView;
+        private System.Windows.Forms.Label label2;
     }
 }
