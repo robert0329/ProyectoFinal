@@ -77,6 +77,7 @@
             this.Controls.Add(this.DatosdataGridVieww);
             this.Controls.Add(this.Buscarbutton);
             this.Name = "ConsultasGarante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas De Garantes";
             ((System.ComponentModel.ISupportInitialize)(this.DatosdataGridVieww)).EndInit();
             this.ResumeLayout(false);

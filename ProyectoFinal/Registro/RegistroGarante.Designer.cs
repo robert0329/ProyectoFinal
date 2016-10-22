@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label apellidoLabel;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label cedulaLabel;
@@ -37,16 +36,52 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Limpiarbutton = new System.Windows.Forms.Button();
             this.GnombreTextBox = new System.Windows.Forms.TextBox();
-            this.GapellidoTextBox = new System.Windows.Forms.TextBox();
             this.GdireccionTextBox = new System.Windows.Forms.TextBox();
             this.GtelefonoTextBox = new System.Windows.Forms.TextBox();
             this.GcedulaTextBox = new System.Windows.Forms.TextBox();
+            this.SexocomboBox = new System.Windows.Forms.ComboBox();
+            this.Sexo = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
-            apellidoLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             telefonoLabel = new System.Windows.Forms.Label();
             cedulaLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(18, 9);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 16;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(18, 57);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.TabIndex = 20;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(18, 105);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.TabIndex = 22;
+            telefonoLabel.Text = "Telefono:";
+            // 
+            // cedulaLabel
+            // 
+            cedulaLabel.AutoSize = true;
+            cedulaLabel.Location = new System.Drawing.Point(18, 154);
+            cedulaLabel.Name = "cedulaLabel";
+            cedulaLabel.Size = new System.Drawing.Size(43, 13);
+            cedulaLabel.TabIndex = 24;
+            cedulaLabel.Text = "Cedula:";
             // 
             // GuardarG
             // 
@@ -75,15 +110,7 @@
             this.Limpiarbutton.TabIndex = 26;
             this.Limpiarbutton.Text = "Limpiar";
             this.Limpiarbutton.UseVisualStyleBackColor = true;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(18, 9);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 16;
-            nombreLabel.Text = "Nombre:";
+            this.Limpiarbutton.Click += new System.EventHandler(this.Limpiarbutton_Click);
             // 
             // GnombreTextBox
             // 
@@ -92,82 +119,60 @@
             this.GnombreTextBox.Size = new System.Drawing.Size(322, 20);
             this.GnombreTextBox.TabIndex = 17;
             // 
-            // apellidoLabel
-            // 
-            apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(18, 57);
-            apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
-            apellidoLabel.TabIndex = 18;
-            apellidoLabel.Text = "Apellido:";
-            // 
-            // GapellidoTextBox
-            // 
-            this.GapellidoTextBox.Location = new System.Drawing.Point(21, 73);
-            this.GapellidoTextBox.Name = "GapellidoTextBox";
-            this.GapellidoTextBox.Size = new System.Drawing.Size(322, 20);
-            this.GapellidoTextBox.TabIndex = 19;
-            // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(18, 109);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 20;
-            direccionLabel.Text = "Direccion:";
-            // 
             // GdireccionTextBox
             // 
-            this.GdireccionTextBox.Location = new System.Drawing.Point(21, 125);
+            this.GdireccionTextBox.Location = new System.Drawing.Point(21, 73);
             this.GdireccionTextBox.Name = "GdireccionTextBox";
             this.GdireccionTextBox.Size = new System.Drawing.Size(322, 20);
             this.GdireccionTextBox.TabIndex = 21;
             // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(18, 157);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 22;
-            telefonoLabel.Text = "Telefono:";
-            // 
             // GtelefonoTextBox
             // 
-            this.GtelefonoTextBox.Location = new System.Drawing.Point(21, 173);
+            this.GtelefonoTextBox.Location = new System.Drawing.Point(21, 121);
             this.GtelefonoTextBox.Name = "GtelefonoTextBox";
             this.GtelefonoTextBox.Size = new System.Drawing.Size(322, 20);
             this.GtelefonoTextBox.TabIndex = 23;
             // 
-            // cedulaLabel
-            // 
-            cedulaLabel.AutoSize = true;
-            cedulaLabel.Location = new System.Drawing.Point(18, 206);
-            cedulaLabel.Name = "cedulaLabel";
-            cedulaLabel.Size = new System.Drawing.Size(43, 13);
-            cedulaLabel.TabIndex = 24;
-            cedulaLabel.Text = "Cedula:";
-            // 
             // GcedulaTextBox
             // 
-            this.GcedulaTextBox.Location = new System.Drawing.Point(21, 222);
+            this.GcedulaTextBox.Location = new System.Drawing.Point(21, 170);
             this.GcedulaTextBox.Name = "GcedulaTextBox";
             this.GcedulaTextBox.Size = new System.Drawing.Size(322, 20);
             this.GcedulaTextBox.TabIndex = 25;
+            // 
+            // SexocomboBox
+            // 
+            this.SexocomboBox.FormattingEnabled = true;
+            this.SexocomboBox.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer",
+            "Otro"});
+            this.SexocomboBox.Location = new System.Drawing.Point(21, 221);
+            this.SexocomboBox.Name = "SexocomboBox";
+            this.SexocomboBox.Size = new System.Drawing.Size(325, 21);
+            this.SexocomboBox.TabIndex = 30;
+            // 
+            // Sexo
+            // 
+            this.Sexo.AutoSize = true;
+            this.Sexo.Location = new System.Drawing.Point(18, 205);
+            this.Sexo.Name = "Sexo";
+            this.Sexo.Size = new System.Drawing.Size(31, 13);
+            this.Sexo.TabIndex = 29;
+            this.Sexo.Text = "Sexo";
             // 
             // RegistroGarante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 289);
+            this.Controls.Add(this.SexocomboBox);
+            this.Controls.Add(this.Sexo);
             this.Controls.Add(this.GuardarG);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Limpiarbutton);
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.GnombreTextBox);
-            this.Controls.Add(apellidoLabel);
-            this.Controls.Add(this.GapellidoTextBox);
             this.Controls.Add(direccionLabel);
             this.Controls.Add(this.GdireccionTextBox);
             this.Controls.Add(telefonoLabel);
@@ -175,6 +180,7 @@
             this.Controls.Add(cedulaLabel);
             this.Controls.Add(this.GcedulaTextBox);
             this.Name = "RegistroGarante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroGarante";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,9 +193,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Limpiarbutton;
         private System.Windows.Forms.TextBox GnombreTextBox;
-        private System.Windows.Forms.TextBox GapellidoTextBox;
         private System.Windows.Forms.TextBox GdireccionTextBox;
         private System.Windows.Forms.TextBox GtelefonoTextBox;
         private System.Windows.Forms.TextBox GcedulaTextBox;
+        private System.Windows.Forms.ComboBox SexocomboBox;
+        private System.Windows.Forms.Label Sexo;
     }
 }

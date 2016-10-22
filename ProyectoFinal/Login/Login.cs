@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
+using DAL;
+using ProyectoFinal.RegistroUsuarios;
 
 namespace ProyectoFinal.Login
 {
     public partial class Login : Form
     {
+        private FormularioPrincipal f;
+
         public Login()
         {
             InitializeComponent();
@@ -26,14 +30,50 @@ namespace ProyectoFinal.Login
 
         private void BEntrar_Click(object sender, EventArgs e)
         {
-            Usuarios User = new Usuarios();
-
-            User.Usuario = TextCuenta.Text;
-            User.Usuario = TextClave.Text;
-
-            FormularioPrincipal FP = new FormularioPrincipal();
-            FP.Show();
+            if (ValidarSesion() == DialogResult.OK)
+            {
+                this.Visible = false;
+                f = new FormularioPrincipal();
+                f.Show();
+            }
         }
-        
+        public bool ValidarUsuario()
+        {
+            if (UsuariosBLL.GetListaNombreUsuario(UsuarioTextBox.Text).Count() == 0)
+            {
+                MessageBox.Show("Usuario incorrecto o no registrado");
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarContrasena()
+        {
+            if (UsuariosBLL.GetContrasena(ContraseñaTextBox.Text).Count() == 0)
+            {
+                MessageBox.Show("Contraseña incorrecta");
+                return false;
+            }
+            return true;
+        }
+
+        public DialogResult ValidarSesion()
+        {
+            if (ValidarUsuario() == true && ValidarContrasena() == true)
+            {
+                return DialogResult.OK;
+            }
+            return DialogResult.Cancel;
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RegistrarlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegistroUsuarios.RegistroDeUsuarios r = new RegistroDeUsuarios();
+            r.Show();
+        }
     }
 }

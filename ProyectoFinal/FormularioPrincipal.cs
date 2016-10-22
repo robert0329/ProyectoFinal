@@ -14,7 +14,6 @@ using ProyectoFinal.RegistroCliente;
 using ProyectoFinal.RegistroGarantes;
 using ProyectoFinal.Consultas;
 
-
 namespace ProyectoFinal
 {
     public partial class FormularioPrincipal : Form
@@ -62,6 +61,12 @@ namespace ProyectoFinal
         {
             ConsultasGarante cg = new ConsultasGarante();
             cg.Show();
+        }
+
+        private void NuevoPrestamoGaranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Prestamos.NuevoPrestamo NP = new Prestamos.NuevoPrestamo();
+            NP.Show();
         }
     }
 }

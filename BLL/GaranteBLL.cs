@@ -60,6 +60,7 @@ namespace BLL
             return lista;
 
         }
+        
 
         public static List<Garantes> GetLista(int GaranteId)
         {

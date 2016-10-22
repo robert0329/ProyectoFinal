@@ -12,15 +12,15 @@ namespace Entidades
         [Key]
         public int ClienteId { get; set; }
 
-        public string Nombre { get; set; }
-
-        public string Apellido{ get; set; }
+        public string Nombres { get; set; }
 
         public string Direccion { get; set; }
         
         public string Telefono { get; set; }
 
         public string Cedula { get; set; }
+
+        public string Sexo { get; set; }
     }
 
 }

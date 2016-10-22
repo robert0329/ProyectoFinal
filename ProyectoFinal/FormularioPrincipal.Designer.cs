@@ -30,8 +30,10 @@
         {
             this.prestariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NuevoPrestamoGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +42,6 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,10 +58,19 @@
             // 
             // nuevoPrestarioToolStripMenuItem
             // 
+            this.nuevoPrestarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NuevoPrestamoGaranteToolStripMenuItem});
             this.nuevoPrestarioToolStripMenuItem.Name = "nuevoPrestarioToolStripMenuItem";
             this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.nuevoPrestarioToolStripMenuItem.Text = "&Nuevo Prestario";
             this.nuevoPrestarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoPrestarioToolStripMenuItem_Click);
+            // 
+            // NuevoPrestamoGaranteToolStripMenuItem
+            // 
+            this.NuevoPrestamoGaranteToolStripMenuItem.Name = "NuevoPrestamoGaranteToolStripMenuItem";
+            this.NuevoPrestamoGaranteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.NuevoPrestamoGaranteToolStripMenuItem.Text = "Nuevo Prestamo";
+            this.NuevoPrestamoGaranteToolStripMenuItem.Click += new System.EventHandler(this.NuevoPrestamoGaranteToolStripMenuItem_Click);
             // 
             // consultaPrestarioToolStripMenuItem
             // 
@@ -75,6 +85,13 @@
             this.nuevoGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.nuevoGaranteToolStripMenuItem.Text = "Nuevo Garante";
             this.nuevoGaranteToolStripMenuItem.Click += new System.EventHandler(this.nuevoGaranteToolStripMenuItem_Click);
+            // 
+            // consultaGaranteToolStripMenuItem
+            // 
+            this.consultaGaranteToolStripMenuItem.Name = "consultaGaranteToolStripMenuItem";
+            this.consultaGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.consultaGaranteToolStripMenuItem.Text = "Consulta Garante";
+            this.consultaGaranteToolStripMenuItem.Click += new System.EventHandler(this.consultaGaranteToolStripMenuItem_Click);
             // 
             // prestamosToolStripMenuItem
             // 
@@ -138,13 +155,6 @@
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
-            // consultaGaranteToolStripMenuItem
-            // 
-            this.consultaGaranteToolStripMenuItem.Name = "consultaGaranteToolStripMenuItem";
-            this.consultaGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.consultaGaranteToolStripMenuItem.Text = "Consulta Garante";
-            this.consultaGaranteToolStripMenuItem.Click += new System.EventHandler(this.consultaGaranteToolStripMenuItem_Click);
-            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +164,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormularioPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prestamos Mariant";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -176,6 +187,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoGaranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaGaranteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NuevoPrestamoGaranteToolStripMenuItem;
     }
 }
 

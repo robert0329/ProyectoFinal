@@ -42,6 +42,7 @@ namespace ProyectoFinal.RegistroUsuarios
                 if (UsuariosBLL.Guardar(usuario))
                 {
                      MessageBox.Show("Guardado con exito");
+                    this.Close();
                 }
             }
             if (textContraseña.Text != textConfirmar.Text)

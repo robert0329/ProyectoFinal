@@ -105,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Buscarbutton);
             this.Name = "ConsultasCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas De Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.DatosdataGridView)).EndInit();
             this.ResumeLayout(false);

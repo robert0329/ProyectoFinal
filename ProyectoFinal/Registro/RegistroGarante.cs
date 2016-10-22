@@ -22,13 +22,12 @@ namespace ProyectoFinal.RegistroGarantes
         {
             Garantes garantes = new Garantes();
 
-            garantes.Nombre = GnombreTextBox.Text;
-            garantes.Apellido = GapellidoTextBox.Text;
+            garantes.Nombres = GnombreTextBox.Text;
             garantes.Direccion = GdireccionTextBox.Text;
             garantes.Telefono = GtelefonoTextBox.Text;
             garantes.Cedula = GcedulaTextBox.Text;
-
-
+            garantes.Sexo = SexocomboBox.Text;
+            
             return garantes;
         }
         private void GuardarG_Click(object sender, EventArgs e)
@@ -43,6 +42,11 @@ namespace ProyectoFinal.RegistroGarantes
 
                 MessageBox.Show("Guardodo con exito");
             }
+        }
+
+        private void Limpiarbutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

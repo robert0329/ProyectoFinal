@@ -28,13 +28,11 @@ namespace ProyectoFinal.RegistroCliente
         {
             Clientes Cliente = new Clientes();
 
-            Cliente.Nombre = NombretextBox.Text;
-            Cliente.Apellido = ApellidotextBox.Text;
+            Cliente.Nombres = NombretextBox.Text;
             Cliente.Direccion = DirecciontextBox.Text;
             Cliente.Telefono = TelefonotextBox.Text;
             Cliente.Cedula = CedulatextBox.Text;
-
-
+            Cliente.Sexo = SexocomboBox.Text;
             return Cliente;
         }
         
@@ -50,6 +48,11 @@ namespace ProyectoFinal.RegistroCliente
 
                 MessageBox.Show("Guardodo con exito");
             }
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
