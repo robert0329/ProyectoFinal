@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using DAL;
+using BLL;
 
 namespace ProyectoFinal.Prestamos
 {
@@ -37,27 +38,61 @@ namespace ProyectoFinal.Prestamos
         private void Carcular_Click(object sender, EventArgs e)
         {
             Double i, k;
-            Double z = Convert.ToDouble(MontotextBox.Text);
+            Double z = Convert.ToDouble(MontomaskedTextBox.Text);
             Double x = Convert.ToDouble(InterestextBox.Text);
             Double c = Convert.ToDouble(MesesnumericUpDown.Text);
-            Double v = Convert.ToDouble(MontotextBox.Text);
+            Double v = Convert.ToDouble(MontomaskedTextBox.Text);
             Double b = Convert.ToDouble(CantidatextBox.Text);
 
             i = z * x / 100 * c + v;//Total a pagar
             k = i / b;// por cuotas
 
-            CuotastextBox.Text = Convert.ToString(k);
-            TotaltextBox.Text = Convert.ToString(i);
-            for (int p = 0; p < 10; p++)
+            CuotasmaskedTextBox.Text = Convert.ToString(k);
+            TotalmaskedTextBox.Text = Convert.ToString(i);
+
+            for (int p = 0; p < b; ++p)
             {
-                TabladataGridView.DataSource = k;
-                TabladataGridView.DataMember = "Cuotas";
+                TabladataGridView.Rows.Add(p, k);
             }
         }
 
         private void GarantecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private Entidades.Prestamos LlenarClase()
+        {
+            Entidades.Prestamos Prestamos = new Entidades.Prestamos();
+
+            Prestamos.CantidadCuotas = Utilidades.ToInt(CantidatextBox.Text);
+            Prestamos.Interes = Utilidades.ToInt(InterestextBox.Text);
+            Prestamos.FormaDePago = FormaPagocomboBox.Text;
+            Prestamos.Desde = Convert.ToDateTime(DesdemaskedTextBox);
+            Prestamos.MontoPrestado = Utilidades.ToInt(MontomaskedTextBox.Text);
+            Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
+            Prestamos.Garante = GarantecomboBox.Text;
+            Prestamos.Hasta = Convert.ToDateTime(HastamaskedTextBox);
+            Prestamos.Cuotas = Utilidades.ToInt(CuotasmaskedTextBox.Text);
+            Prestamos.Total =  Utilidades.ToInt(TotalmaskedTextBox.Text);
+            Prestamos.MesesgraciasMonatoria = Utilidades.ToInt(MesesMoratorianumericUpDown.Text);
+            Prestamos.DiasgraciasMonatoria = Utilidades.ToInt(DiaMoratorianumericUpDown.Text);
+            Prestamos.MontoMesesMonatoria = Utilidades.ToInt(MontoEstimadotextBox.Text);
+            Prestamos.MontoDiaMonatoria = Utilidades.ToInt(DiaMoratoriotextBox.Text);
+
+            return Prestamos;
+        }
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            Entidades.Prestamos Prestamos = new Entidades.Prestamos();
+
+            Prestamos = LlenarClase();
+
+            if (PrestamosBLL.Guardar(Prestamos))
+            {
+                Nuevobutton.PerformClick();
+
+                MessageBox.Show("Guardado con exito");
+            }
         }
     }
 }
