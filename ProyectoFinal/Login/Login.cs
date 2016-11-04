@@ -16,24 +16,21 @@ namespace ProyectoFinal.Login
 {
     public partial class Login : Form
     {
-        private FormularioPrincipal f;
-
         public Login()
         {
             InitializeComponent();
         }
-
         private void TextCuenta_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void BEntrar_Click(object sender, EventArgs e)
         {
+            Validar();
             if (ValidarSesion() == DialogResult.OK)
             {
                 this.Visible = false;
-                f = new FormularioPrincipal();
+                FormularioPrincipal f = new FormularioPrincipal();
                 f.Show();
             }
         }
@@ -55,7 +52,6 @@ namespace ProyectoFinal.Login
             }
             return true;
         }
-
         public DialogResult ValidarSesion()
         {
             if (ValidarUsuario() == true && ValidarContrasena() == true)
@@ -64,12 +60,18 @@ namespace ProyectoFinal.Login
             }
             return DialogResult.Cancel;
         }
-
+        public void Validar()
+        {
+            if(ContraseñaTextBox.Text == string.Empty && UsuarioTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(ContraseñaTextBox, "Campo vacio");
+                errorProvider1.SetError(UsuarioTextBox, "Campo vacio");
+            }
+        }
         private void BCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void RegistrarlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegistroUsuarios.RegistroDeUsuarios r = new RegistroDeUsuarios();

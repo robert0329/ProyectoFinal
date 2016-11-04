@@ -30,18 +30,18 @@
         {
             this.prestariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NuevoPrestamoGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDevolucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,53 +49,29 @@
             // 
             this.prestariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPrestarioToolStripMenuItem,
-            this.consultaPrestarioToolStripMenuItem,
-            this.nuevoGaranteToolStripMenuItem,
-            this.consultaGaranteToolStripMenuItem});
+            this.nuevoGaranteToolStripMenuItem});
             this.prestariosToolStripMenuItem.Name = "prestariosToolStripMenuItem";
-            this.prestariosToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.prestariosToolStripMenuItem.Text = "&Prestarios";
+            this.prestariosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.prestariosToolStripMenuItem.Text = "Clientes";
             // 
             // nuevoPrestarioToolStripMenuItem
             // 
-            this.nuevoPrestarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NuevoPrestamoGaranteToolStripMenuItem});
             this.nuevoPrestarioToolStripMenuItem.Name = "nuevoPrestarioToolStripMenuItem";
-            this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.nuevoPrestarioToolStripMenuItem.Text = "&Nuevo Prestario";
             this.nuevoPrestarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoPrestarioToolStripMenuItem_Click);
-            // 
-            // NuevoPrestamoGaranteToolStripMenuItem
-            // 
-            this.NuevoPrestamoGaranteToolStripMenuItem.Name = "NuevoPrestamoGaranteToolStripMenuItem";
-            this.NuevoPrestamoGaranteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.NuevoPrestamoGaranteToolStripMenuItem.Text = "Nuevo Prestamo";
-            this.NuevoPrestamoGaranteToolStripMenuItem.Click += new System.EventHandler(this.NuevoPrestamoGaranteToolStripMenuItem_Click);
-            // 
-            // consultaPrestarioToolStripMenuItem
-            // 
-            this.consultaPrestarioToolStripMenuItem.Name = "consultaPrestarioToolStripMenuItem";
-            this.consultaPrestarioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.consultaPrestarioToolStripMenuItem.Text = "&Consulta Prestario";
-            this.consultaPrestarioToolStripMenuItem.Click += new System.EventHandler(this.consultaPrestarioToolStripMenuItem_Click);
             // 
             // nuevoGaranteToolStripMenuItem
             // 
             this.nuevoGaranteToolStripMenuItem.Name = "nuevoGaranteToolStripMenuItem";
-            this.nuevoGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.nuevoGaranteToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.nuevoGaranteToolStripMenuItem.Text = "Nuevo Garante";
             this.nuevoGaranteToolStripMenuItem.Click += new System.EventHandler(this.nuevoGaranteToolStripMenuItem_Click);
-            // 
-            // consultaGaranteToolStripMenuItem
-            // 
-            this.consultaGaranteToolStripMenuItem.Name = "consultaGaranteToolStripMenuItem";
-            this.consultaGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.consultaGaranteToolStripMenuItem.Text = "Consulta Garante";
-            this.consultaGaranteToolStripMenuItem.Click += new System.EventHandler(this.consultaGaranteToolStripMenuItem_Click);
             // 
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoPrestamoToolStripMenuItem,
             this.nuevoDesembolsoToolStripMenuItem,
             this.modificacionDesembolsoToolStripMenuItem,
             this.devolucionToolStripMenuItem,
@@ -103,6 +79,13 @@
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
+            // 
+            // nuevoPrestamoToolStripMenuItem
+            // 
+            this.nuevoPrestamoToolStripMenuItem.Name = "nuevoPrestamoToolStripMenuItem";
+            this.nuevoPrestamoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.nuevoPrestamoToolStripMenuItem.Text = "Nuevo Prestamo";
+            this.nuevoPrestamoToolStripMenuItem.Click += new System.EventHandler(this.nuevoPrestamoToolStripMenuItem_Click);
             // 
             // nuevoDesembolsoToolStripMenuItem
             // 
@@ -140,27 +123,42 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prestariosToolStripMenuItem,
             this.prestamosToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(802, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // groupBox3
+            // consultasToolStripMenuItem
             // 
-            this.groupBox3.Location = new System.Drawing.Point(0, 28);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(802, 70);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultaPrestarioToolStripMenuItem,
+            this.consultaGaranteToolStripMenuItem});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // consultaPrestarioToolStripMenuItem
+            // 
+            this.consultaPrestarioToolStripMenuItem.Name = "consultaPrestarioToolStripMenuItem";
+            this.consultaPrestarioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.consultaPrestarioToolStripMenuItem.Text = "Consulta Prestario";
+            this.consultaPrestarioToolStripMenuItem.Click += new System.EventHandler(this.consultaPrestarioToolStripMenuItem_Click_1);
+            // 
+            // consultaGaranteToolStripMenuItem
+            // 
+            this.consultaGaranteToolStripMenuItem.Name = "consultaGaranteToolStripMenuItem";
+            this.consultaGaranteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.consultaGaranteToolStripMenuItem.Text = "Consulta Garante";
+            this.consultaGaranteToolStripMenuItem.Click += new System.EventHandler(this.consultaGaranteToolStripMenuItem_Click_1);
             // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 307);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormularioPrincipal";
@@ -183,11 +181,11 @@
         private System.Windows.Forms.ToolStripMenuItem modificacionDevolucionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ToolStripMenuItem consultaPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoGaranteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaGaranteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem NuevoPrestamoGaranteToolStripMenuItem;
     }
 }
 

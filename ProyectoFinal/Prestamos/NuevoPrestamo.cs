@@ -16,9 +16,13 @@ namespace ProyectoFinal.Prestamos
     public partial class NuevoPrestamo : Form
     {
         public List<Garantes> lista = new List<Garantes>();
+        public List<Clientes> lis = new List<Clientes>();
         public NuevoPrestamo()
         {
             InitializeComponent();
+            byte Total = 000000;
+            CuotasmaskedTextBox.Text = Convert.ToString(Total);
+            TotalmaskedTextBox.Text = Convert.ToString(Total);
         }
         private void ListarGarante()
         {
@@ -30,13 +34,35 @@ namespace ProyectoFinal.Prestamos
                 GarantecomboBox.DisplayMember = "Nombres";
             }
         }
+        public void Condiciones()
+        {
+            if (Utilidades.ToInt(MontomaskedTextBox.Text) > 1000)
+            {
+                MontomaskedTextBox.Mask = ",";
+            }
+        }
+        private void ListarCliente()
+        {
+            Conexion conn = new Conexion();
+            var lis = conn.Clientes.ToList();
+            if (lis.Count > 0)
+            {
+                NombreClientecomboBox.DataSource = lis;
+                NombreClientecomboBox.DisplayMember = "Nombres";
+            }
+        }
+
+
         private void NuevoPrestamo_Load(object sender, EventArgs e)
         {
             ListarGarante();
+            ListarCliente();
+            Condiciones();
         }
 
         private void Carcular_Click(object sender, EventArgs e)
         {
+            Entidades.Prestamos Prestamos = new Entidades.Prestamos();
             Double i, k;
             Double z = Convert.ToDouble(MontomaskedTextBox.Text);
             Double x = Convert.ToDouble(InterestextBox.Text);
@@ -44,16 +70,11 @@ namespace ProyectoFinal.Prestamos
             Double v = Convert.ToDouble(MontomaskedTextBox.Text);
             Double b = Convert.ToDouble(CantidatextBox.Text);
 
-            i = z * x / 100 * c + v;//Total a pagar
-            k = i / b;// por cuotas
+            i = z * x / 100 * c + v;
+            k = i / b;
 
             CuotasmaskedTextBox.Text = Convert.ToString(k);
             TotalmaskedTextBox.Text = Convert.ToString(i);
-
-            for (int p = 0; p < b; ++p)
-            {
-                TabladataGridView.Rows.Add(p, k);
-            }
         }
 
         private void GarantecomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,20 +85,16 @@ namespace ProyectoFinal.Prestamos
         {
             Entidades.Prestamos Prestamos = new Entidades.Prestamos();
 
+            Prestamos.Nombre = NombreClientecomboBox.Text;
             Prestamos.CantidadCuotas = Utilidades.ToInt(CantidatextBox.Text);
             Prestamos.Interes = Utilidades.ToInt(InterestextBox.Text);
             Prestamos.FormaDePago = FormaPagocomboBox.Text;
-            Prestamos.Desde = Convert.ToDateTime(DesdemaskedTextBox);
             Prestamos.MontoPrestado = Utilidades.ToInt(MontomaskedTextBox.Text);
             Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
             Prestamos.Garante = GarantecomboBox.Text;
             Prestamos.Hasta = Convert.ToDateTime(HastamaskedTextBox);
             Prestamos.Cuotas = Utilidades.ToInt(CuotasmaskedTextBox.Text);
             Prestamos.Total =  Utilidades.ToInt(TotalmaskedTextBox.Text);
-            Prestamos.MesesgraciasMonatoria = Utilidades.ToInt(MesesMoratorianumericUpDown.Text);
-            Prestamos.DiasgraciasMonatoria = Utilidades.ToInt(DiaMoratorianumericUpDown.Text);
-            Prestamos.MontoMesesMonatoria = Utilidades.ToInt(MontoEstimadotextBox.Text);
-            Prestamos.MontoDiaMonatoria = Utilidades.ToInt(DiaMoratoriotextBox.Text);
 
             return Prestamos;
         }
@@ -93,6 +110,22 @@ namespace ProyectoFinal.Prestamos
 
                 MessageBox.Show("Guardado con exito");
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        private void HastamaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void NombreClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
