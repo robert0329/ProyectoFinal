@@ -280,7 +280,6 @@
             // MontomaskedTextBox
             // 
             this.MontomaskedTextBox.Location = new System.Drawing.Point(427, 51);
-            this.MontomaskedTextBox.Mask = "99999.00";
             this.MontomaskedTextBox.Name = "MontomaskedTextBox";
             this.MontomaskedTextBox.Size = new System.Drawing.Size(325, 26);
             this.MontomaskedTextBox.TabIndex = 29;
@@ -342,6 +341,7 @@
             this.Nuevobutton.TabIndex = 1;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Cancelarbutton
             // 
@@ -359,7 +359,7 @@
             this.ClientSize = new System.Drawing.Size(823, 484);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevoPrestamo";
-            this.Text = "NuevoPrestamo";
+            this.Text = "Nuevo Prestamo";
             this.Load += new System.EventHandler(this.NuevoPrestamo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

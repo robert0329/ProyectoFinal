@@ -127,5 +127,10 @@ namespace ProyectoFinal.Prestamos
         {
 
         }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            NombreClientecomboBox.Text = CantidatextBox.Text = InterestextBox.Text = "";
+        }
     }
 }

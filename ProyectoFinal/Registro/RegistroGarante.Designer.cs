@@ -52,9 +52,9 @@
             nombreLabel.AutoSize = true;
             nombreLabel.Location = new System.Drawing.Point(18, 9);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.Size = new System.Drawing.Size(52, 13);
             nombreLabel.TabIndex = 16;
-            nombreLabel.Text = "Nombre:";
+            nombreLabel.Text = "Nombres:";
             // 
             // direccionLabel
             // 
@@ -183,7 +183,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "RegistroGarante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroGarante";
+            this.Text = "Registro Garante";
             this.ResumeLayout(false);
             this.PerformLayout();
 
