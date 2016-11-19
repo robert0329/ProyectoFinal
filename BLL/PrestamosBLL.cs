@@ -13,14 +13,12 @@ namespace BLL
         public static bool Guardar(Prestamos Prestamo)
         {
             bool retorno = false;
-
             try
             {
-                Conexion Conn = new Conexion();
+                Conexion db = new Conexion();
+                db.Prestamos.Add(Prestamo);
+                db.SaveChanges();
 
-                Conn.Prestamos.Add(Prestamo);
-
-                Conn.SaveChanges();
                 retorno = true;
             }
             catch (Exception)
@@ -28,24 +26,43 @@ namespace BLL
 
                 throw;
             }
-
             return retorno;
         }
-        public static void Eliminar(int id)
+        public static bool Eliminar(Prestamos id)
         {
-            var db = new Conexion();
-
-            Prestamos Prestamo = Busqueda(id);
-
-            db.Prestamos.Remove(Prestamo);
-            db.SaveChanges();
+            try
+            {
+                Conexion db = new Conexion();
+                Prestamos c = db.Prestamos.Find(id);
+                {
+                    db.Prestamos.Remove(c);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return true;
+                throw;
+            }
         }
 
-        public static Prestamos Busqueda(int id)
+        public static bool Buscar(int id)
         {
-            var db = new Conexion();
+            bool Retorno = false;
+            try
+            {
+                Prestamos p = new Prestamos();
+                Conexion d = new Conexion();
+                p = d.Prestamos.Find(id);
+                Retorno = true;
+            }
+            catch (Exception)
+            {
 
-            return db.Prestamos.Find(id);
+                throw;
+            }
+            return Retorno;
 
         }
 

@@ -13,14 +13,12 @@ namespace BLL
         public static bool Guardar(Garantes garante)
         {
             bool retorno = false;
-
             try
             {
-                Conexion ConnG = new Conexion();
+                Conexion db = new Conexion();
+                db.garante.Add(garante);
+                db.SaveChanges();
 
-                ConnG.garante.Add(garante);
-
-                ConnG.SaveChanges();
                 retorno = true;
             }
             catch (Exception)
@@ -28,24 +26,43 @@ namespace BLL
 
                 throw;
             }
-
             return retorno;
         }
-        public static void EliminarG(int id)
+        public static bool Eliminar(Garantes e)
         {
-            var db = new Conexion();
+            try
+            {
+                Conexion db = new Conexion();
+                Garantes c = db.garante.Find(e);
+                {
+                    db.garante.Remove(c);
+                    db.SaveChanges();
+                    return false;
+                }
+            }catch(Exception)
+            {
+                return true;
+                throw;
+            }
 
-            Garantes Ug = Busqueda(id);
-
-            db.garante.Remove(Ug);
-            db.SaveChanges();
         }
 
-        public static Garantes Busqueda(int id)
+        public static bool Buscar(int id)
         {
-            var db = new Conexion();
+            bool Retorno = false;
+            try
+            {
+                Garantes p = new Garantes();
+                Conexion d = new Conexion();
+                p = d.garante.Find(id);
+                Retorno = true;
+            }
+            catch (Exception)
+            {
 
-            return db.garante.Find(id);
+                throw;
+            }
+            return Retorno;
 
         }
 

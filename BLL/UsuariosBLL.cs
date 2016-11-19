@@ -13,14 +13,12 @@ namespace BLL
         public static bool Guardar(Usuarios usuario)
         {
             bool retorno = false;
-
             try
             {
-                Conexion Conn = new Conexion();
+                Conexion db = new Conexion();
+                db.Usuarios.Add(usuario);
+                db.SaveChanges();
 
-                Conn.Usuarios.Add(usuario);
-
-                Conn.SaveChanges();
                 retorno = true;
             }
             catch (Exception)
@@ -28,7 +26,6 @@ namespace BLL
 
                 throw;
             }
-
             return retorno;
         }
         public static List<Usuarios> GetListaNombreUsuario(string Usuario)

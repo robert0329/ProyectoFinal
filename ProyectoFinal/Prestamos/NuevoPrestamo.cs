@@ -85,16 +85,16 @@ namespace ProyectoFinal.Prestamos
         {
             Entidades.Prestamos Prestamos = new Entidades.Prestamos();
 
-            Prestamos.Nombre = NombreClientecomboBox.Text;
+            Prestamos.Nombres = NombreClientecomboBox.Text;
             Prestamos.CantidadCuotas = Utilidades.ToInt(CantidatextBox.Text);
-            Prestamos.Interes = Utilidades.ToInt(InterestextBox.Text);
-            Prestamos.FormaDePago = FormaPagocomboBox.Text;
-            Prestamos.MontoPrestado = Utilidades.ToInt(MontomaskedTextBox.Text);
-            Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
-            Prestamos.Garante = GarantecomboBox.Text;
-            Prestamos.Hasta = Convert.ToDateTime(HastamaskedTextBox);
-            Prestamos.Cuotas = Utilidades.ToInt(CuotasmaskedTextBox.Text);
-            Prestamos.Total =  Utilidades.ToInt(TotalmaskedTextBox.Text);
+            //Prestamos.Interes = Utilidades.ToInt(InterestextBox.Text);
+            //Prestamos.FormaDePago = FormaPagocomboBox.Text;
+            //Prestamos.MontoPrestado = Utilidades.ToInt(MontomaskedTextBox.Text);
+            //Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
+            //Prestamos.Garante = GarantecomboBox.Text;
+            //Prestamos.Hasta = Convert.ToDateTime(HastamaskedTextBox);
+            //Prestamos.Cuotas = Utilidades.ToInt(CuotasmaskedTextBox.Text);
+            //Prestamos.Total =  Utilidades.ToInt(TotalmaskedTextBox.Text);
 
             return Prestamos;
         }

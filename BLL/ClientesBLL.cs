@@ -32,14 +32,23 @@ namespace BLL
             return retorno;
         }
 
-        public static void Eliminar(int id)
+        public static bool Eliminar(int id)
         {
-            var db = new Conexion();
-
-            Clientes Cliente = Buscar(id);
-
-            db.Clientes.Remove(Cliente);
-            db.SaveChanges();
+            try
+            {
+                Conexion db = new Conexion();
+                Clientes c = db.Clientes.Find(id);
+                {
+                    db.Clientes.Remove(c);
+                    db.SaveChanges();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return true;
+                throw;
+            }
         }
 
         public static Clientes Buscar(int id)
@@ -47,7 +56,6 @@ namespace BLL
             var db = new Conexion();
 
             return db.Clientes.Find(id);
-
         }
 
         public static List<Clientes> GetLista()
