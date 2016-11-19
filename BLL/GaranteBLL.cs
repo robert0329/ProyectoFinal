@@ -28,42 +28,43 @@ namespace BLL
             }
             return retorno;
         }
-        public static bool Eliminar(Garantes e)
+        public static bool Eliminar(int e)
         {
-            try
+            bool r = false;
+            using (var db = new Conexion())
             {
-                Conexion db = new Conexion();
-                Garantes c = db.garante.Find(e);
+                try
                 {
+                    Garantes c = db.garante.Find(e);
                     db.garante.Remove(c);
                     db.SaveChanges();
-                    return false;
+                    r = true;
                 }
-            }catch(Exception)
-            {
-                return true;
-                throw;
-            }
-
+                catch (Exception)
+                {
+                    throw;
+                }
+                return r;
+            }    
         }
 
         public static bool Buscar(int id)
         {
             bool Retorno = false;
-            try
+            using (var d = new Conexion())
             {
-                Garantes p = new Garantes();
-                Conexion d = new Conexion();
-                p = d.garante.Find(id);
-                Retorno = true;
-            }
-            catch (Exception)
-            {
-
-                throw;
+                try
+                {
+                    Garantes p = new Garantes();
+                    p = d.garante.Find(id);
+                    Retorno = true;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
             return Retorno;
-
         }
 
         public static List<Garantes> GetLista()

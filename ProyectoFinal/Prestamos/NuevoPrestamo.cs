@@ -44,7 +44,7 @@ namespace ProyectoFinal.Prestamos
         private void ListarCliente()
         {
             Conexion conn = new Conexion();
-            var lis = conn.Clientes.ToList();
+            var lis = conn.clientes.ToList();
             if (lis.Count > 0)
             {
                 NombreClientecomboBox.DataSource = lis;

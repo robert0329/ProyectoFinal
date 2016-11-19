@@ -15,7 +15,8 @@ namespace BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            string dateTime = "01/08/2008 14:50:50.42"; DateTime dt = Convert.ToDateTime(dateTime);
+            string dateTime = "01/08/2008 14:50:50.42";
+            DateTime dt = Convert.ToDateTime(dateTime);
             Prestamos p = new Prestamos();
             p.PrestamoID = 01;
             p.Nombres = "q";

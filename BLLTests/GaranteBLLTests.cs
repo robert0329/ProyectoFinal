@@ -22,8 +22,7 @@ namespace BLL.Tests
         [TestMethod()]
         public void EliminarGTest()
         {
-            Garantes c = new Garantes();
-            Assert.IsTrue(GaranteBLL.Eliminar(c));
+            Assert.IsTrue(GaranteBLL.Eliminar(3));
         }
 
         [TestMethod()]

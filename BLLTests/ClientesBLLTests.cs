@@ -23,13 +23,13 @@ namespace BLL.Tests
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.IsTrue(ClientesBLL.Eliminar(1));
+            Assert.IsTrue(ClientesBLL.Eliminar(3));
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.IsNull(ClientesBLL.Buscar(1));
+            Assert.IsTrue(ClientesBLL.Buscar(1));
         }
 
         [TestMethod()]

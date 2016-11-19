@@ -18,7 +18,7 @@ namespace BLL
             {
                 Conexion Conn = new Conexion();
 
-                Conn.Clientes.Add(Cliente);
+                Conn.clientes.Add(Cliente);
 
                 Conn.SaveChanges();
                 retorno = true;
@@ -32,30 +32,45 @@ namespace BLL
             return retorno;
         }
 
-        public static bool Eliminar(int id)
+        public static bool Eliminar(int e)
         {
-            try
+            bool r = false;
+            using (var db = new Conexion())
             {
-                Conexion db = new Conexion();
-                Clientes c = db.Clientes.Find(id);
+                try
                 {
-                    db.Clientes.Remove(c);
+                    Clientes c = db.clientes.Find(e);
+                    db.clientes.Remove(c);
                     db.SaveChanges();
-                    return false;
+                    r = true;
                 }
-            }
-            catch (Exception)
-            {
-                return true;
-                throw;
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return r;
             }
         }
 
-        public static Clientes Buscar(int id)
+        public static bool Buscar(int id)
         {
-            var db = new Conexion();
+            bool Retorno = false;
+            using (var d = new Conexion())
+            {
+                try
+                {
+                    Clientes p = new Clientes();
+                    p = d.clientes.Find(id);
+                    Retorno = true;
+                }
+                catch (Exception)
+                {
 
-            return db.Clientes.Find(id);
+                    throw;
+                }
+                return Retorno;
+            }
         }
 
         public static List<Clientes> GetLista()
@@ -64,7 +79,7 @@ namespace BLL
 
             var db = new Conexion();
 
-            lista = db.Clientes.ToList();
+            lista = db.clientes.ToList();
 
             return lista;
 
@@ -76,7 +91,7 @@ namespace BLL
 
             var db = new Conexion();
 
-            lista = db.Clientes.Where(p => p.ClienteId == usuarioId).ToList();
+            lista = db.clientes.Where(p => p.ClienteId == usuarioId).ToList();
 
             return lista;
 
