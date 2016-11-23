@@ -22,15 +22,16 @@ namespace ProyectoFinal.RegistroGarantes
         {
             Garantes garantes = new Garantes();
 
-            garantes.Nombres = GnombreTextBox.Text;
-            garantes.Direccion = GdireccionTextBox.Text;
-            garantes.Telefono = GtelefonoTextBox.Text;
-            garantes.Cedula = GcedulaTextBox.Text;
+            garantes.Nombres = nombresTextBox.Text;
+            garantes.Direccion = direccionTextBox.Text;
+            garantes.Telefono = telefonoTextBox.Text;
+            garantes.Cedula = cedulaTextBox.Text;
             garantes.Sexo = SexocomboBox.Text;
             
             return garantes;
         }
-        private void GuardarG_Click(object sender, EventArgs e)
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Garantes garantes = new Garantes();
 
@@ -38,15 +39,31 @@ namespace ProyectoFinal.RegistroGarantes
 
             if (GaranteBLL.Guardar(garantes))
             {
-                Limpiarbutton.PerformClick();
+                Nuevobutton.PerformClick();
 
                 MessageBox.Show("Guardado con exito");
             }
         }
 
-        private void Limpiarbutton_Click(object sender, EventArgs e)
+        private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            int d = Convert.ToInt32(garanteIdTextBox.Text);
+            var cc = GaranteBLL.Eliminar(d);
+        }
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            int d = Convert.ToInt32(garanteIdTextBox.Text);
+            var cc = GaranteBLL.Buscar(d);
 
+            if (cc != null)
+            {
+                nombresTextBox.Text = cc.Nombres;
+            }
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            nombresTextBox.Text = direccionTextBox.Text = telefonoTextBox.Text = cedulaTextBox.Text = SexocomboBox.Text = "";
         }
     }
 }

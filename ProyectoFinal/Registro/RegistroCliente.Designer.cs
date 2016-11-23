@@ -38,9 +38,12 @@
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.CancelarButton = new System.Windows.Forms.Button();
             this.Sexo = new System.Windows.Forms.Label();
             this.SexocomboBox = new System.Windows.Forms.ComboBox();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +67,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 147);
+            this.label4.Location = new System.Drawing.Point(22, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
@@ -73,7 +76,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 98);
+            this.label5.Location = new System.Drawing.Point(22, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 4;
@@ -88,28 +91,28 @@
             // 
             // TelefonotextBox
             // 
-            this.TelefonotextBox.Location = new System.Drawing.Point(25, 114);
+            this.TelefonotextBox.Location = new System.Drawing.Point(25, 103);
             this.TelefonotextBox.Name = "TelefonotextBox";
-            this.TelefonotextBox.Size = new System.Drawing.Size(325, 20);
+            this.TelefonotextBox.Size = new System.Drawing.Size(431, 20);
             this.TelefonotextBox.TabIndex = 8;
             // 
             // CedulatextBox
             // 
-            this.CedulatextBox.Location = new System.Drawing.Point(25, 163);
+            this.CedulatextBox.Location = new System.Drawing.Point(25, 142);
             this.CedulatextBox.Name = "CedulatextBox";
-            this.CedulatextBox.Size = new System.Drawing.Size(325, 20);
+            this.CedulatextBox.Size = new System.Drawing.Size(431, 20);
             this.CedulatextBox.TabIndex = 9;
             // 
             // DirecciontextBox
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(25, 64);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(325, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(431, 20);
             this.DirecciontextBox.TabIndex = 10;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(275, 247);
+            this.Guardarbutton.Location = new System.Drawing.Point(462, 200);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 36);
             this.Guardarbutton.TabIndex = 2;
@@ -119,7 +122,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(25, 247);
+            this.Nuevobutton.Location = new System.Drawing.Point(462, 140);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 36);
             this.Nuevobutton.TabIndex = 11;
@@ -127,20 +130,10 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // CancelarButton
-            // 
-            this.CancelarButton.Location = new System.Drawing.Point(152, 247);
-            this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(75, 36);
-            this.CancelarButton.TabIndex = 12;
-            this.CancelarButton.Text = "Cancelar";
-            this.CancelarButton.UseVisualStyleBackColor = true;
-            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
             // Sexo
             // 
             this.Sexo.AutoSize = true;
-            this.Sexo.Location = new System.Drawing.Point(22, 196);
+            this.Sexo.Location = new System.Drawing.Point(22, 165);
             this.Sexo.Name = "Sexo";
             this.Sexo.Size = new System.Drawing.Size(31, 13);
             this.Sexo.TabIndex = 13;
@@ -153,20 +146,59 @@
             "Hombre",
             "Mujer",
             "Otro"});
-            this.SexocomboBox.Location = new System.Drawing.Point(25, 212);
+            this.SexocomboBox.Location = new System.Drawing.Point(25, 181);
             this.SexocomboBox.Name = "SexocomboBox";
-            this.SexocomboBox.Size = new System.Drawing.Size(325, 21);
+            this.SexocomboBox.Size = new System.Drawing.Size(431, 21);
             this.SexocomboBox.TabIndex = 14;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Location = new System.Drawing.Point(462, 25);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 36);
+            this.Buscarbutton.TabIndex = 15;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // ClienteIdmaskedTextBox
+            // 
+            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(356, 25);
+            this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
+            this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ClienteIdmaskedTextBox.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(356, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Cliente Id:";
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Location = new System.Drawing.Point(462, 80);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(74, 36);
+            this.Eliminarbutton.TabIndex = 18;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(371, 283);
+            this.ClientSize = new System.Drawing.Size(557, 255);
+            this.Controls.Add(this.Eliminarbutton);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ClienteIdmaskedTextBox);
+            this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.SexocomboBox);
             this.Controls.Add(this.Sexo);
-            this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.DirecciontextBox);
@@ -198,8 +230,11 @@
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Label Sexo;
         private System.Windows.Forms.ComboBox SexocomboBox;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.MaskedTextBox ClienteIdmaskedTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Eliminarbutton;
     }
 }

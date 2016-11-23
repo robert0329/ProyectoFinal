@@ -42,29 +42,20 @@ namespace BLL
                 }
                 catch (Exception)
                 {
+
                     throw;
                 }
                 return r;
-            }    
+            }
         }
 
-        public static bool Buscar(int id)
+        public static Garantes Buscar(int id)
         {
-            bool Retorno = false;
-            using (var d = new Conexion())
-            {
-                try
-                {
-                    Garantes p = new Garantes();
-                    p = d.garante.Find(id);
-                    Retorno = true;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-            return Retorno;
+            var Garant = new Garantes();
+            var d = new Conexion();
+
+            Garant = d.garante.Find(id);
+            return Garant;
         }
 
         public static List<Garantes> GetLista()

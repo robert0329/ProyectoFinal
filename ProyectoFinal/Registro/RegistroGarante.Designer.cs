@@ -28,158 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label nombreLabel;
+            System.Windows.Forms.Label garanteIdLabel;
+            System.Windows.Forms.Label nombresLabel;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label cedulaLabel;
-            this.GuardarG = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Limpiarbutton = new System.Windows.Forms.Button();
-            this.GnombreTextBox = new System.Windows.Forms.TextBox();
-            this.GdireccionTextBox = new System.Windows.Forms.TextBox();
-            this.GtelefonoTextBox = new System.Windows.Forms.TextBox();
-            this.GcedulaTextBox = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.Label sexoLabel;
+            this.garanteIdTextBox = new System.Windows.Forms.TextBox();
+            this.nombresTextBox = new System.Windows.Forms.TextBox();
+            this.direccionTextBox = new System.Windows.Forms.TextBox();
+            this.telefonoTextBox = new System.Windows.Forms.TextBox();
+            this.cedulaTextBox = new System.Windows.Forms.TextBox();
             this.SexocomboBox = new System.Windows.Forms.ComboBox();
-            this.Sexo = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            garanteIdLabel = new System.Windows.Forms.Label();
+            nombresLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             telefonoLabel = new System.Windows.Forms.Label();
             cedulaLabel = new System.Windows.Forms.Label();
+            sexoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // nombreLabel
+            // garanteIdLabel
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(18, 9);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(52, 13);
-            nombreLabel.TabIndex = 16;
-            nombreLabel.Text = "Nombres:";
+            garanteIdLabel.AutoSize = true;
+            garanteIdLabel.Location = new System.Drawing.Point(351, 23);
+            garanteIdLabel.Name = "garanteIdLabel";
+            garanteIdLabel.Size = new System.Drawing.Size(60, 13);
+            garanteIdLabel.TabIndex = 1;
+            garanteIdLabel.Text = "Garante Id:";
+            // 
+            // nombresLabel
+            // 
+            nombresLabel.AutoSize = true;
+            nombresLabel.Location = new System.Drawing.Point(12, 23);
+            nombresLabel.Name = "nombresLabel";
+            nombresLabel.Size = new System.Drawing.Size(52, 13);
+            nombresLabel.TabIndex = 3;
+            nombresLabel.Text = "Nombres:";
             // 
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(18, 57);
+            direccionLabel.Location = new System.Drawing.Point(12, 62);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 20;
+            direccionLabel.TabIndex = 5;
             direccionLabel.Text = "Direccion:";
             // 
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(18, 105);
+            telefonoLabel.Location = new System.Drawing.Point(12, 101);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 22;
+            telefonoLabel.TabIndex = 7;
             telefonoLabel.Text = "Telefono:";
             // 
             // cedulaLabel
             // 
             cedulaLabel.AutoSize = true;
-            cedulaLabel.Location = new System.Drawing.Point(18, 154);
+            cedulaLabel.Location = new System.Drawing.Point(12, 140);
             cedulaLabel.Name = "cedulaLabel";
             cedulaLabel.Size = new System.Drawing.Size(43, 13);
-            cedulaLabel.TabIndex = 24;
+            cedulaLabel.TabIndex = 9;
             cedulaLabel.Text = "Cedula:";
             // 
-            // GuardarG
+            // sexoLabel
             // 
-            this.GuardarG.Location = new System.Drawing.Point(268, 249);
-            this.GuardarG.Name = "GuardarG";
-            this.GuardarG.Size = new System.Drawing.Size(75, 37);
-            this.GuardarG.TabIndex = 28;
-            this.GuardarG.Text = "Guardar";
-            this.GuardarG.UseVisualStyleBackColor = true;
-            this.GuardarG.Click += new System.EventHandler(this.GuardarG_Click);
+            sexoLabel.AutoSize = true;
+            sexoLabel.Location = new System.Drawing.Point(12, 179);
+            sexoLabel.Name = "sexoLabel";
+            sexoLabel.Size = new System.Drawing.Size(34, 13);
+            sexoLabel.TabIndex = 11;
+            sexoLabel.Text = "Sexo:";
             // 
-            // button2
+            // garanteIdTextBox
             // 
-            this.button2.Location = new System.Drawing.Point(147, 249);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 37);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.garanteIdTextBox.Location = new System.Drawing.Point(354, 39);
+            this.garanteIdTextBox.Name = "garanteIdTextBox";
+            this.garanteIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.garanteIdTextBox.TabIndex = 2;
             // 
-            // Limpiarbutton
+            // nombresTextBox
             // 
-            this.Limpiarbutton.Location = new System.Drawing.Point(21, 249);
-            this.Limpiarbutton.Name = "Limpiarbutton";
-            this.Limpiarbutton.Size = new System.Drawing.Size(75, 37);
-            this.Limpiarbutton.TabIndex = 26;
-            this.Limpiarbutton.Text = "Limpiar";
-            this.Limpiarbutton.UseVisualStyleBackColor = true;
-            this.Limpiarbutton.Click += new System.EventHandler(this.Limpiarbutton_Click);
+            this.nombresTextBox.Location = new System.Drawing.Point(15, 39);
+            this.nombresTextBox.Name = "nombresTextBox";
+            this.nombresTextBox.Size = new System.Drawing.Size(330, 20);
+            this.nombresTextBox.TabIndex = 4;
             // 
-            // GnombreTextBox
+            // direccionTextBox
             // 
-            this.GnombreTextBox.Location = new System.Drawing.Point(21, 25);
-            this.GnombreTextBox.Name = "GnombreTextBox";
-            this.GnombreTextBox.Size = new System.Drawing.Size(322, 20);
-            this.GnombreTextBox.TabIndex = 17;
+            this.direccionTextBox.Location = new System.Drawing.Point(15, 78);
+            this.direccionTextBox.Name = "direccionTextBox";
+            this.direccionTextBox.Size = new System.Drawing.Size(439, 20);
+            this.direccionTextBox.TabIndex = 6;
             // 
-            // GdireccionTextBox
+            // telefonoTextBox
             // 
-            this.GdireccionTextBox.Location = new System.Drawing.Point(21, 73);
-            this.GdireccionTextBox.Name = "GdireccionTextBox";
-            this.GdireccionTextBox.Size = new System.Drawing.Size(322, 20);
-            this.GdireccionTextBox.TabIndex = 21;
+            this.telefonoTextBox.Location = new System.Drawing.Point(15, 117);
+            this.telefonoTextBox.Name = "telefonoTextBox";
+            this.telefonoTextBox.Size = new System.Drawing.Size(439, 20);
+            this.telefonoTextBox.TabIndex = 8;
             // 
-            // GtelefonoTextBox
+            // cedulaTextBox
             // 
-            this.GtelefonoTextBox.Location = new System.Drawing.Point(21, 121);
-            this.GtelefonoTextBox.Name = "GtelefonoTextBox";
-            this.GtelefonoTextBox.Size = new System.Drawing.Size(322, 20);
-            this.GtelefonoTextBox.TabIndex = 23;
-            // 
-            // GcedulaTextBox
-            // 
-            this.GcedulaTextBox.Location = new System.Drawing.Point(21, 170);
-            this.GcedulaTextBox.Name = "GcedulaTextBox";
-            this.GcedulaTextBox.Size = new System.Drawing.Size(322, 20);
-            this.GcedulaTextBox.TabIndex = 25;
+            this.cedulaTextBox.Location = new System.Drawing.Point(15, 156);
+            this.cedulaTextBox.Name = "cedulaTextBox";
+            this.cedulaTextBox.Size = new System.Drawing.Size(439, 20);
+            this.cedulaTextBox.TabIndex = 10;
             // 
             // SexocomboBox
             // 
             this.SexocomboBox.FormattingEnabled = true;
-            this.SexocomboBox.Items.AddRange(new object[] {
-            "Hombre",
-            "Mujer",
-            "Otro"});
-            this.SexocomboBox.Location = new System.Drawing.Point(21, 221);
+            this.SexocomboBox.Location = new System.Drawing.Point(15, 196);
             this.SexocomboBox.Name = "SexocomboBox";
-            this.SexocomboBox.Size = new System.Drawing.Size(325, 21);
-            this.SexocomboBox.TabIndex = 30;
+            this.SexocomboBox.Size = new System.Drawing.Size(439, 21);
+            this.SexocomboBox.TabIndex = 12;
             // 
-            // Sexo
+            // Buscarbutton
             // 
-            this.Sexo.AutoSize = true;
-            this.Sexo.Location = new System.Drawing.Point(18, 205);
-            this.Sexo.Name = "Sexo";
-            this.Sexo.Size = new System.Drawing.Size(31, 13);
-            this.Sexo.TabIndex = 29;
-            this.Sexo.Text = "Sexo";
+            this.Buscarbutton.Location = new System.Drawing.Point(460, 39);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 40);
+            this.Buscarbutton.TabIndex = 13;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Location = new System.Drawing.Point(460, 85);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 40);
+            this.Nuevobutton.TabIndex = 14;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Location = new System.Drawing.Point(460, 131);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 40);
+            this.Eliminarbutton.TabIndex = 15;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Location = new System.Drawing.Point(460, 179);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 40);
+            this.Guardarbutton.TabIndex = 16;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // RegistroGarante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(364, 289);
+            this.ClientSize = new System.Drawing.Size(545, 255);
+            this.Controls.Add(this.Guardarbutton);
+            this.Controls.Add(this.Eliminarbutton);
+            this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.SexocomboBox);
-            this.Controls.Add(this.Sexo);
-            this.Controls.Add(this.GuardarG);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Limpiarbutton);
-            this.Controls.Add(nombreLabel);
-            this.Controls.Add(this.GnombreTextBox);
+            this.Controls.Add(garanteIdLabel);
+            this.Controls.Add(this.garanteIdTextBox);
+            this.Controls.Add(nombresLabel);
+            this.Controls.Add(this.nombresTextBox);
             this.Controls.Add(direccionLabel);
-            this.Controls.Add(this.GdireccionTextBox);
+            this.Controls.Add(this.direccionTextBox);
             this.Controls.Add(telefonoLabel);
-            this.Controls.Add(this.GtelefonoTextBox);
+            this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(cedulaLabel);
-            this.Controls.Add(this.GcedulaTextBox);
+            this.Controls.Add(this.cedulaTextBox);
+            this.Controls.Add(sexoLabel);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "RegistroGarante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -191,14 +222,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button GuardarG;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Limpiarbutton;
-        private System.Windows.Forms.TextBox GnombreTextBox;
-        private System.Windows.Forms.TextBox GdireccionTextBox;
-        private System.Windows.Forms.TextBox GtelefonoTextBox;
-        private System.Windows.Forms.TextBox GcedulaTextBox;
+        private System.Windows.Forms.TextBox garanteIdTextBox;
+        private System.Windows.Forms.TextBox nombresTextBox;
+        private System.Windows.Forms.TextBox direccionTextBox;
+        private System.Windows.Forms.TextBox telefonoTextBox;
+        private System.Windows.Forms.TextBox cedulaTextBox;
         private System.Windows.Forms.ComboBox SexocomboBox;
-        private System.Windows.Forms.Label Sexo;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button Guardarbutton;
     }
 }

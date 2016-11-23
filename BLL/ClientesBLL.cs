@@ -53,24 +53,13 @@ namespace BLL
             }
         }
 
-        public static bool Buscar(int id)
+        public static Clientes Buscar(int id)
         {
-            bool Retorno = false;
-            using (var d = new Conexion())
-            {
-                try
-                {
-                    Clientes p = new Clientes();
-                    p = d.clientes.Find(id);
-                    Retorno = true;
-                }
-                catch (Exception)
-                {
+            var Client = new Clientes();
+            var d = new Conexion();
 
-                    throw;
-                }
-                return Retorno;
-            }
+            Client = d.clientes.Find(id);
+            return Client;
         }
 
         public static List<Clientes> GetLista()

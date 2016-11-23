@@ -70,6 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDatosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultasGarante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +159,17 @@
     <EmbeddedResource Include="Registro\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BaseDatosDataSet.xsc">
+      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDatosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDatosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDatosDataSet.xss">
+      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

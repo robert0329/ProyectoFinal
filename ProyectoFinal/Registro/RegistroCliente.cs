@@ -55,9 +55,22 @@ namespace ProyectoFinal.RegistroCliente
            NombretextBox.Text = DirecciontextBox.Text = TelefonotextBox.Text = CedulatextBox.Text= SexocomboBox.Text= "";
         }
 
-        private void CancelarButton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int d = Convert.ToInt32(ClienteIdmaskedTextBox.Text);
+            var cc = ClientesBLL.Buscar(d);
+
+            if (cc != null)
+            {
+                NombretextBox.Text = cc.Nombres;
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            int d = Convert.ToInt32(ClienteIdmaskedTextBox.Text);
+            var cc = ClientesBLL.Eliminar(d);
+            
         }
     }
 }
