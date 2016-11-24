@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CobrosBLL.cs" />
     <Compile Include="GaranteBLL.cs" />
     <Compile Include="PrestamosBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

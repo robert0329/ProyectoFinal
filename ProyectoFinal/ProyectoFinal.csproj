@@ -99,6 +99,12 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prestamos\Desembolso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamos\Desembolso.Designer.cs">
+      <DependentUpon>Desembolso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestamos\NuevoPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos\Desembolso.resx">
+      <DependentUpon>Desembolso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestamos\NuevoPrestamo.resx">
       <DependentUpon>NuevoPrestamo.cs</DependentUpon>

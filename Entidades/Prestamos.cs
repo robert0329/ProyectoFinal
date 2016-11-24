@@ -18,7 +18,7 @@ namespace Entidades
         public int Meses { get; set; }
         public string FormaDePago { get; set; }
         public string Garante { get; set; }
-        public DateTime Hasta { get; set; }
+        public string Hasta { get; set; }
         public int Cuotas { get; set; }
         public int Total { get; set; }
         public int DiasgraciasMonatoria { get; set; }

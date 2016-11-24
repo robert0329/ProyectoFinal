@@ -27,12 +27,12 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void BuscarTest()
-        {
-            Assert.IsTrue(ClientesBLL.Buscar(1));
-        }
+        //public void BuscarTest()
+        //{
+        //    Assert.IsTrue(ClientesBLL.Buscar(1));
+        //}
 
-        [TestMethod()]
+        ////[TestMethod()]
         public void GetListaTest()
         {
             Assert.IsTrue(ClientesBLL.GetLista().Count != 0);

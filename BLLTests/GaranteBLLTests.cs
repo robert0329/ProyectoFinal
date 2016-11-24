@@ -25,11 +25,11 @@ namespace BLL.Tests
             Assert.IsTrue(GaranteBLL.Eliminar(3));
         }
 
-        [TestMethod()]
-        public void BuscarTest()
-        {
-            Assert.IsTrue(GaranteBLL.Buscar(1));
-        }
+        //[TestMethod()]
+        //public void BuscarTest()
+        //{
+        //    Assert.IsTrue(GaranteBLL.Buscar(1));
+        //}
 
         [TestMethod()]
         public void GetListaTest()

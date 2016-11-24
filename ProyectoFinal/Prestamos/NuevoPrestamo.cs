@@ -20,44 +20,20 @@ namespace ProyectoFinal.Prestamos
         public NuevoPrestamo()
         {
             InitializeComponent();
-            byte Total = 000000;
-            CuotasmaskedTextBox.Text = Convert.ToString(Total);
-            TotalmaskedTextBox.Text = Convert.ToString(Total);
         }
-        private void ListarGarante()
+        private void ListarComboBox()
         {
             Conexion conn = new Conexion();
             var lista = conn.garante.ToList();
-            if (lista.Count > 0)
-            {
-                GarantecomboBox.DataSource = lista;
-                GarantecomboBox.DisplayMember = "Nombres";
-            }
-        }
-        public void Condiciones()
-        {
-            if (Utilidades.ToInt(MontomaskedTextBox.Text) > 1000)
-            {
-                MontomaskedTextBox.Mask = ",";
-            }
-        }
-        private void ListarCliente()
-        {
-            Conexion conn = new Conexion();
             var lis = conn.clientes.ToList();
-            if (lis.Count > 0)
-            {
-                NombreClientecomboBox.DataSource = lis;
-                NombreClientecomboBox.DisplayMember = "Nombres";
-            }
-        }
+            GarantecomboBox.DataSource = lista;
+            GarantecomboBox.DisplayMember = "Nombres";
+            NombreClientecomboBox.DataSource = lis;
+            NombreClientecomboBox.DisplayMember = "Nombres";
 
-
-        private void NuevoPrestamo_Load(object sender, EventArgs e)
+        }private void NuevoPrestamo_Load(object sender, EventArgs e)
         {
-            ListarGarante();
-            ListarCliente();
-            Condiciones();
+            ListarComboBox();
         }
 
         private void Carcular_Click(object sender, EventArgs e)
@@ -87,14 +63,14 @@ namespace ProyectoFinal.Prestamos
 
             Prestamos.Nombres = NombreClientecomboBox.Text;
             Prestamos.CantidadCuotas = Utilidades.ToInt(CantidatextBox.Text);
-            //Prestamos.Interes = Utilidades.ToInt(InterestextBox.Text);
-            //Prestamos.FormaDePago = FormaPagocomboBox.Text;
-            //Prestamos.MontoPrestado = Utilidades.ToInt(MontomaskedTextBox.Text);
-            //Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
-            //Prestamos.Garante = GarantecomboBox.Text;
-            //Prestamos.Hasta = Convert.ToDateTime(HastamaskedTextBox);
-            //Prestamos.Cuotas = Utilidades.ToInt(CuotasmaskedTextBox.Text);
-            //Prestamos.Total =  Utilidades.ToInt(TotalmaskedTextBox.Text);
+            Prestamos.Interes = Utilidades.ToInt(InterestextBox.Text);
+            Prestamos.FormaDePago = FormaPagocomboBox.Text;
+            Prestamos.MontoPrestado = Utilidades.ToInt(MontomaskedTextBox.Text);
+            Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
+            Prestamos.Garante = GarantecomboBox.Text;
+            Prestamos.Hasta = HastamaskedTextBox.Text;
+            Prestamos.Cuotas = Utilidades.ToInt(CuotasmaskedTextBox.Text);
+            Prestamos.Total = Utilidades.ToInt(TotalmaskedTextBox.Text);
 
             return Prestamos;
         }
@@ -125,7 +101,6 @@ namespace ProyectoFinal.Prestamos
 
         private void NombreClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
