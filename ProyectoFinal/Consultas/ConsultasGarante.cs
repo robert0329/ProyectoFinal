@@ -18,13 +18,10 @@ namespace ProyectoFinal.Consultas
             InitializeComponent();
         }
         public List<Garantes> lista = new List<Garantes>();
-        
-
         private void DatosdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(GFiltrotextBox.Text))

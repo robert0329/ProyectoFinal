@@ -35,7 +35,6 @@ namespace BLL
             lista = db.Usuarios.Where(p => p.Usuario == Usuario).ToList();
             return lista;
         }
-
         public static List<Usuarios> GetContrasena(string contraseña)
         {
             List<Usuarios> lista = new List<Usuarios>();
@@ -43,6 +42,5 @@ namespace BLL
             lista = db.Usuarios.Where(p => p.Contraseña == contraseña).ToList();
             return lista;
         }
-
     }
 }

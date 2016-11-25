@@ -14,7 +14,7 @@ using ProyectoFinal.RegistroUsuarios;
 
 namespace ProyectoFinal.Login
 {
-    public partial class Login : Form
+    public partial class    Login : Form
     {
         public Login()
         {

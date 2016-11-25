@@ -46,7 +46,6 @@ namespace BLL
                 throw;
             }
         }
-
         public static bool Buscar(int id)
         {
             bool Retorno = false;
@@ -65,7 +64,6 @@ namespace BLL
             return Retorno;
 
         }
-
         public static List<Prestamos> GetLista()
         {
             List<Prestamos> lista = new List<Prestamos>();
@@ -76,8 +74,6 @@ namespace BLL
 
             return lista;
         }
-
-
         public static List<Prestamos> GetLista(int PrestamosId)
         {
             List<Prestamos> list = new List<Prestamos>();

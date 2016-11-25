@@ -18,7 +18,6 @@ namespace ProyectoFinal.RegistroCliente
         {
             InitializeComponent();
         }
-
         public void RegistroCliente_Load(object sender, EventArgs e)
         {
 

@@ -38,7 +38,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.MontotextBox = new System.Windows.Forms.TextBox();
             this.Cobrarbutton = new System.Windows.Forms.Button();
-            this.Agregarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +82,7 @@
             this.NombrecomboBox.FormattingEnabled = true;
             this.NombrecomboBox.Location = new System.Drawing.Point(15, 25);
             this.NombrecomboBox.Name = "NombrecomboBox";
-            this.NombrecomboBox.Size = new System.Drawing.Size(215, 21);
+            this.NombrecomboBox.Size = new System.Drawing.Size(303, 21);
             this.NombrecomboBox.TabIndex = 5;
             this.NombrecomboBox.SelectedIndexChanged += new System.EventHandler(this.NombrecomboBox_SelectedIndexChanged);
             // 
@@ -129,22 +128,11 @@
             this.Cobrarbutton.UseVisualStyleBackColor = true;
             this.Cobrarbutton.Click += new System.EventHandler(this.Cobrarbutton_Click);
             // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Location = new System.Drawing.Point(243, 25);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Agregarbutton.TabIndex = 10;
-            this.Agregarbutton.Text = "Agregar";
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
-            // 
             // Desembolso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 248);
-            this.Controls.Add(this.Agregarbutton);
             this.Controls.Add(this.Cobrarbutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -175,6 +163,5 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox MontotextBox;
         private System.Windows.Forms.Button Cobrarbutton;
-        private System.Windows.Forms.Button Agregarbutton;
     }
 }

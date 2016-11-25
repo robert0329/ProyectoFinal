@@ -23,5 +23,4 @@ namespace Entidades
         public string Sexo { get; set; }
         public List<Prestamos> Prestamo { get; set; }
     }
-
 }

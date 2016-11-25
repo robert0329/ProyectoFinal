@@ -30,7 +30,6 @@ namespace ProyectoFinal.RegistroGarantes
             
             return garantes;
         }
-
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Garantes garantes = new Garantes();
@@ -44,7 +43,6 @@ namespace ProyectoFinal.RegistroGarantes
                 MessageBox.Show("Guardado con exito");
             }
         }
-
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int d = Convert.ToInt32(garanteIdTextBox.Text);
@@ -60,7 +58,6 @@ namespace ProyectoFinal.RegistroGarantes
                 nombresTextBox.Text = cc.Nombres;
             }
         }
-
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             nombresTextBox.Text = direccionTextBox.Text = telefonoTextBox.Text = cedulaTextBox.Text = SexocomboBox.Text = "";

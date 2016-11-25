@@ -7,7 +7,6 @@ using DAL;
 
 namespace BLL
 {
-
     public class ClientesBLL
     {
         public static bool Insertar(Clientes Cliente)

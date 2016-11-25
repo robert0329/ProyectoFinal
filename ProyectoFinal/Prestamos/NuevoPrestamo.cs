@@ -27,15 +27,15 @@ namespace ProyectoFinal.Prestamos
             var lista = conn.garante.ToList();
             var lis = conn.clientes.ToList();
             GarantecomboBox.DataSource = lista;
-            GarantecomboBox.DisplayMember = "Nombres";
             NombreClientecomboBox.DataSource = lis;
+            GarantecomboBox.DisplayMember = "Nombres";
             NombreClientecomboBox.DisplayMember = "Nombres";
 
-        }private void NuevoPrestamo_Load(object sender, EventArgs e)
+        }
+        private void NuevoPrestamo_Load(object sender, EventArgs e)
         {
             ListarComboBox();
         }
-
         private void Carcular_Click(object sender, EventArgs e)
         {
             Entidades.Prestamos Prestamos = new Entidades.Prestamos();
@@ -52,7 +52,6 @@ namespace ProyectoFinal.Prestamos
             CuotasmaskedTextBox.Text = Convert.ToString(k);
             TotalmaskedTextBox.Text = Convert.ToString(i);
         }
-
         private void GarantecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -87,22 +86,17 @@ namespace ProyectoFinal.Prestamos
                 MessageBox.Show("Guardado con exito");
             }
         }
-
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
-        
-
         private void HastamaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
-
         private void NombreClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             NombreClientecomboBox.Text = CantidatextBox.Text = InterestextBox.Text = "";

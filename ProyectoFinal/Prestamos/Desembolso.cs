@@ -15,11 +15,11 @@ namespace ProyectoFinal.Prestamos
 {
     public partial class Desembolso : Form
     {
+        Conexion bd = new Conexion();
         public Desembolso()
         {
             InitializeComponent();
         }
-        Conexion bd = new Conexion();
         void cargar()
         {
             var conn = new Conexion();
@@ -27,7 +27,6 @@ namespace ProyectoFinal.Prestamos
             NombrecomboBox.DataSource = lista;
             NombrecomboBox.DisplayMember = "Nombres";
         }
-        
         private void Cobrarbutton_Click(object sender, EventArgs e)
         {
             llenar();
@@ -37,18 +36,15 @@ namespace ProyectoFinal.Prestamos
             {
                 r = (cc.MontoPrestado - Utilidades.ToInt(MontotextBox.Text));
                 BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text);
-                Agregarbutton.PerformClick();
             }
+            Limpiar();
         }
         private void Desembolso_Load(object sender, EventArgs e)
         { 
             cargar();
+            Limpiar();
         }
         private void NombrecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void Agregarbutton_Click(object sender, EventArgs e)
         {
             var d = new Conexion();
             var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
@@ -56,6 +52,10 @@ namespace ProyectoFinal.Prestamos
             {
                 DeudatextBox.Text = Convert.ToString(cc.MontoPrestado);
             }
+        }
+        public void Limpiar()
+        {
+            NombrecomboBox.Text = DeudatextBox.Text = MontotextBox.Text = "";
         }
         public void llenar()
         {

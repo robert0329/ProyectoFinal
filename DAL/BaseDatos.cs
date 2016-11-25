@@ -14,12 +14,12 @@ namespace DAL
         {
 
         }
-
         public virtual DbSet<Clientes> clientes { get; set; }
         public virtual DbSet<Garantes> garante { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Prestamos> Prestamos { get; set; }
         public virtual DbSet<Cobros> cobros { get; set; }
+        public virtual DbSet<PrestamoCliente> prestamoCliente { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -34,5 +34,4 @@ namespace DAL
                 });
         }
     }
-    
 }

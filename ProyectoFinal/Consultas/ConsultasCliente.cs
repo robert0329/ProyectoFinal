@@ -32,7 +32,6 @@ namespace ProyectoFinal.Consultas
 
             ConsultaClientedataGridView.DataSource = lista;
         }
-        
         private void FiltrotextBox_TextChanged(object sender, EventArgs e)
         {
 

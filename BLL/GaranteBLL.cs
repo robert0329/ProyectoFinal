@@ -48,7 +48,6 @@ namespace BLL
                 return r;
             }
         }
-
         public static Garantes Buscar(int id)
         {
             var Garant = new Garantes();
@@ -57,7 +56,6 @@ namespace BLL
             Garant = d.garante.Find(id);
             return Garant;
         }
-
         public static List<Garantes> GetLista()
         {
             List<Garantes> lista = new List<Garantes>();
@@ -69,8 +67,6 @@ namespace BLL
             return lista;
 
         }
-        
-
         public static List<Garantes> GetLista(int GaranteId)
         {
             List<Garantes> list = new List<Garantes>();
