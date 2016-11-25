@@ -23,7 +23,6 @@ namespace ProyectoFinal.RegistroCliente
         {
 
         }
-
         private Clientes LlenarClase()
         {
             Clientes Cliente = new Clientes();
@@ -34,8 +33,7 @@ namespace ProyectoFinal.RegistroCliente
             Cliente.Cedula = CedulatextBox.Text;
             Cliente.Sexo = SexocomboBox.Text;
             return Cliente;
-        }
-        
+        }        
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Clientes Cliente = new Clientes();
@@ -49,12 +47,10 @@ namespace ProyectoFinal.RegistroCliente
                 MessageBox.Show("Guardado con exito");
             }
         }
-
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
            NombretextBox.Text = DirecciontextBox.Text = TelefonotextBox.Text = CedulatextBox.Text= SexocomboBox.Text= "";
         }
-
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int d = Convert.ToInt32(ClienteIdmaskedTextBox.Text);
@@ -65,7 +61,6 @@ namespace ProyectoFinal.RegistroCliente
                 NombretextBox.Text = cc.Nombres;
             }
         }
-
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int d = Convert.ToInt32(ClienteIdmaskedTextBox.Text);

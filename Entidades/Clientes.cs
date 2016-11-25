@@ -21,6 +21,7 @@ namespace Entidades
         public string Cedula { get; set; }
 
         public string Sexo { get; set; }
+        public List<Prestamos> Prestamo { get; set; }
     }
 
 }

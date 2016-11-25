@@ -34,9 +34,6 @@
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificacionDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.devolucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificacionDevolucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,10 +69,7 @@
             // 
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPrestamoToolStripMenuItem,
-            this.nuevoDesembolsoToolStripMenuItem,
-            this.modificacionDesembolsoToolStripMenuItem,
-            this.devolucionToolStripMenuItem,
-            this.modificacionDevolucionToolStripMenuItem});
+            this.nuevoDesembolsoToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
@@ -83,34 +77,16 @@
             // nuevoPrestamoToolStripMenuItem
             // 
             this.nuevoPrestamoToolStripMenuItem.Name = "nuevoPrestamoToolStripMenuItem";
-            this.nuevoPrestamoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.nuevoPrestamoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.nuevoPrestamoToolStripMenuItem.Text = "Nuevo Prestamo";
             this.nuevoPrestamoToolStripMenuItem.Click += new System.EventHandler(this.nuevoPrestamoToolStripMenuItem_Click);
             // 
             // nuevoDesembolsoToolStripMenuItem
             // 
             this.nuevoDesembolsoToolStripMenuItem.Name = "nuevoDesembolsoToolStripMenuItem";
-            this.nuevoDesembolsoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.nuevoDesembolsoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.nuevoDesembolsoToolStripMenuItem.Text = "Nuevo Desembolso";
             this.nuevoDesembolsoToolStripMenuItem.Click += new System.EventHandler(this.nuevoDesembolsoToolStripMenuItem_Click);
-            // 
-            // modificacionDesembolsoToolStripMenuItem
-            // 
-            this.modificacionDesembolsoToolStripMenuItem.Name = "modificacionDesembolsoToolStripMenuItem";
-            this.modificacionDesembolsoToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.modificacionDesembolsoToolStripMenuItem.Text = "Modificacion Desembolso";
-            // 
-            // devolucionToolStripMenuItem
-            // 
-            this.devolucionToolStripMenuItem.Name = "devolucionToolStripMenuItem";
-            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.devolucionToolStripMenuItem.Text = "Devolucion";
-            // 
-            // modificacionDevolucionToolStripMenuItem
-            // 
-            this.modificacionDevolucionToolStripMenuItem.Name = "modificacionDevolucionToolStripMenuItem";
-            this.modificacionDevolucionToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.modificacionDevolucionToolStripMenuItem.Text = "Modificacion Devolucion";
             // 
             // reportesToolStripMenuItem
             // 
@@ -176,9 +152,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoDesembolsoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificacionDesembolsoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem devolucionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificacionDevolucionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nuevoGaranteToolStripMenuItem;

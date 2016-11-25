@@ -23,5 +23,6 @@ namespace Entidades
         public int Total { get; set; }
         public int DiasgraciasMonatoria { get; set; }
         public int MontoDiaMonatoria { get; set; }
+        public List<Clientes> LClientes { get; set; }
     }
 }

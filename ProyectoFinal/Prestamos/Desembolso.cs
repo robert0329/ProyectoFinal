@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BLL;
+using DAL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -25,11 +26,11 @@ namespace ProyectoFinal.Prestamos
             var lista = conn.Prestamos.ToList();
             NombrecomboBox.DataSource = lista;
             NombrecomboBox.DisplayMember = "Nombres";
-
         }
         
         private void Cobrarbutton_Click(object sender, EventArgs e)
         {
+            llenar();
             int r = 0;
             var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
             if (cc != null)
@@ -39,7 +40,6 @@ namespace ProyectoFinal.Prestamos
                 Agregarbutton.PerformClick();
             }
         }
-
         private void Desembolso_Load(object sender, EventArgs e)
         { 
             cargar();
@@ -48,15 +48,25 @@ namespace ProyectoFinal.Prestamos
         {
 
         }
-
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
             var d = new Conexion();
             var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
-
             if (cc != null)
             {
                 DeudatextBox.Text = Convert.ToString(cc.MontoPrestado);
+            }
+        }
+        public void llenar()
+        {
+            Cobros Co = new Cobros();
+            Co.Nombres = NombrecomboBox.Text;
+            Co.Deuda = Utilidades.ToInt(DeudatextBox.Text);
+            Co.UltimoPago = Utilidades.ToInt(MontotextBox.Text);
+
+            if (CobrosBLL.Insertar(Co , NombrecomboBox.Text , Utilidades.ToInt(DeudatextBox.Text) , Utilidades.ToInt(MontotextBox.Text)))
+            {
+                MessageBox.Show("Cobro con exito");
             }
         }
     }

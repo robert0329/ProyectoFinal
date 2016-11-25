@@ -25,49 +25,58 @@ namespace BLL
 
             prestamo = Conn.Prestamos.Where(c => c.Nombres.Equals(nombre)).FirstOrDefault();
             prestamo.MontoPrestado = Monto;
-                Conn.SaveChanges();
+            Conn.SaveChanges();
             return prestamo;
         }
-        public static bool Insertar(Cobros cobro)
+        public static bool Insertar(Cobros cobro , string nombre , int Deuda , int Monto)
         {
             bool retorno = false;
-
-            try
+            using (var Conn = new Conexion())
             {
-                Conexion Conn = new Conexion();
+                try
+                {
+                    var cc = new Cobros();
+                    cc = Conn.cobros.Where(c => c.Nombres.Equals(nombre)).FirstOrDefault();
 
-                Conn..Add(cobro);
-
-                Conn.SaveChanges();
-                retorno = true;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return retorno;
+                    if (cc != null)
+                    {
+                        cc = Conn.cobros.Where(c => c.Nombres.Equals(nombre)).FirstOrDefault();
+                        cc.Deuda = Deuda;
+                        cc.Nombres = nombre;
+                        cc.UltimoPago = Monto;
+                        Conn.SaveChanges();
+                    }
+                    else
+                    {
+                        cc = Conn.cobros.Add(cobro);
+                        Conn.SaveChanges();
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                return retorno;
+            }    
         }
-        public static List<Prestamos> GetLista()
+        public static List<Cobros> GetLista()
         {
-            List<Prestamos> lista = new List<Prestamos>();
+            List<Cobros> lista = new List<Cobros>();
 
             var db = new Conexion();
 
-            lista = db.Prestamos.ToList();
+            lista = db.cobros.ToList();
 
             return lista;
 
         }
-
-        public static List<Prestamos> GetLista(string usuarioId)
+        public static List<Cobros> GetLista(string usuarioId)
         {
-            List<Prestamos> lista = new List<Prestamos>();
+            List<Cobros> lista = new List<Cobros>();
 
             var db = new Conexion();
 
-            lista = db.Prestamos.Where(p => Convert.ToString( p.PrestamoID) == usuarioId).ToList();
+            lista = db.cobros.Where(p => Convert.ToString( p.cobroId) == usuarioId).ToList();
 
             return lista;
 

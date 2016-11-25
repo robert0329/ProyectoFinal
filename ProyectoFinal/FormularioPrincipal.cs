@@ -29,7 +29,8 @@ namespace ProyectoFinal
         }
         private void nuevoDesembolsoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ProyectoFinal.Prestamos.Desembolso d = new Prestamos.Desembolso();
+            d.Show();
         }
         private void nuevoGaranteToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -21,9 +21,17 @@ namespace DAL
         public virtual DbSet<Prestamos> Prestamos { get; set; }
         public virtual DbSet<Cobros> cobros { get; set; }
 
-        public bool executecommand(string actualizar)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new NotImplementedException();
+            modelBuilder.Entity<Prestamos>()
+                .HasMany<Clientes>(g => g.LClientes)
+                .WithMany(e => e.Prestamo)
+                .Map(Ge =>
+                {
+                    Ge.MapLeftKey("PrestamoId");
+                    Ge.MapRightKey("ClienteId");
+                    Ge.ToTable("PrestamoCliente");
+                });
         }
     }
     

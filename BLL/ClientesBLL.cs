@@ -31,7 +31,6 @@ namespace BLL
 
             return retorno;
         }
-
         public static bool Eliminar(int e)
         {
             bool r = false;
@@ -52,7 +51,6 @@ namespace BLL
                 return r;
             }
         }
-
         public static Clientes Buscar(int id)
         {
             var Client = new Clientes();
@@ -61,7 +59,6 @@ namespace BLL
             Client = d.clientes.Find(id);
             return Client;
         }
-
         public static List<Clientes> GetLista()
         {
             List<Clientes> lista = new List<Clientes>();
@@ -73,7 +70,6 @@ namespace BLL
             return lista;
 
         }
-
         public static List<Clientes> GetLista(int usuarioId)
         {
             List<Clientes> lista = new List<Clientes>();
