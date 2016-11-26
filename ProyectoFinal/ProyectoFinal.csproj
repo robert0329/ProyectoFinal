@@ -223,10 +223,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\BaseDatos.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Database\BaseDatos_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BaseDatos.mdf</DependentUpon>
     </Content>
   </ItemGroup>

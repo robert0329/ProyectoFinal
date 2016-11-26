@@ -17,6 +17,7 @@ namespace ProyectoFinal.Prestamos
     {
         public List<Garantes> lista = new List<Garantes>();
         public List<Clientes> lis = new List<Clientes>();
+        public List<PrestamoClientes> ListPrestamoCliente = new List<PrestamoClientes>();
         public NuevoPrestamo()
         {
             InitializeComponent();
@@ -79,10 +80,10 @@ namespace ProyectoFinal.Prestamos
 
             Prestamos = LlenarClase();
 
-            if (PrestamosBLL.Guardar(Prestamos))
+            if (Prestamos != null)
             {
+                PrestamosBLL.Insertar(Prestamos);
                 Nuevobutton.PerformClick();
-
                 MessageBox.Show("Guardado con exito");
             }
         }

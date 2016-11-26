@@ -44,6 +44,7 @@
             this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Modificarbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,33 +87,33 @@
             // 
             this.NombretextBox.Location = new System.Drawing.Point(25, 25);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(325, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(270, 20);
             this.NombretextBox.TabIndex = 6;
             // 
             // TelefonotextBox
             // 
             this.TelefonotextBox.Location = new System.Drawing.Point(25, 103);
             this.TelefonotextBox.Name = "TelefonotextBox";
-            this.TelefonotextBox.Size = new System.Drawing.Size(431, 20);
+            this.TelefonotextBox.Size = new System.Drawing.Size(376, 20);
             this.TelefonotextBox.TabIndex = 8;
             // 
             // CedulatextBox
             // 
             this.CedulatextBox.Location = new System.Drawing.Point(25, 142);
             this.CedulatextBox.Name = "CedulatextBox";
-            this.CedulatextBox.Size = new System.Drawing.Size(431, 20);
+            this.CedulatextBox.Size = new System.Drawing.Size(376, 20);
             this.CedulatextBox.TabIndex = 9;
             // 
             // DirecciontextBox
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(25, 64);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(431, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(376, 20);
             this.DirecciontextBox.TabIndex = 10;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(462, 200);
+            this.Guardarbutton.Location = new System.Drawing.Point(25, 208);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 36);
             this.Guardarbutton.TabIndex = 2;
@@ -122,7 +123,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(462, 140);
+            this.Nuevobutton.Location = new System.Drawing.Point(226, 208);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 36);
             this.Nuevobutton.TabIndex = 11;
@@ -148,12 +149,12 @@
             "Otro"});
             this.SexocomboBox.Location = new System.Drawing.Point(25, 181);
             this.SexocomboBox.Name = "SexocomboBox";
-            this.SexocomboBox.Size = new System.Drawing.Size(431, 21);
+            this.SexocomboBox.Size = new System.Drawing.Size(376, 21);
             this.SexocomboBox.TabIndex = 14;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(462, 25);
+            this.Buscarbutton.Location = new System.Drawing.Point(407, 25);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 36);
             this.Buscarbutton.TabIndex = 15;
@@ -163,7 +164,7 @@
             // 
             // ClienteIdmaskedTextBox
             // 
-            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(356, 25);
+            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(301, 25);
             this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
             this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.ClienteIdmaskedTextBox.TabIndex = 16;
@@ -171,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(356, 9);
+            this.label3.Location = new System.Drawing.Point(301, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 17;
@@ -179,7 +180,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(462, 80);
+            this.Eliminarbutton.Location = new System.Drawing.Point(125, 208);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(74, 36);
             this.Eliminarbutton.TabIndex = 18;
@@ -187,12 +188,22 @@
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
+            // Modificarbutton
+            // 
+            this.Modificarbutton.Location = new System.Drawing.Point(326, 208);
+            this.Modificarbutton.Name = "Modificarbutton";
+            this.Modificarbutton.Size = new System.Drawing.Size(75, 36);
+            this.Modificarbutton.TabIndex = 19;
+            this.Modificarbutton.Text = "Modificar";
+            this.Modificarbutton.UseVisualStyleBackColor = true;
+            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(557, 255);
+            this.ClientSize = new System.Drawing.Size(503, 255);
+            this.Controls.Add(this.Modificarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ClienteIdmaskedTextBox);
@@ -236,5 +247,6 @@
         private System.Windows.Forms.MaskedTextBox ClienteIdmaskedTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button Modificarbutton;
     }
 }

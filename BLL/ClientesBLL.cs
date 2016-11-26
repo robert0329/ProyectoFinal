@@ -4,32 +4,59 @@ using System.Linq;
 using System.Text;
 using Entidades;
 using DAL;
+using System.Data.Entity;
 
 namespace BLL
 {
     public class ClientesBLL
     {
-        public static bool Insertar(Clientes Cliente)
+        public static void Insertar(Clientes cliente)
         {
-            bool retorno = false;
-
-            try
+            using (var Conn = new Conexion())
             {
-                Conexion Conn = new Conexion();
-
-                Conn.clientes.Add(Cliente);
-
+                var con = Conn.clientes.Add(cliente);
+                foreach (var pre in cliente.ListPrestamo)
+                {
+                    Conn.Entry(pre).State = EntityState.Unchanged;
+                }
                 Conn.SaveChanges();
-                retorno = true;
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return retorno;
         }
+        public static Clientes Buscar(int id)
+        {
+            var Cliente = new Clientes();
+
+            using (var context = new Conexion())
+            {
+                Cliente = context.clientes.Find(id);
+                if (Cliente != null)
+                {
+                    Cliente.ListPrestamo.Count();
+                }
+            }
+            return Cliente;
+        }
+        //public static bool Insertar(Clientes Cliente)
+        //{
+        //    bool retorno = false;
+
+        //    try
+        //    {
+        //        Conexion Conn = new Conexion();
+
+        //        Conn.clientes.Add(Cliente);
+
+        //        Conn.SaveChanges();
+        //        retorno = true;
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+
+        //    return retorno;
+        //}
         public static bool Eliminar(int e)
         {
             bool r = false;
@@ -50,14 +77,14 @@ namespace BLL
                 return r;
             }
         }
-        public static Clientes Buscar(int id)
-        {
-            var Client = new Clientes();
-            var d = new Conexion();
+        //public static Clientes Buscar(int id)
+        //{
+        //    var Client = new Clientes();
+        //    var d = new Conexion();
 
-            Client = d.clientes.Find(id);
-            return Client;
-        }
+        //    Client = d.clientes.Find(id);
+        //    return Client;
+        //}
         public static List<Clientes> GetLista()
         {
             List<Clientes> lista = new List<Clientes>();

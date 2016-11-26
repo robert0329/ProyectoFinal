@@ -39,10 +39,10 @@ namespace ProyectoFinal.RegistroCliente
 
             Cliente = LlenarClase();
 
-            if (ClientesBLL.Insertar(Cliente))
+            if (Cliente!= null)
             {
+                ClientesBLL.Insertar(Cliente);
                 Nuevobutton.PerformClick();
-
                 MessageBox.Show("Guardado con exito");
             }
         }

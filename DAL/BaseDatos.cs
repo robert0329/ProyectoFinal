@@ -19,18 +19,17 @@ namespace DAL
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Prestamos> Prestamos { get; set; }
         public virtual DbSet<Cobros> cobros { get; set; }
-        public virtual DbSet<PrestamoCliente> prestamoCliente { get; set; }
-
+        public virtual DbSet<PrestamoClientes> prestamoClientes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Prestamos>()
                 .HasMany<Clientes>(g => g.LClientes)
-                .WithMany(e => e.Prestamo)
+                .WithMany(e => e.ListPrestamo)
                 .Map(Ge =>
                 {
                     Ge.MapLeftKey("PrestamoId");
                     Ge.MapRightKey("ClienteId");
-                    Ge.ToTable("PrestamoCliente");
+                    Ge.ToTable("PrestamoClientes");
                 });
         }
     }

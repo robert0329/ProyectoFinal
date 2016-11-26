@@ -17,17 +17,17 @@ namespace ProyectoFinal.Consultas
         {
             InitializeComponent();
         }
-        public List<Cobros> lista = new List<Cobros>();
+        public List<PrestamoClientes> lista = new List<PrestamoClientes>();
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(FiltrotextBox.Text))
             {
 
-                lista = BLL.CobrosBLL.GetLista(FiltrotextBox.Text);
+                //lista = BLL.PrestamoClienteBLL.GetLis(Convert.ToInt32(FiltrotextBox.Text));
             }
             else
             {
-                lista = BLL.CobrosBLL.GetLista();
+                //lista = BLL.PrestamoClienteBLL.GetLista();
             }
 
             ConsultaClientedataGridView.DataSource = lista;

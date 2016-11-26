@@ -23,6 +23,25 @@ namespace Entidades
         public int Total { get; set; }
         public int DiasgraciasMonatoria { get; set; }
         public int MontoDiaMonatoria { get; set; }
-        public List<Clientes> LClientes { get; set; }
+        public virtual List<Clientes> LClientes { get; set; }
+        public Prestamos(int PrestamoID,string Nombres ,int CantidadCuotas, int Interes, int MontoPrestado ,int Meses ,string FormaDePago, string Garante, string Hasta,  int Total,int DiasgraciasMonatoria,int MontoDiaMonatoria)
+        {
+            this.PrestamoID = PrestamoID;
+            this.Nombres = Nombres;
+            this.CantidadCuotas = CantidadCuotas;
+            this.Interes = Interes;
+            this.MontoPrestado = MontoPrestado;
+            this.Meses = Meses;
+            this.FormaDePago = FormaDePago;
+            this.Garante = Garante;
+            this.Hasta = Hasta;
+            this.Total = Total;
+            this.DiasgraciasMonatoria = DiasgraciasMonatoria;
+            this.MontoDiaMonatoria = MontoDiaMonatoria;
+        }
+        public Prestamos()
+        {
+
+        }
     }
 }
