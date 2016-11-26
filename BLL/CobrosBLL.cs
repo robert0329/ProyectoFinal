@@ -15,7 +15,7 @@ namespace BLL
             var Client = new Prestamos();
             var d = new Conexion();
 
-            Client = d.Prestamos.Where(c => c.Nombres.Equals(Nombre)).FirstOrDefault();
+            Client = d.Prestamos.Where(c => c.Nombre.Equals(Nombre)).FirstOrDefault();
             return Client;
         }
         public static Prestamos Modificar(int Monto , string nombre)
@@ -23,7 +23,7 @@ namespace BLL
             var Conn = new Conexion();
             var prestamo = new Prestamos();
 
-            prestamo = Conn.Prestamos.Where(c => c.Nombres.Equals(nombre)).FirstOrDefault();
+            prestamo = Conn.Prestamos.Where(c => c.Nombre.Equals(nombre)).FirstOrDefault();
             prestamo.MontoPrestado = Monto;
             Conn.SaveChanges();
             return prestamo;

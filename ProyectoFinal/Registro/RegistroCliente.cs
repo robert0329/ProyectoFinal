@@ -26,7 +26,7 @@ namespace ProyectoFinal.RegistroCliente
         {
             Clientes Cliente = new Clientes();
 
-            Cliente.Nombres = NombretextBox.Text;
+            Cliente.Nombre = NombretextBox.Text;
             Cliente.Direccion = DirecciontextBox.Text;
             Cliente.Telefono = TelefonotextBox.Text;
             Cliente.Cedula = CedulatextBox.Text;
@@ -57,7 +57,7 @@ namespace ProyectoFinal.RegistroCliente
 
             if (cc != null)
             {
-                NombretextBox.Text = cc.Nombres;
+                NombretextBox.Text = cc.Nombre;
             }
         }
         private void Eliminarbutton_Click(object sender, EventArgs e)

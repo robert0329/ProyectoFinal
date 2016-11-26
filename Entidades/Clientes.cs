@@ -11,16 +11,18 @@ namespace Entidades
     {
         [Key]
         public int ClienteId { get; set; }
-        public string Nombres { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string Sexo { get; set; }
         public virtual List<Prestamos> ListPrestamo { get; set; }
-        public Clientes(int ClienteId, string Nombres, string Direccion, string Telefono, string Cedula)
+        public Clientes(int ClienteId, string Nombres, string Apellidos, string Direccion, string Telefono, string Cedula)
         {
             this.ClienteId = ClienteId;
-            this.Nombres = Nombres;
+            this.Nombre = Nombres;
+            this.Apellidos = Apellidos;
             this.Direccion = Direccion;
             this.Telefono = Telefono;
             this.Cedula = Cedula;
