@@ -34,7 +34,7 @@ namespace ProyectoFinal.Prestamos
             var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
             if (cc != null)
             {
-                r = (cc.MontoPrestado - Utilidades.ToInt(MontotextBox.Text));
+                r = (cc.Prestamo - Utilidades.ToInt(MontotextBox.Text));
                 BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text);
             }
             Limpiar();
@@ -50,7 +50,7 @@ namespace ProyectoFinal.Prestamos
             var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
             if (cc != null)
             {
-                DeudatextBox.Text = Convert.ToString(cc.MontoPrestado);
+                DeudatextBox.Text = Convert.ToString(cc.Prestamo);
             }
         }
         public void Limpiar()

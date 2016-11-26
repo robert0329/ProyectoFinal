@@ -24,7 +24,7 @@ namespace BLL
             var prestamo = new Prestamos();
 
             prestamo = Conn.Prestamos.Where(c => c.Nombre.Equals(nombre)).FirstOrDefault();
-            prestamo.MontoPrestado = Monto;
+            prestamo.Prestamo = Monto;
             Conn.SaveChanges();
             return prestamo;
         }

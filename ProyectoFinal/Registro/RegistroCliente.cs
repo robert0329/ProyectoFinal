@@ -27,6 +27,7 @@ namespace ProyectoFinal.RegistroCliente
             Clientes Cliente = new Clientes();
 
             Cliente.Nombre = NombretextBox.Text;
+            Cliente.Apellidos = ApellidostextBox.Text;
             Cliente.Direccion = DirecciontextBox.Text;
             Cliente.Telefono = TelefonotextBox.Text;
             Cliente.Cedula = CedulatextBox.Text;

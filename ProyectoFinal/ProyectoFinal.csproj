@@ -99,6 +99,7 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prestamos\Condiciones.cs" />
     <Compile Include="Prestamos\Desembolso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,10 +224,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\BaseDatos.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database\BaseDatos_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BaseDatos.mdf</DependentUpon>
     </Content>
   </ItemGroup>

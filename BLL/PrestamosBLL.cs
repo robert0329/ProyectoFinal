@@ -11,51 +11,51 @@ namespace BLL
 {
     public class PrestamosBLL
     {
-        //public static bool Guardar(Prestamos Prestamo)
+        public static bool Guardar(Prestamos Prestamo)
+        {
+            bool retorno = false;
+            try
+            {
+                Conexion db = new Conexion();
+                db.Prestamos.Add(Prestamo);
+                db.SaveChanges();
+
+                retorno = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return retorno;
+        }
+
+        //public static void Insertar(Prestamos Prestamo)
         //{
-        //    bool retorno = false;
-        //    try
+        //    using (var Conn = new Conexion())
         //    {
-        //        Conexion db = new Conexion();
-        //        db.Prestamos.Add(Prestamo);
-        //        db.SaveChanges();
-
-        //        retorno = true;
+        //        var con = Conn.Prestamos.Add(Prestamo);
+        //        foreach(var pre in Prestamo.LClientes)
+        //        {
+        //            Conn.Entry(pre).State = EntityState.Unchanged;
+        //        }
+        //        Conn.SaveChanges();
         //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //    return retorno;
         //}
+        //public static Prestamos Buscar(int id)
+        //{
+        //    var prestamo = new Prestamos();
 
-        public static void Insertar(Prestamos Prestamo)
-        {
-            using (var Conn = new Conexion())
-            {
-                var con = Conn.Prestamos.Add(Prestamo);
-                foreach(var pre in Prestamo.LClientes)
-                {
-                    Conn.Entry(pre).State = EntityState.Unchanged;
-                }
-                Conn.SaveChanges();
-            }
-        }
-        public static Prestamos Buscar(int id)
-        {
-            var prestamo = new Prestamos();
-
-            using (var context = new Conexion())
-            {
-                prestamo = context.Prestamos.Find(id);
-                if(prestamo != null)
-                {
-                    prestamo.LClientes.Count();
-                } 
-            }
-            return prestamo;
-        }
+        //    using (var context = new Conexion())
+        //    {
+        //        prestamo = context.Prestamos.Find(id);
+        //        if(prestamo != null)
+        //        {
+        //            prestamo.LClientes.Count();
+        //        } 
+        //    }
+        //    return prestamo;
+        //}
         public static bool Eliminar(Prestamos id)
         {
             try
@@ -74,24 +74,24 @@ namespace BLL
                 throw;
             }
         }
-        //public static bool Buscar(int id)
-        //{
-        //    bool Retorno = false;
-        //    try
-        //    {
-        //        Prestamos p = new Prestamos();
-        //        Conexion d = new Conexion();
-        //        p = d.Prestamos.Find(id);
-        //        Retorno = true;
-        //    }
-        //    catch (Exception)
-        //    {
+        public static bool Buscar(int id)
+        {
+            bool Retorno = false;
+            try
+            {
+                Prestamos p = new Prestamos();
+                Conexion d = new Conexion();
+                p = d.Prestamos.Find(id);
+                Retorno = true;
+            }
+            catch (Exception)
+            {
 
-        //        throw;
-        //    }
-        //    return Retorno;
+                throw;
+            }
+            return Retorno;
 
-        //}
+        }
         public static List<Prestamos> GetLista()
         {
             List<Prestamos> lista = new List<Prestamos>();

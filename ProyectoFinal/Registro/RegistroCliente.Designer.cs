@@ -45,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Modificarbutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ApellidostextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 48);
+            this.label2.Location = new System.Drawing.Point(22, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 1;
@@ -68,7 +70,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 126);
+            this.label4.Location = new System.Drawing.Point(22, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
@@ -77,7 +79,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 87);
+            this.label5.Location = new System.Drawing.Point(22, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 4;
@@ -92,28 +94,28 @@
             // 
             // TelefonotextBox
             // 
-            this.TelefonotextBox.Location = new System.Drawing.Point(25, 103);
+            this.TelefonotextBox.Location = new System.Drawing.Point(25, 140);
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.Size = new System.Drawing.Size(376, 20);
             this.TelefonotextBox.TabIndex = 8;
             // 
             // CedulatextBox
             // 
-            this.CedulatextBox.Location = new System.Drawing.Point(25, 142);
+            this.CedulatextBox.Location = new System.Drawing.Point(25, 179);
             this.CedulatextBox.Name = "CedulatextBox";
             this.CedulatextBox.Size = new System.Drawing.Size(376, 20);
             this.CedulatextBox.TabIndex = 9;
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(25, 64);
+            this.DirecciontextBox.Location = new System.Drawing.Point(25, 101);
             this.DirecciontextBox.Name = "DirecciontextBox";
             this.DirecciontextBox.Size = new System.Drawing.Size(376, 20);
             this.DirecciontextBox.TabIndex = 10;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(25, 208);
+            this.Guardarbutton.Location = new System.Drawing.Point(25, 245);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 36);
             this.Guardarbutton.TabIndex = 2;
@@ -123,7 +125,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(226, 208);
+            this.Nuevobutton.Location = new System.Drawing.Point(226, 245);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 36);
             this.Nuevobutton.TabIndex = 11;
@@ -134,7 +136,7 @@
             // Sexo
             // 
             this.Sexo.AutoSize = true;
-            this.Sexo.Location = new System.Drawing.Point(22, 165);
+            this.Sexo.Location = new System.Drawing.Point(22, 202);
             this.Sexo.Name = "Sexo";
             this.Sexo.Size = new System.Drawing.Size(31, 13);
             this.Sexo.TabIndex = 13;
@@ -147,7 +149,7 @@
             "Hombre",
             "Mujer",
             "Otro"});
-            this.SexocomboBox.Location = new System.Drawing.Point(25, 181);
+            this.SexocomboBox.Location = new System.Drawing.Point(25, 218);
             this.SexocomboBox.Name = "SexocomboBox";
             this.SexocomboBox.Size = new System.Drawing.Size(376, 21);
             this.SexocomboBox.TabIndex = 14;
@@ -180,7 +182,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(125, 208);
+            this.Eliminarbutton.Location = new System.Drawing.Point(125, 245);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(74, 36);
             this.Eliminarbutton.TabIndex = 18;
@@ -190,19 +192,37 @@
             // 
             // Modificarbutton
             // 
-            this.Modificarbutton.Location = new System.Drawing.Point(326, 208);
+            this.Modificarbutton.Location = new System.Drawing.Point(326, 245);
             this.Modificarbutton.Name = "Modificarbutton";
             this.Modificarbutton.Size = new System.Drawing.Size(75, 36);
             this.Modificarbutton.TabIndex = 19;
             this.Modificarbutton.Text = "Modificar";
             this.Modificarbutton.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Apellidos";
+            // 
+            // ApellidostextBox
+            // 
+            this.ApellidostextBox.Location = new System.Drawing.Point(25, 62);
+            this.ApellidostextBox.Name = "ApellidostextBox";
+            this.ApellidostextBox.Size = new System.Drawing.Size(376, 20);
+            this.ApellidostextBox.TabIndex = 21;
+            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(503, 255);
+            this.ClientSize = new System.Drawing.Size(503, 283);
+            this.Controls.Add(this.ApellidostextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Modificarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.label3);
@@ -248,5 +268,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Modificarbutton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ApellidostextBox;
     }
 }

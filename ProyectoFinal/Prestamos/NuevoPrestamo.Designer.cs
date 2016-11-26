@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.NombrecomboBox = new System.Windows.Forms.ComboBox();
             this.ApellidoTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,9 +62,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Salirbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MesesnumericUpDown)).BeginInit();
@@ -76,7 +75,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Buscarbutton);
             this.groupBox1.Controls.Add(this.NombrecomboBox);
             this.groupBox1.Controls.Add(this.ApellidoTextBox);
             this.groupBox1.Controls.Add(this.label3);
@@ -90,28 +88,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Location = new System.Drawing.Point(741, 19);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 49);
-            this.Buscarbutton.TabIndex = 6;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
             // NombrecomboBox
             // 
             this.NombrecomboBox.FormattingEnabled = true;
-            this.NombrecomboBox.Location = new System.Drawing.Point(524, 29);
+            this.NombrecomboBox.Location = new System.Drawing.Point(583, 29);
             this.NombrecomboBox.Name = "NombrecomboBox";
-            this.NombrecomboBox.Size = new System.Drawing.Size(202, 21);
+            this.NombrecomboBox.Size = new System.Drawing.Size(246, 21);
             this.NombrecomboBox.TabIndex = 5;
+            this.NombrecomboBox.SelectedIndexChanged += new System.EventHandler(this.NombrecomboBox_SelectedIndexChanged);
             // 
             // ApellidoTextBox
             // 
+            this.ApellidoTextBox.Enabled = false;
             this.ApellidoTextBox.Location = new System.Drawing.Point(273, 29);
             this.ApellidoTextBox.Name = "ApellidoTextBox";
-            this.ApellidoTextBox.Size = new System.Drawing.Size(179, 20);
+            this.ApellidoTextBox.Size = new System.Drawing.Size(233, 20);
             this.ApellidoTextBox.TabIndex = 4;
             // 
             // label3
@@ -126,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(469, 29);
+            this.label2.Location = new System.Drawing.Point(532, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 2;
@@ -143,6 +134,7 @@
             // 
             // CodigoClientetextBox
             // 
+            this.CodigoClientetextBox.Enabled = false;
             this.CodigoClientetextBox.Location = new System.Drawing.Point(104, 29);
             this.CodigoClientetextBox.Name = "CodigoClientetextBox";
             this.CodigoClientetextBox.Size = new System.Drawing.Size(100, 20);
@@ -171,9 +163,11 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Terminos del Prestamo";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // GarantecomboBox
             // 
+            this.GarantecomboBox.Enabled = false;
             this.GarantecomboBox.FormattingEnabled = true;
             this.GarantecomboBox.Location = new System.Drawing.Point(524, 68);
             this.GarantecomboBox.Name = "GarantecomboBox";
@@ -191,6 +185,7 @@
             // 
             // Calcularbutton
             // 
+            this.Calcularbutton.Enabled = false;
             this.Calcularbutton.Location = new System.Drawing.Point(741, 11);
             this.Calcularbutton.Name = "Calcularbutton";
             this.Calcularbutton.Size = new System.Drawing.Size(75, 49);
@@ -201,6 +196,7 @@
             // 
             // FechadateTimePicker
             // 
+            this.FechadateTimePicker.Enabled = false;
             this.FechadateTimePicker.Location = new System.Drawing.Point(524, 21);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(202, 20);
@@ -208,6 +204,7 @@
             // 
             // FormadePagocomboBox
             // 
+            this.FormadePagocomboBox.Enabled = false;
             this.FormadePagocomboBox.Location = new System.Drawing.Point(273, 68);
             this.FormadePagocomboBox.Name = "FormadePagocomboBox";
             this.FormadePagocomboBox.Size = new System.Drawing.Size(179, 21);
@@ -224,6 +221,7 @@
             // 
             // MesesnumericUpDown
             // 
+            this.MesesnumericUpDown.Enabled = false;
             this.MesesnumericUpDown.Location = new System.Drawing.Point(273, 30);
             this.MesesnumericUpDown.Name = "MesesnumericUpDown";
             this.MesesnumericUpDown.Size = new System.Drawing.Size(37, 20);
@@ -231,6 +229,7 @@
             // 
             // InteresnumericUpDown
             // 
+            this.InteresnumericUpDown.Enabled = false;
             this.InteresnumericUpDown.Location = new System.Drawing.Point(78, 68);
             this.InteresnumericUpDown.Name = "InteresnumericUpDown";
             this.InteresnumericUpDown.Size = new System.Drawing.Size(37, 20);
@@ -238,6 +237,7 @@
             // 
             // PrestamotextBox
             // 
+            this.PrestamotextBox.Enabled = false;
             this.PrestamotextBox.Location = new System.Drawing.Point(78, 29);
             this.PrestamotextBox.Name = "PrestamotextBox";
             this.PrestamotextBox.Size = new System.Drawing.Size(126, 20);
@@ -310,6 +310,7 @@
             // 
             // NumeroCuotastextBox
             // 
+            this.NumeroCuotastextBox.Enabled = false;
             this.NumeroCuotastextBox.Location = new System.Drawing.Point(681, 30);
             this.NumeroCuotastextBox.Name = "NumeroCuotastextBox";
             this.NumeroCuotastextBox.Size = new System.Drawing.Size(113, 20);
@@ -317,6 +318,7 @@
             // 
             // ValorPorCuotastextBox
             // 
+            this.ValorPorCuotastextBox.Enabled = false;
             this.ValorPorCuotastextBox.Location = new System.Drawing.Point(337, 70);
             this.ValorPorCuotastextBox.Name = "ValorPorCuotastextBox";
             this.ValorPorCuotastextBox.Size = new System.Drawing.Size(137, 20);
@@ -324,6 +326,7 @@
             // 
             // Prestamos2textBox
             // 
+            this.Prestamos2textBox.Enabled = false;
             this.Prestamos2textBox.Location = new System.Drawing.Point(468, 30);
             this.Prestamos2textBox.Name = "Prestamos2textBox";
             this.Prestamos2textBox.Size = new System.Drawing.Size(113, 20);
@@ -340,6 +343,7 @@
             // 
             // InteresFinaltextBox
             // 
+            this.InteresFinaltextBox.Enabled = false;
             this.InteresFinaltextBox.Location = new System.Drawing.Point(292, 30);
             this.InteresFinaltextBox.Name = "InteresFinaltextBox";
             this.InteresFinaltextBox.Size = new System.Drawing.Size(113, 20);
@@ -347,6 +351,7 @@
             // 
             // MontoFinaltextBox
             // 
+            this.MontoFinaltextBox.Enabled = false;
             this.MontoFinaltextBox.Location = new System.Drawing.Point(91, 30);
             this.MontoFinaltextBox.Name = "MontoFinaltextBox";
             this.MontoFinaltextBox.Size = new System.Drawing.Size(113, 20);
@@ -396,32 +401,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(758, 150);
             this.dataGridView1.TabIndex = 4;
             // 
-            // button1
+            // Guardarbutton
             // 
-            this.button1.Location = new System.Drawing.Point(776, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Location = new System.Drawing.Point(776, 320);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 42);
+            this.Guardarbutton.TabIndex = 5;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // button2
+            // Nuevobutton
             // 
-            this.button2.Location = new System.Drawing.Point(776, 368);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 42);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Nuevo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Location = new System.Drawing.Point(776, 368);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 42);
+            this.Nuevobutton.TabIndex = 6;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // button3
+            // Salirbutton
             // 
-            this.button3.Location = new System.Drawing.Point(776, 416);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 42);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Salirbutton.Location = new System.Drawing.Point(776, 416);
+            this.Salirbutton.Name = "Salirbutton";
+            this.Salirbutton.Size = new System.Drawing.Size(75, 42);
+            this.Salirbutton.TabIndex = 7;
+            this.Salirbutton.Text = "Salir";
+            this.Salirbutton.UseVisualStyleBackColor = true;
             // 
             // NuevoPrestamo
             // 
@@ -429,9 +436,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(859, 473);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Salirbutton);
+            this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -455,7 +462,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ComboBox NombrecomboBox;
         private System.Windows.Forms.TextBox ApellidoTextBox;
         private System.Windows.Forms.Label label3;
@@ -487,9 +493,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Button Salirbutton;
         private System.Windows.Forms.ComboBox GarantecomboBox;
         private System.Windows.Forms.Label Garante;
     }
