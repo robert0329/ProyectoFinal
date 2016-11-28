@@ -40,6 +40,7 @@
             this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarCobrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +114,8 @@
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaPrestarioToolStripMenuItem,
             this.consultaGaranteToolStripMenuItem,
-            this.consultaPrestamosToolStripMenuItem});
+            this.consultaPrestamosToolStripMenuItem,
+            this.consultarCobrosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -138,6 +140,13 @@
             this.consultaPrestamosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.consultaPrestamosToolStripMenuItem.Text = "Consulta Prestamos";
             this.consultaPrestamosToolStripMenuItem.Click += new System.EventHandler(this.consultaPrestamosToolStripMenuItem_Click);
+            // 
+            // consultarCobrosToolStripMenuItem
+            // 
+            this.consultarCobrosToolStripMenuItem.Name = "consultarCobrosToolStripMenuItem";
+            this.consultarCobrosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.consultarCobrosToolStripMenuItem.Text = "Consultar cobros";
+            this.consultarCobrosToolStripMenuItem.Click += new System.EventHandler(this.consultarCobrosToolStripMenuItem_Click);
             // 
             // FormularioPrincipal
             // 
@@ -169,6 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaGaranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaPrestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarCobrosToolStripMenuItem;
     }
 }
 

@@ -11,20 +11,22 @@ namespace BLL
 {
     public class GaranteBLL
     {
-        public static bool Insertar(Garantes gar)
+        public static bool Insertar(Garantes nuevo)
         {
             bool resultado = false;
             using (var conexion = new Conexion())
             {
                 try
                 {
-                    conexion.garante.Add(gar);
+                    if (Buscar(nuevo.GaranteId) == null)
+                        conexion.garante.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
             }
@@ -130,8 +132,9 @@ namespace BLL
             return lista;
 
         }
-        public static void Modificar(int id, Garantes cliente)
+        public static void Modificar(int id)
         {
+            Garantes cliente = new Garantes();
             using (var db = new Conexion())
             {
                 try

@@ -17,7 +17,6 @@ namespace Entidades
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string Sexo { get; set; }
-        public virtual ICollection< Prestamos> ListPrestamos { get; set; }
         public Clientes(int ClienteId, string Nombres, string Apellidos, string Direccion, string Telefono, string Cedula, string Sexo)
         {
             this.ClienteId = ClienteId;
@@ -27,11 +26,9 @@ namespace Entidades
             this.Telefono = Telefono;
             this.Cedula = Cedula;
             this.Sexo = Sexo;
-            this.ListPrestamos = new HashSet<Prestamos>();
         }
         public Clientes()
         {
-            this.ListPrestamos = new HashSet<Prestamos>();
         }
     }
 }

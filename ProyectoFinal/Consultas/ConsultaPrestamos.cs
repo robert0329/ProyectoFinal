@@ -15,7 +15,6 @@ namespace ProyectoFinal.Consultas
 {
     public partial class ConsultaPrestamos : Form
     {
-        Utilidades Util = new Utilidades();
         Clientes cliente = new Clientes();
 
         public ConsultaPrestamos()
@@ -44,7 +43,7 @@ namespace ProyectoFinal.Consultas
         private void BuscarSeleccion()
         {
             if (FiltrocomboBox.SelectedIndex == 0)
-                PrestamosdataGridView.DataSource = PrestamosBLL.GetListaId(Util.StringToInt(FiltrotextBox.Text));
+                PrestamosdataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.StringToInt(FiltrotextBox.Text));
             if (FiltrocomboBox.SelectedIndex == 1)
                 PrestamosdataGridView.DataSource = PrestamosBLL.GetListaNombre(FiltrotextBox.Text);
             if (FiltrocomboBox.SelectedIndex == 2)
@@ -77,7 +76,7 @@ namespace ProyectoFinal.Consultas
                 return false;
 
             }
-            if (FiltrocomboBox.SelectedIndex == 0 && PrestamosBLL.GetListaId(Util.StringToInt(FiltrotextBox.Text)).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 0 && PrestamosBLL.GetListaId(Utilidades.StringToInt(FiltrotextBox.Text)).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;

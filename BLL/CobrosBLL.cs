@@ -18,16 +18,15 @@ namespace BLL
             {
                 try
                 {
-                    if (Buscar(Cobro.ClienteId) == null)
+                    if (Buscar(Cobro.cobroId) == null)
                     {
                         Conn.cobros.Add(Cobro);
                     }
                     else
                     {
                         Conn.Entry(Cobro).State = EntityState.Modified;
-                        Conn.SaveChanges();
                     }
-                        
+                    Conn.SaveChanges();
                     retorno = true;
                 }
                 catch (Exception)
@@ -62,13 +61,14 @@ namespace BLL
             }
             return Cobro;
         }
-        public static Prestamos Modificar(int Monto , string nombre)
+        public static Prestamos Modificar(int Monto , string nombre , int Cuotas)
         {
             var Conn = new Conexion();
             var prestamo = new Prestamos();
 
             prestamo = Conn.Prestamos.Where(c => c.Nombre.Equals(nombre)).FirstOrDefault();
             prestamo.Prestamo = Monto;
+            prestamo.NumeroCuotas = Cuotas;
             Conn.SaveChanges();
             return prestamo;
         }      
@@ -101,6 +101,28 @@ namespace BLL
             var db = new Conexion();
 
             lista = db.Prestamos.ToList();
+
+            return lista;
+
+        }
+        public static List<Cobros> GetListaId(int PrestamosId)
+        {
+            List<Cobros> list = new List<Cobros>();
+
+            var db = new Conexion();
+
+            list = db.cobros.Where(p => p.cobroId == PrestamosId).ToList();
+
+            return list;
+
+        }
+        public static List<Cobros> GetListaFecha(DateTime D, DateTime H)
+        {
+            List<Cobros> lista = new List<Cobros>();
+
+            var db = new Conexion();
+
+            lista = db.cobros.Where(p => p.Fecha >= D && p.Fecha <= H).ToList();
 
             return lista;
 

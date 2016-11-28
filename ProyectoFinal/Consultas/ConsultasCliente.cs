@@ -30,15 +30,14 @@ namespace ProyectoFinal.Consultas
             FiltrocomboBox.Items.Insert(1, "Nombre");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
-            ClientedataGridView.DataSource = ClientesBLL.GetLista();
 
         }
         private void BuscarSeleccion()
         {
             if (FiltrocomboBox.SelectedIndex == 0)
-                ClientedataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text));
+                ClientedataGridView.DataSource = ClientesBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text));
             if (FiltrocomboBox.SelectedIndex == 1)
-                ClientedataGridView.DataSource = PrestamosBLL.GetListaNombre(FiltrotextBox.Text);
+                ClientedataGridView.DataSource = ClientesBLL.GetListaNombre(FiltrotextBox.Text);
         }
         private bool validar()
         {
@@ -48,13 +47,13 @@ namespace ProyectoFinal.Consultas
                 return false;
             }
 
-            if (FiltrocomboBox.SelectedIndex == 1 && PrestamosBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 1 && ClientesBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
 
             }
-            if (FiltrocomboBox.SelectedIndex == 0 && PrestamosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 0 && ClientesBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;

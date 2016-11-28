@@ -37,6 +37,7 @@ namespace ProyectoFinal.RegistroGarantes
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label cedulaLabel;
             System.Windows.Forms.Label sexoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroGarante));
             this.garanteIdTextBox = new System.Windows.Forms.TextBox();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@ namespace ProyectoFinal.RegistroGarantes
             this.sexoComboBox = new System.Windows.Forms.ComboBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Guargarbutton = new System.Windows.Forms.Button();
-            this.Modificarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -136,6 +136,7 @@ namespace ProyectoFinal.RegistroGarantes
             // telefonoMaskedTextBox
             // 
             this.telefonoMaskedTextBox.Location = new System.Drawing.Point(78, 103);
+            this.telefonoMaskedTextBox.Mask = "(999)000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(256, 20);
             this.telefonoMaskedTextBox.TabIndex = 8;
@@ -143,6 +144,7 @@ namespace ProyectoFinal.RegistroGarantes
             // cedulaMaskedTextBox
             // 
             this.cedulaMaskedTextBox.Location = new System.Drawing.Point(78, 129);
+            this.cedulaMaskedTextBox.Mask = "000-0000000-0";
             this.cedulaMaskedTextBox.Name = "cedulaMaskedTextBox";
             this.cedulaMaskedTextBox.Size = new System.Drawing.Size(256, 20);
             this.cedulaMaskedTextBox.TabIndex = 10;
@@ -150,6 +152,9 @@ namespace ProyectoFinal.RegistroGarantes
             // sexoComboBox
             // 
             this.sexoComboBox.FormattingEnabled = true;
+            this.sexoComboBox.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
             this.sexoComboBox.Location = new System.Drawing.Point(78, 155);
             this.sexoComboBox.Name = "sexoComboBox";
             this.sexoComboBox.Size = new System.Drawing.Size(256, 21);
@@ -157,51 +162,53 @@ namespace ProyectoFinal.RegistroGarantes
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(259, 16);
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(246, 2);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 29);
+            this.Buscarbutton.Size = new System.Drawing.Size(88, 43);
             this.Buscarbutton.TabIndex = 16;
             this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Guargarbutton
             // 
+            this.Guargarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guargarbutton.Image")));
+            this.Guargarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guargarbutton.Location = new System.Drawing.Point(15, 182);
             this.Guargarbutton.Name = "Guargarbutton";
-            this.Guargarbutton.Size = new System.Drawing.Size(75, 29);
+            this.Guargarbutton.Size = new System.Drawing.Size(84, 41);
             this.Guargarbutton.TabIndex = 17;
             this.Guargarbutton.Text = "Guardar";
+            this.Guargarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guargarbutton.UseVisualStyleBackColor = true;
             this.Guargarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // Modificarbutton
-            // 
-            this.Modificarbutton.Location = new System.Drawing.Point(96, 182);
-            this.Modificarbutton.Name = "Modificarbutton";
-            this.Modificarbutton.Size = new System.Drawing.Size(75, 29);
-            this.Modificarbutton.TabIndex = 18;
-            this.Modificarbutton.Text = "Modificar";
-            this.Modificarbutton.UseVisualStyleBackColor = true;
-            this.Modificarbutton.Click += new System.EventHandler(this.Modificarbutton_Click);
-            // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(177, 182);
+            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminarbutton.Location = new System.Drawing.Point(129, 182);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 29);
+            this.Eliminarbutton.Size = new System.Drawing.Size(88, 40);
             this.Eliminarbutton.TabIndex = 19;
             this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(259, 182);
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(246, 183);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 29);
+            this.Nuevobutton.Size = new System.Drawing.Size(88, 40);
             this.Nuevobutton.TabIndex = 20;
             this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
@@ -217,7 +224,6 @@ namespace ProyectoFinal.RegistroGarantes
             this.ClientSize = new System.Drawing.Size(346, 224);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.Modificarbutton);
             this.Controls.Add(this.Guargarbutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(garanteIdLabel);
@@ -255,7 +261,6 @@ namespace ProyectoFinal.RegistroGarantes
         private System.Windows.Forms.ComboBox sexoComboBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Guargarbutton;
-        private System.Windows.Forms.Button Modificarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.ErrorProvider ClienteerrorProvider;

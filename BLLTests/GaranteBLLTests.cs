@@ -12,18 +12,18 @@ namespace BLL.Tests
     [TestClass()]
     public class GaranteBLLTests
     {
-        [TestMethod()]
-        public void GuardarTest()
-        {
-            Garantes garante = new Garantes();
-            Assert.IsTrue(GaranteBLL.Guardar(garante));
-        }
+        //[TestMethod()]
+        //public void GuardarTest()
+        //{
+        //    Garantes garante = new Garantes();
+        //    Assert.IsTrue(GaranteBLL.Guardar(garante));
+        //}
 
-        [TestMethod()]
-        public void EliminarGTest()
-        {
-            Assert.IsTrue(GaranteBLL.Eliminar(3));
-        }
+        //[TestMethod()]
+        //public void EliminarGTest()
+        //{
+        //    Assert.IsTrue(GaranteBLL.Eliminar(3));
+        //}
 
         //[TestMethod()]
         //public void BuscarTest()

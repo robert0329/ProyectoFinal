@@ -18,7 +18,6 @@ namespace ProyectoFinal.Prestamos
         public List<Garantes> lista = new List<Garantes>();
         public List<Clientes> lis = new List<Clientes>();
         public List<Entidades.Prestamos> Listaprestamo = new List<Entidades.Prestamos>();
-        public List<PrestamoClientes> ListPrestamoCliente = new List<PrestamoClientes>();
         public NuevoPrestamo()
         {
             InitializeComponent();

@@ -20,11 +20,11 @@ namespace BLL.Tests
             Assert.IsTrue(ClientesBLL.Insertar(Cliente));
         }
 
-        [TestMethod()]
-        public void EliminarTest()
-        {
-            Assert.IsTrue(ClientesBLL.Eliminar(3));
-        }
+        //[TestMethod()]
+        //public void EliminarTest()
+        //{
+        //    Assert.IsTrue(ClientesBLL.Eliminar(3));
+        //}
 
         [TestMethod()]
         //public void BuscarTest()
@@ -38,10 +38,10 @@ namespace BLL.Tests
             Assert.IsTrue(ClientesBLL.GetLista().Count != 0);
         }
 
-        [TestMethod()]
-        public void GetListaTest1()
-        {
-            Assert.IsTrue(ClientesBLL.GetLista(1).Count == 0);
-        }
+        //[TestMethod()]
+        //public void GetListaTest1()
+        //{
+        //    Assert.IsTrue(ClientesBLL.GetLista(1).Count == 0);
+        //}
     }
 }

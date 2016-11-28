@@ -21,8 +21,25 @@ namespace ProyectoFinal.RegistroCliente
             InitializeComponent();
         }
         public void RegistroCliente_Load(object sender, EventArgs e)
-        {}
-        private void Guardarbutton_Click(object sender, EventArgs e)
+        { Validar(); }
+        private void Guargarbutton_Click(object sender, EventArgs e)
+        {
+            Clientes cc = new Clientes();
+            cc = CrearCliente();
+
+            if (!ValidarTextbox())
+            {
+                MessageBox.Show("Todos los campos deben estar llenos");
+            }
+            else
+                if (BLL.ClientesBLL.Insertar(cc))
+            {
+                MessageBox.Show("Proceso Realizado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("No se pudo realizar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private Clientes CrearCliente()
         {
             Clientes Cliente = new Clientes();
             Cliente.Nombre = nombreTextBox.Text;
@@ -31,17 +48,14 @@ namespace ProyectoFinal.RegistroCliente
             Cliente.Telefono = telefonoMaskedTextBox.Text;
             Cliente.Cedula = cedulaMaskedTextBox.Text;
             Cliente.Sexo = sexoComboBox.Text;
-            if (ValidarTextbox() && ValidarExiste(nombreTextBox.Text))
-            {
-                ClientesBLL.Insertar(Cliente);
-                MessageBox.Show("Se Registrado Un Cliente", "<- Proceso Exitoso ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            return Cliente;
         }
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click_1(object sender, EventArgs e)
         {
             nombreTextBox.Text = direccionTextBox.Text = telefonoMaskedTextBox.Text = cedulaMaskedTextBox.Text = sexoComboBox.Text = "";
         }
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
             int d = Convert.ToInt32(clienteIdMaskedTextBox.Text);
             var cc = ClientesBLL.Buscar(d);
@@ -68,7 +82,7 @@ namespace ProyectoFinal.RegistroCliente
                 }
             }
         }
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
             var cc = BLL.ClientesBLL.Buscar(Utilidades.ToInt(clienteIdMaskedTextBox.Text));
             if (cc != null)
@@ -83,22 +97,9 @@ namespace ProyectoFinal.RegistroCliente
                 }
             }
         }
-        private void Modificarbutton_Click(object sender, EventArgs e)
-        {
-            if (validarId("Favor Buscar el cliente"))
-            {
-                LlenarClase(Client);
-                if (ValidarExiste(nombreTextBox.Text))
-                {
-                    ClientesBLL.Modificar(Utilidades.ToInt(clienteIdMaskedTextBox.Text), Client);
-                    MessageBox.Show("Actualizado con exito");
-                }
-
-            }
-        }
         private bool ValidarExiste(string aux)
         {
-            if (ClientesBLL.GetListaM(aux).Count() > 0)
+            if (ClientesBLL.GetListaNombre(aux).Count() > 0)
             {
                 MessageBox.Show("Este cliente ya existe." + "\n" + "Verifique los datos ingresado correctamente");
                 return false;
@@ -112,7 +113,6 @@ namespace ProyectoFinal.RegistroCliente
                 ClienteerrorProvider.SetError(nombreTextBox, "Favor ingresar el nombre");
                 return false;
             }
-
             if (string.IsNullOrEmpty(apellidosTextBox.Text))
             {
                 ClienteerrorProvider.SetError(apellidosTextBox, "Favor ingresar el apellido");
@@ -161,6 +161,13 @@ namespace ProyectoFinal.RegistroCliente
             E.Telefono = telefonoMaskedTextBox.Text;
             E.Cedula = cedulaMaskedTextBox.Text;
             E.Sexo = sexoComboBox.Text;
+        }
+        public void Validar()
+        {
+            var u1 = new Utilidades(nombreTextBox, "L");
+            var u2 = new Utilidades(apellidosTextBox, "L");
+            var u3 = new Utilidades(direccionTextBox, "LN");
+
         }
     }
 }

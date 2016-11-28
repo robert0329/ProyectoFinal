@@ -58,5 +58,11 @@ namespace ProyectoFinal
             ConsultaPrestamos cp = new ConsultaPrestamos();
             cp.Show();
         }
+
+        private void consultarCobrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaCobros r = new ConsultaCobros();
+            r.Show();
+        }
     }
 }

@@ -61,7 +61,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(590, 61);
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(66, 52);
+            this.Buscarbutton.Size = new System.Drawing.Size(66, 40);
             this.Buscarbutton.TabIndex = 81;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;

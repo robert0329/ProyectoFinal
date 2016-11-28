@@ -10,20 +10,22 @@ namespace BLL
 {
     public class ClientesBLL
     {
-        public static bool Insertar(Clientes Cliente)
+        public static bool Insertar(Clientes nuevo)
         {
             bool resultado = false;
             using (var conexion = new Conexion())
             {
                 try
                 {
-                    conexion.clientes.Add(Cliente);
+                    if (Buscar(nuevo.ClienteId) == null)
+                        conexion.clientes.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
             }
@@ -49,14 +51,14 @@ namespace BLL
 
             return resultado;
         }
-        public static Clientes Buscar(int id)
+        public static Clientes Buscar(int Id)
         {
-            var Cliente = new Clientes();
+            var cc= new Clientes();
             using (var conexion = new Conexion())
             {
                 try
                 {
-                    Cliente = conexion.clientes.Find(id);
+                    cc = conexion.clientes.Find(Id);
                 }
                 catch (Exception)
                 {
@@ -64,7 +66,8 @@ namespace BLL
                     throw;
                 }
             }
-            return Cliente;
+
+            return cc;
         }
         public static Clientes Buscar(string Nombre)
         {
@@ -101,56 +104,28 @@ namespace BLL
             return lista;
 
         }
-        public static List<Clientes> GetLista(int usuarioId)
+        public static List<Clientes> GetListaId(int PrestamosId)
         {
-            List<Clientes> lista = new List<Clientes>();
-            using (var conexion = new Conexion())
-            {
-                try
-                {
-                    lista = conexion.clientes.Where(p => p.ClienteId == usuarioId).ToList();
-                }
-                catch (Exception)
-                {
+            List<Clientes> list = new List<Clientes>();
 
-                    throw;
-                }
-            }
-            return lista;
+            var db = new Conexion();
+
+            list = db.clientes.Where(p => p.ClienteId == PrestamosId).ToList();
+
+            return list;
 
         }
-        public static List<Clientes> GetListaM(string aux)
+        public static List<Clientes>GetListaNombre(string m)
         {
             List<Clientes> lista = new List<Clientes>();
 
             var db = new Conexion();
 
-            lista = db.clientes.Where(p => p.Nombre== aux).ToList();
+            lista = db.clientes.Where(p => string.Equals(p.Nombre, m)).ToList();
 
             return lista;
 
         }
-        public static void Modificar(int id, Clientes cliente)
-        {
-            using (var db = new Conexion())
-            {
-                try
-                {
-                    Clientes cc = db.clientes.Find(id);
-                    cc.Nombre = cliente.Nombre;
-                    cc.Apellidos = cliente.Apellidos;
-                    cc.Direccion = cliente.Direccion;
-                    cc.Telefono = cliente.Telefono;
-                    cc.Cedula = cliente.Cedula;
-                    cc.Sexo = cliente.Sexo;
-                    db.SaveChanges();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
         }
     }
-}
+

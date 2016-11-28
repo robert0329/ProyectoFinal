@@ -54,10 +54,10 @@ namespace BLL.Tests
             Assert.IsTrue(PrestamosBLL.GetLista().Count >= 0);
         }
 
-        [TestMethod()]
-        public void GetListaTest1()
-        {
-            Assert.IsTrue(PrestamosBLL.GetLista(1).Count >= 0);
-        }
+        //[TestMethod()]
+        //public void GetListaTest1()
+        //{
+        //    Assert.IsTrue(PrestamosBLL.GetLista(1).Count >= 0);
+        //}
     }
 }

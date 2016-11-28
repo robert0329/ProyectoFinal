@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPrestamo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NombrecomboBox = new System.Windows.Forms.ComboBox();
             this.ApellidoTextBox = new System.Windows.Forms.TextBox();
@@ -175,7 +176,7 @@
             this.GarantecomboBox.FormattingEnabled = true;
             this.GarantecomboBox.Location = new System.Drawing.Point(524, 68);
             this.GarantecomboBox.Name = "GarantecomboBox";
-            this.GarantecomboBox.Size = new System.Drawing.Size(202, 21);
+            this.GarantecomboBox.Size = new System.Drawing.Size(183, 21);
             this.GarantecomboBox.TabIndex = 14;
             // 
             // Garante
@@ -190,11 +191,14 @@
             // Calcularbutton
             // 
             this.Calcularbutton.Enabled = false;
-            this.Calcularbutton.Location = new System.Drawing.Point(741, 11);
+            this.Calcularbutton.Image = ((System.Drawing.Image)(resources.GetObject("Calcularbutton.Image")));
+            this.Calcularbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Calcularbutton.Location = new System.Drawing.Point(745, 32);
             this.Calcularbutton.Name = "Calcularbutton";
-            this.Calcularbutton.Size = new System.Drawing.Size(75, 49);
+            this.Calcularbutton.Size = new System.Drawing.Size(84, 49);
             this.Calcularbutton.TabIndex = 12;
             this.Calcularbutton.Text = "Calcular";
+            this.Calcularbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Calcularbutton.UseVisualStyleBackColor = true;
             this.Calcularbutton.Click += new System.EventHandler(this.Calcularbutton_Click);
             // 
@@ -203,7 +207,7 @@
             this.FechadateTimePicker.Enabled = false;
             this.FechadateTimePicker.Location = new System.Drawing.Point(524, 21);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(202, 20);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(183, 20);
             this.FechadateTimePicker.TabIndex = 11;
             // 
             // FormadePagocomboBox
@@ -413,36 +417,45 @@
             this.PrestamodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PrestamodataGridView.Location = new System.Drawing.Point(12, 311);
             this.PrestamodataGridView.Name = "PrestamodataGridView";
-            this.PrestamodataGridView.Size = new System.Drawing.Size(758, 159);
+            this.PrestamodataGridView.Size = new System.Drawing.Size(707, 159);
             this.PrestamodataGridView.TabIndex = 4;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(776, 320);
+            this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(757, 320);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 42);
+            this.Guardarbutton.Size = new System.Drawing.Size(90, 42);
             this.Guardarbutton.TabIndex = 5;
             this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(776, 368);
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(757, 368);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 42);
+            this.Nuevobutton.Size = new System.Drawing.Size(94, 42);
             this.Nuevobutton.TabIndex = 6;
             this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscar
             // 
-            this.Buscar.Location = new System.Drawing.Point(776, 416);
+            this.Buscar.Image = ((System.Drawing.Image)(resources.GetObject("Buscar.Image")));
+            this.Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscar.Location = new System.Drawing.Point(757, 416);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(75, 42);
+            this.Buscar.Size = new System.Drawing.Size(94, 42);
             this.Buscar.TabIndex = 7;
             this.Buscar.Text = "Buscar";
+            this.Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscar.UseVisualStyleBackColor = true;
             this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 

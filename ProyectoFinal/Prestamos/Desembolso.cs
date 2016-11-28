@@ -57,6 +57,7 @@ namespace ProyectoFinal.Prestamos
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
             int r = 0;
+            int c = 0;
             var p = Utilidades.ToInt(AbonomaskedTextBox.Text);
             var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
             Cobros();
@@ -64,13 +65,15 @@ namespace ProyectoFinal.Prestamos
             {
                 if (AbonomaskedTextBox.Text == String.Empty)
                 {
-                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas);                   
+                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas);
+                    c = cc.NumeroCuotas - 1;             
                 }
                 else
                 {
-                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas + p);  
+                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas + p);
+                    c = cc.NumeroCuotas - 1;
                 }
-                BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text);
+                BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text , c);
                 Retornar();
             }
         }
@@ -85,12 +88,8 @@ namespace ProyectoFinal.Prestamos
 
             if (BLL.CobrosBLL.Insertar(cobro))
             {
-                MessageBox.Show("Guardo");
+                MessageBox.Show("<-Cobro Realizado->");
             }          
-        }
-        private void Guardarbutton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

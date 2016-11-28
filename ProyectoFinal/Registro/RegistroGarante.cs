@@ -41,7 +41,7 @@ namespace ProyectoFinal.RegistroGarantes
             gar.Cedula = cedulaMaskedTextBox.Text;
             gar.Sexo = sexoComboBox.Text;
 
-            if (ValidarTextbox() && ValidarExiste(nombresTextBox.Text))
+            if (ValidarTextbox())
             {
                 GaranteBLL.Insertar(gar);
                 MessageBox.Show("Se Registrado Un Garante", "<- Proceso Exitosa ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,29 +95,7 @@ namespace ProyectoFinal.RegistroGarantes
         }
         private void RegistroGarante_Load(object sender, EventArgs e)
         {
-
-        }
-        private void Modificarbutton_Click(object sender, EventArgs e)
-        {
-            if (validarId("Favor Buscar el cliente"))
-            {
-                LlenarClase(gar);
-                if (ValidarExiste(nombresTextBox.Text))
-                {
-                    GaranteBLL.Modificar(Utilidades.ToInt(garanteIdTextBox.Text), gar);
-                    MessageBox.Show("Actualizado con exito");
-                }
-
-            }
-        }
-        private bool ValidarExiste(string aux)
-        {
-            if (GaranteBLL.GetListaM(aux).Count() > 0)
-            {
-                MessageBox.Show("Este Equipo ya existe." + "\n" + "Verifique que el serial esta ingresado correctamente");
-                return false;
-            }
-            return true;
+            Validar();
         }
         private bool ValidarTextbox()
         {
@@ -161,13 +139,12 @@ namespace ProyectoFinal.RegistroGarantes
                 return true;
             }
         }
-        private void LlenarClase(Garantes E)
+        public void Validar()
         {
-            E.Nombres = nombresTextBox.Text;
-            E.Direccion = direccionTextBox.Text;
-            E.Telefono = telefonoMaskedTextBox.Text;
-            E.Cedula = cedulaMaskedTextBox.Text;
-            E.Sexo = sexoComboBox.Text;
+            var u1 = new Utilidades(nombresTextBox, "L");
+            var u = new Utilidades(garanteIdTextBox, "N");
+            var u3 = new Utilidades(direccionTextBox, "LN");
+
         }
     }
 }
