@@ -147,6 +147,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(362, 257);
             this.Controls.Add(this.groupBox1);
+            this.MinimizeBox = false;
             this.Name = "RegistroDeUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroDeUsuarios";

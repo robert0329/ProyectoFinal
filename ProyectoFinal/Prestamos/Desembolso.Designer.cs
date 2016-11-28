@@ -253,7 +253,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(671, 204);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "Desembolso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Desembolso";
             this.Load += new System.EventHandler(this.Desembolso_Load);
             this.groupBox1.ResumeLayout(false);

@@ -259,6 +259,7 @@
             this.Controls.Add(this.cedulaMaskedTextBox);
             this.Controls.Add(sexoLabel);
             this.Controls.Add(this.sexoComboBox);
+            this.MinimizeBox = false;
             this.Name = "RegistroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro De Cliente";

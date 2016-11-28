@@ -126,6 +126,24 @@ namespace BLL
             return lista;
 
         }
+        public static List<Clientes> GetListac()
+        {
+            var lista = new List<Clientes>();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    lista = conexion.clientes.ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+
         }
+    }
     }
 

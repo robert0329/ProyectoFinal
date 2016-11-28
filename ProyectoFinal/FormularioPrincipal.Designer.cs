@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.prestariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoDesembolsoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaPrestarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,15 +49,16 @@
             this.prestariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPrestarioToolStripMenuItem,
             this.nuevoGaranteToolStripMenuItem});
+            this.prestariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("prestariosToolStripMenuItem.Image")));
             this.prestariosToolStripMenuItem.Name = "prestariosToolStripMenuItem";
-            this.prestariosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.prestariosToolStripMenuItem.Text = "Clientes";
+            this.prestariosToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.prestariosToolStripMenuItem.Text = "Registros";
             // 
             // nuevoPrestarioToolStripMenuItem
             // 
             this.nuevoPrestarioToolStripMenuItem.Name = "nuevoPrestarioToolStripMenuItem";
-            this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.nuevoPrestarioToolStripMenuItem.Text = "&Nuevo Prestario";
+            this.nuevoPrestarioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.nuevoPrestarioToolStripMenuItem.Text = "Nuevo Cliente";
             this.nuevoPrestarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoPrestarioToolStripMenuItem_Click);
             // 
             // nuevoGaranteToolStripMenuItem
@@ -72,8 +73,9 @@
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPrestamoToolStripMenuItem,
             this.nuevoDesembolsoToolStripMenuItem});
+            this.prestamosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("prestamosToolStripMenuItem.Image")));
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
             // 
             // nuevoPrestamoToolStripMenuItem
@@ -90,22 +92,15 @@
             this.nuevoDesembolsoToolStripMenuItem.Text = "Nuevo Desembolso";
             this.nuevoDesembolsoToolStripMenuItem.Click += new System.EventHandler(this.nuevoDesembolsoToolStripMenuItem_Click);
             // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prestariosToolStripMenuItem,
             this.prestamosToolStripMenuItem,
-            this.reportesToolStripMenuItem,
             this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(802, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(621, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,8 +111,9 @@
             this.consultaGaranteToolStripMenuItem,
             this.consultaPrestamosToolStripMenuItem,
             this.consultarCobrosToolStripMenuItem});
+            this.consultasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasToolStripMenuItem.Image")));
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // consultaPrestarioToolStripMenuItem
@@ -152,12 +148,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 307);
+            this.ClientSize = new System.Drawing.Size(621, 307);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormularioPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Prestamos Mariant";
+            this.Text = "Finanzas de dinero";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -170,7 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoPrestarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoDesembolsoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nuevoGaranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoPrestamoToolStripMenuItem;

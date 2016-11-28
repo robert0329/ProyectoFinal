@@ -22,37 +22,38 @@ namespace BLL.Tests
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Assert.IsTrue(ClientesBLL.Eliminar(new Clientes(1, "asdsa", "sasfsd", "wfsfs", "sffsdf", "sdfsdfs", "sfsf")));
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Assert.IsNull(ClientesBLL.Buscar(1));
         }
 
         [TestMethod()]
         public void BuscarTest1()
         {
-            Assert.Fail();
+            Assert.IsNull(ClientesBLL.Buscar(1));
         }
 
         [TestMethod()]
         public void GetListaTest()
         {
-            Assert.Fail();
+            Assert.IsNotNull(ClientesBLL.GetLista());
         }
 
         [TestMethod()]
         public void GetListaIdTest()
         {
-            Assert.Fail();
+            Assert.IsNotNull(ClientesBLL.GetListaId(1));
         }
 
         [TestMethod()]
         public void GetListaNombreTest()
         {
-            Assert.Fail();
+            Clientes p = new Clientes();
+            Assert.IsNotNull(ClientesBLL.GetListaNombre(Convert.ToString(p)));
         }
     }
 }

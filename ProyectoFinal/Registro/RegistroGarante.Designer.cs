@@ -239,6 +239,7 @@ namespace ProyectoFinal.RegistroGarantes
             this.Controls.Add(sexoLabel);
             this.Controls.Add(this.sexoComboBox);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MinimizeBox = false;
             this.Name = "RegistroGarante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Garante";
