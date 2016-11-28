@@ -5,78 +5,151 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAL;
+using System.Data.Entity;
 
 namespace BLL
 {
     public class GaranteBLL
     {
-        public static bool Guardar(Garantes garante)
+        public static bool Insertar(Garantes gar)
         {
-            bool retorno = false;
-            try
-            {
-                Conexion db = new Conexion();
-                db.garante.Add(garante);
-                db.SaveChanges();
-
-                retorno = true;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            return retorno;
-        }
-        public static bool Eliminar(int e)
-        {
-            bool r = false;
-            using (var db = new Conexion())
+            bool resultado = false;
+            using (var conexion = new Conexion())
             {
                 try
                 {
-                    Garantes c = db.garante.Find(e);
-                    db.garante.Remove(c);
-                    db.SaveChanges();
-                    r = true;
+                    conexion.garante.Add(gar);
+                    conexion.SaveChanges();
+                    resultado = true;
                 }
                 catch (Exception)
                 {
 
                     throw;
                 }
-                return r;
             }
+            return resultado;
+        }
+        public static bool Eliminar(Garantes existente)
+        {
+            bool resultado = false;
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    conexion.Entry(existente).State = EntityState.Deleted;
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+            return resultado;
         }
         public static Garantes Buscar(int id)
         {
-            var Garant = new Garantes();
-            var d = new Conexion();
+            var gar = new Garantes();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    gar = conexion.garante.Find(id);
+                }
+                catch (Exception)
+                {
 
-            Garant = d.garante.Find(id);
-            return Garant;
+                    throw;
+                }
+            }
+            return gar;
+        }
+        public static Garantes Buscar(string Nombre)
+        {
+            var gar = new Garantes();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    gar = conexion.garante.Where(c => c.Nombres.Equals(Nombre)).FirstOrDefault();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return gar;
         }
         public static List<Garantes> GetLista()
+        {
+            var lista = new List<Garantes>();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    lista = conexion.garante.ToList();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return lista;
+
+        }
+        public static List<Garantes> GetLista(int usuarioId)
+        {
+            List<Garantes> lista = new List<Garantes>();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    lista = conexion.garante.Where(p => p.GaranteId == usuarioId).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+
+        }
+        public static List<Garantes> GetListaM(string aux)
         {
             List<Garantes> lista = new List<Garantes>();
 
             var db = new Conexion();
 
-            lista = db.garante.ToList();
+            lista = db.garante.Where(p => p.Nombres == aux).ToList();
 
             return lista;
 
         }
-        public static List<Garantes> GetLista(int GaranteId)
+        public static void Modificar(int id, Garantes cliente)
         {
-            List<Garantes> list = new List<Garantes>();
+            using (var db = new Conexion())
+            {
+                try
+                {
+                    Garantes cc = db.garante.Find(id);
+                    cc.Nombres = cliente.Nombres;
+                    cc.Direccion = cliente.Direccion;
+                    cc.Telefono = cliente.Telefono;
+                    cc.Cedula = cliente.Cedula;
+                    cc.Sexo = cliente.Sexo;
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
 
-            var db = new Conexion();
-
-            list = db.garante.Where(p => p.GaranteId == GaranteId).ToList();
-
-            return list;
-
+                    throw;
+                }
+            }
         }
     }
 }

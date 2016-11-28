@@ -16,5 +16,13 @@ namespace ProyectoFinal
 
             return retorno;
         }
+        public int StringToInt(string texto)
+        {
+            int numero = 0;
+
+            int.TryParse(texto, out numero);
+
+            return numero;
+        }
     }
 }

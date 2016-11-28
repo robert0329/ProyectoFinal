@@ -75,6 +75,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BaseDatosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDatosDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaPrestamos.Designer.cs">
+      <DependentUpon>ConsultaPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultasGarante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +144,9 @@
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\ConsultaPrestamos.resx">
+      <DependentUpon>ConsultaPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultasGarante.resx">
       <DependentUpon>ConsultasGarante.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +193,17 @@
     </None>
     <None Include="BaseDatosDataSet.xss">
       <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDatosDataSet1.xsc">
+      <DependentUpon>BaseDatosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDatosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDatosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDatosDataSet1.xss">
+      <DependentUpon>BaseDatosDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

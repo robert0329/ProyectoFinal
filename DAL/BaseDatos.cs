@@ -24,12 +24,12 @@ namespace DAL
         {
             modelBuilder.Entity<Prestamos>()
                 .HasMany<Clientes>(g => g.LClientes)
-                .WithMany(e => e.ListPrestamo)
+                .WithMany(e => e.ListPrestamos)
                 .Map(Ge =>
                 {
                     Ge.MapLeftKey("PrestamoId");
                     Ge.MapRightKey("ClienteId");
-                    Ge.ToTable("PrestamoClientes");
+                    Ge.ToTable("PrestamoClientes"); 
                 });
         }
     }

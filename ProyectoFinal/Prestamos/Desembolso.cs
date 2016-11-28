@@ -16,6 +16,8 @@ namespace ProyectoFinal.Prestamos
     public partial class Desembolso : Form
     {
         Conexion bd = new Conexion();
+        List<Entidades.Cobros> Lista = new List<Entidades.Cobros>();
+        List<Entidades.Prestamos> List = new List<Entidades.Prestamos>();
         public Desembolso()
         {
             InitializeComponent();
@@ -25,49 +27,70 @@ namespace ProyectoFinal.Prestamos
             var conn = new Conexion();
             var lista = conn.Prestamos.ToList();
             NombrecomboBox.DataSource = lista;
-            NombrecomboBox.DisplayMember = "Nombres";
-        }
-        private void Cobrarbutton_Click(object sender, EventArgs e)
-        {
-            llenar();
-            int r = 0;
-            var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
-            if (cc != null)
-            {
-                r = (cc.Prestamo - Utilidades.ToInt(MontotextBox.Text));
-                BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text);
-            }
-            Limpiar();
+            NombrecomboBox.DisplayMember = "Nombre";
         }
         private void Desembolso_Load(object sender, EventArgs e)
-        { 
+        {
             cargar();
-            Limpiar();
         }
         private void NombrecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var d = new Conexion();
-            var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
+            var cc = BLL.PrestamosBLL.Buscar(NombrecomboBox.Text);
             if (cc != null)
             {
-                DeudatextBox.Text = Convert.ToString(cc.Prestamo);
-            }
-        }
-        public void Limpiar()
-        {
-            NombrecomboBox.Text = DeudatextBox.Text = MontotextBox.Text = "";
-        }
-        public void llenar()
-        {
-            Cobros Co = new Cobros();
-            Co.Nombres = NombrecomboBox.Text;
-            Co.Deuda = Utilidades.ToInt(DeudatextBox.Text);
-            Co.UltimoPago = Utilidades.ToInt(MontotextBox.Text);
 
-            if (CobrosBLL.Insertar(Co , NombrecomboBox.Text , Utilidades.ToInt(DeudatextBox.Text) , Utilidades.ToInt(MontotextBox.Text)))
-            {
-                MessageBox.Show("Cobro con exito");
+                Retornar();
+
             }
+        }
+        public void Retornar()
+        {
+            var cc = BLL.PrestamosBLL.Buscar(NombrecomboBox.Text);
+            ClienteIdtextBox.Text = Convert.ToString(cc.ClienteId);
+            PrestamoIdtextBox.Text = Convert.ToString(cc.PrestamoID);
+            CuotastextBox.Text = Convert.ToString(cc.NumeroCuotas);
+            FechadateTimePicker.Value = Convert.ToDateTime(cc.Fecha);
+            ValortextBox.Text = Convert.ToString(cc.valorCuotas);
+            MontotextBox.Text = Convert.ToString(cc.Prestamo);
+        }
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+            int r = 0;
+            var p = Utilidades.ToInt(AbonomaskedTextBox.Text);
+            var cc = BLL.CobrosBLL.Buscar(NombrecomboBox.Text);
+            Cobros();
+            if (cc != null)
+            {
+                if (AbonomaskedTextBox.Text == String.Empty)
+                {
+                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas);                   
+                }
+                else
+                {
+                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas + p);  
+                }
+                BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text);
+                Retornar();
+            }
+        }
+        public void Cobros()
+        {
+            Cobros cobro = new Cobros();
+            cobro.ClienteId = Utilidades.ToInt(ClienteIdtextBox.Text);
+            cobro.PrestamoId = Utilidades.ToInt(PrestamoIdtextBox.Text);
+            cobro.NumeroCuotas = Utilidades.ToInt(CuotastextBox.Text);
+            cobro.Abono = Utilidades.ToInt(AbonomaskedTextBox.Text);
+            cobro.Fecha = Convert.ToDateTime(FechadateTimePicker.Value);
+
+            if (BLL.CobrosBLL.Insertar(cobro))
+            {
+                MessageBox.Show("Guardo");
+            }          
+        }
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

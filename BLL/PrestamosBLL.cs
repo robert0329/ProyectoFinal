@@ -102,7 +102,7 @@ namespace BLL
 
             return lista;
         }
-        public static List<Prestamos> GetLista(int PrestamosId)
+        public static List<Prestamos> GetListaId(int PrestamosId)
         {
             List<Prestamos> list = new List<Prestamos>();
 
@@ -112,6 +112,36 @@ namespace BLL
 
             return list;
 
+        }
+        public static List<Prestamos> GetListaNombre(string m)
+        {
+            List<Prestamos> lista = new List<Prestamos>();
+
+            var db = new Conexion();
+
+            lista = db.Prestamos.Where(p => string.Equals(p.Nombre, m)).ToList();
+
+            return lista;
+
+        }
+        public static List<Prestamos> GetListaFecha(DateTime D, DateTime H)
+        {
+            List<Prestamos> lista = new List<Prestamos>();
+
+            var db = new Conexion();
+
+            lista = db.Prestamos.Where(p => p.Fecha >= D && p.Fecha <= H).ToList();
+
+            return lista;
+
+        }
+        public static Prestamos Buscar(string Nombre)
+        {
+            var Client = new Prestamos();
+            var d = new Conexion();
+
+            Client = d.Prestamos.Where(c => c.Nombre.Equals(Nombre)).FirstOrDefault();
+            return Client;
         }
     }
 }

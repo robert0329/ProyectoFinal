@@ -28,222 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.NombretextBox = new System.Windows.Forms.TextBox();
-            this.TelefonotextBox = new System.Windows.Forms.TextBox();
-            this.CedulatextBox = new System.Windows.Forms.TextBox();
-            this.DirecciontextBox = new System.Windows.Forms.TextBox();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Sexo = new System.Windows.Forms.Label();
-            this.SexocomboBox = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label clienteIdLabel;
+            System.Windows.Forms.Label nombreLabel;
+            System.Windows.Forms.Label apellidosLabel;
+            System.Windows.Forms.Label direccionLabel;
+            System.Windows.Forms.Label telefonoLabel;
+            System.Windows.Forms.Label cedulaLabel;
+            System.Windows.Forms.Label sexoLabel;
+            this.clienteIdMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.apellidosTextBox = new System.Windows.Forms.TextBox();
+            this.direccionTextBox = new System.Windows.Forms.TextBox();
+            this.telefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.cedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.sexoComboBox = new System.Windows.Forms.ComboBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.ClienteIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             this.Modificarbutton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ApellidostextBox = new System.Windows.Forms.TextBox();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            clienteIdLabel = new System.Windows.Forms.Label();
+            nombreLabel = new System.Windows.Forms.Label();
+            apellidosLabel = new System.Windows.Forms.Label();
+            direccionLabel = new System.Windows.Forms.Label();
+            telefonoLabel = new System.Windows.Forms.Label();
+            cedulaLabel = new System.Windows.Forms.Label();
+            sexoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // clienteIdLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombres";
+            clienteIdLabel.AutoSize = true;
+            clienteIdLabel.Location = new System.Drawing.Point(12, 21);
+            clienteIdLabel.Name = "clienteIdLabel";
+            clienteIdLabel.Size = new System.Drawing.Size(54, 13);
+            clienteIdLabel.TabIndex = 1;
+            clienteIdLabel.Text = "Cliente Id:";
             // 
-            // label2
+            // nombreLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Direccion";
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(12, 47);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 3;
+            nombreLabel.Text = "Nombre:";
             // 
-            // label4
+            // apellidosLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 163);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Cedula";
+            apellidosLabel.AutoSize = true;
+            apellidosLabel.Location = new System.Drawing.Point(12, 73);
+            apellidosLabel.Name = "apellidosLabel";
+            apellidosLabel.Size = new System.Drawing.Size(52, 13);
+            apellidosLabel.TabIndex = 5;
+            apellidosLabel.Text = "Apellidos:";
             // 
-            // label5
+            // direccionLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Telefono/Cel";
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(12, 99);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.TabIndex = 7;
+            direccionLabel.Text = "Direccion:";
             // 
-            // NombretextBox
+            // telefonoLabel
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(25, 25);
-            this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(270, 20);
-            this.NombretextBox.TabIndex = 6;
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(12, 125);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.TabIndex = 9;
+            telefonoLabel.Text = "Telefono:";
             // 
-            // TelefonotextBox
+            // cedulaLabel
             // 
-            this.TelefonotextBox.Location = new System.Drawing.Point(25, 140);
-            this.TelefonotextBox.Name = "TelefonotextBox";
-            this.TelefonotextBox.Size = new System.Drawing.Size(376, 20);
-            this.TelefonotextBox.TabIndex = 8;
+            cedulaLabel.AutoSize = true;
+            cedulaLabel.Location = new System.Drawing.Point(12, 151);
+            cedulaLabel.Name = "cedulaLabel";
+            cedulaLabel.Size = new System.Drawing.Size(43, 13);
+            cedulaLabel.TabIndex = 11;
+            cedulaLabel.Text = "Cedula:";
             // 
-            // CedulatextBox
+            // sexoLabel
             // 
-            this.CedulatextBox.Location = new System.Drawing.Point(25, 179);
-            this.CedulatextBox.Name = "CedulatextBox";
-            this.CedulatextBox.Size = new System.Drawing.Size(376, 20);
-            this.CedulatextBox.TabIndex = 9;
+            sexoLabel.AutoSize = true;
+            sexoLabel.Location = new System.Drawing.Point(12, 177);
+            sexoLabel.Name = "sexoLabel";
+            sexoLabel.Size = new System.Drawing.Size(34, 13);
+            sexoLabel.TabIndex = 13;
+            sexoLabel.Text = "Sexo:";
             // 
-            // DirecciontextBox
+            // clienteIdMaskedTextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(25, 101);
-            this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(376, 20);
-            this.DirecciontextBox.TabIndex = 10;
+            this.clienteIdMaskedTextBox.Location = new System.Drawing.Point(73, 18);
+            this.clienteIdMaskedTextBox.Name = "clienteIdMaskedTextBox";
+            this.clienteIdMaskedTextBox.Size = new System.Drawing.Size(37, 20);
+            this.clienteIdMaskedTextBox.TabIndex = 2;
             // 
-            // Guardarbutton
+            // nombreTextBox
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(25, 245);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 36);
-            this.Guardarbutton.TabIndex = 2;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            this.nombreTextBox.Location = new System.Drawing.Point(73, 44);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(254, 20);
+            this.nombreTextBox.TabIndex = 4;
             // 
-            // Nuevobutton
+            // apellidosTextBox
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(226, 245);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 36);
-            this.Nuevobutton.TabIndex = 11;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.apellidosTextBox.Location = new System.Drawing.Point(73, 70);
+            this.apellidosTextBox.Name = "apellidosTextBox";
+            this.apellidosTextBox.Size = new System.Drawing.Size(254, 20);
+            this.apellidosTextBox.TabIndex = 6;
             // 
-            // Sexo
+            // direccionTextBox
             // 
-            this.Sexo.AutoSize = true;
-            this.Sexo.Location = new System.Drawing.Point(22, 202);
-            this.Sexo.Name = "Sexo";
-            this.Sexo.Size = new System.Drawing.Size(31, 13);
-            this.Sexo.TabIndex = 13;
-            this.Sexo.Text = "Sexo";
+            this.direccionTextBox.Location = new System.Drawing.Point(73, 96);
+            this.direccionTextBox.Name = "direccionTextBox";
+            this.direccionTextBox.Size = new System.Drawing.Size(254, 20);
+            this.direccionTextBox.TabIndex = 8;
             // 
-            // SexocomboBox
+            // telefonoMaskedTextBox
             // 
-            this.SexocomboBox.FormattingEnabled = true;
-            this.SexocomboBox.Items.AddRange(new object[] {
-            "Hombre",
-            "Mujer",
-            "Otro"});
-            this.SexocomboBox.Location = new System.Drawing.Point(25, 218);
-            this.SexocomboBox.Name = "SexocomboBox";
-            this.SexocomboBox.Size = new System.Drawing.Size(376, 21);
-            this.SexocomboBox.TabIndex = 14;
+            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(73, 122);
+            this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
+            this.telefonoMaskedTextBox.Size = new System.Drawing.Size(254, 20);
+            this.telefonoMaskedTextBox.TabIndex = 10;
+            // 
+            // cedulaMaskedTextBox
+            // 
+            this.cedulaMaskedTextBox.Location = new System.Drawing.Point(73, 148);
+            this.cedulaMaskedTextBox.Name = "cedulaMaskedTextBox";
+            this.cedulaMaskedTextBox.Size = new System.Drawing.Size(254, 20);
+            this.cedulaMaskedTextBox.TabIndex = 12;
+            // 
+            // sexoComboBox
+            // 
+            this.sexoComboBox.FormattingEnabled = true;
+            this.sexoComboBox.Location = new System.Drawing.Point(73, 174);
+            this.sexoComboBox.Name = "sexoComboBox";
+            this.sexoComboBox.Size = new System.Drawing.Size(254, 21);
+            this.sexoComboBox.TabIndex = 14;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(407, 25);
+            this.Buscarbutton.Location = new System.Drawing.Point(252, 12);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 36);
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 29);
             this.Buscarbutton.TabIndex = 15;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // ClienteIdmaskedTextBox
+            // Guardarbutton
             // 
-            this.ClienteIdmaskedTextBox.Location = new System.Drawing.Point(301, 25);
-            this.ClienteIdmaskedTextBox.Name = "ClienteIdmaskedTextBox";
-            this.ClienteIdmaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ClienteIdmaskedTextBox.TabIndex = 16;
+            this.Guardarbutton.Location = new System.Drawing.Point(15, 201);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 29);
+            this.Guardarbutton.TabIndex = 16;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // label3
+            // Modificarbutton
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(301, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Cliente Id:";
+            this.Modificarbutton.Location = new System.Drawing.Point(96, 201);
+            this.Modificarbutton.Name = "Modificarbutton";
+            this.Modificarbutton.Size = new System.Drawing.Size(75, 29);
+            this.Modificarbutton.TabIndex = 17;
+            this.Modificarbutton.Text = "Modificar";
+            this.Modificarbutton.UseVisualStyleBackColor = true;
+            this.Modificarbutton.Click += new System.EventHandler(this.Modificarbutton_Click);
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(125, 245);
+            this.Eliminarbutton.Location = new System.Drawing.Point(177, 201);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(74, 36);
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 29);
             this.Eliminarbutton.TabIndex = 18;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
-            // Modificarbutton
+            // Nuevobutton
             // 
-            this.Modificarbutton.Location = new System.Drawing.Point(326, 245);
-            this.Modificarbutton.Name = "Modificarbutton";
-            this.Modificarbutton.Size = new System.Drawing.Size(75, 36);
-            this.Modificarbutton.TabIndex = 19;
-            this.Modificarbutton.Text = "Modificar";
-            this.Modificarbutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Location = new System.Drawing.Point(258, 201);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 29);
+            this.Nuevobutton.TabIndex = 19;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // label6
+            // ClienteerrorProvider
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Apellidos";
-            // 
-            // ApellidostextBox
-            // 
-            this.ApellidostextBox.Location = new System.Drawing.Point(25, 62);
-            this.ApellidostextBox.Name = "ApellidostextBox";
-            this.ApellidostextBox.Size = new System.Drawing.Size(376, 20);
-            this.ApellidostextBox.TabIndex = 21;
+            this.ClienteerrorProvider.ContainerControl = this;
             // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(503, 283);
-            this.Controls.Add(this.ApellidostextBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.Modificarbutton);
-            this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.ClienteIdmaskedTextBox);
-            this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.SexocomboBox);
-            this.Controls.Add(this.Sexo);
+            this.ClientSize = new System.Drawing.Size(351, 238);
             this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.Eliminarbutton);
+            this.Controls.Add(this.Modificarbutton);
             this.Controls.Add(this.Guardarbutton);
-            this.Controls.Add(this.DirecciontextBox);
-            this.Controls.Add(this.CedulatextBox);
-            this.Controls.Add(this.TelefonotextBox);
-            this.Controls.Add(this.NombretextBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(clienteIdLabel);
+            this.Controls.Add(this.clienteIdMaskedTextBox);
+            this.Controls.Add(nombreLabel);
+            this.Controls.Add(this.nombreTextBox);
+            this.Controls.Add(apellidosLabel);
+            this.Controls.Add(this.apellidosTextBox);
+            this.Controls.Add(direccionLabel);
+            this.Controls.Add(this.direccionTextBox);
+            this.Controls.Add(telefonoLabel);
+            this.Controls.Add(this.telefonoMaskedTextBox);
+            this.Controls.Add(cedulaLabel);
+            this.Controls.Add(this.cedulaMaskedTextBox);
+            this.Controls.Add(sexoLabel);
+            this.Controls.Add(this.sexoComboBox);
             this.Name = "RegistroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro De Cliente";
             this.Load += new System.EventHandler(this.RegistroCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,24 +263,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox NombretextBox;
-        private System.Windows.Forms.TextBox TelefonotextBox;
-        private System.Windows.Forms.TextBox CedulatextBox;
-        private System.Windows.Forms.TextBox DirecciontextBox;
-        private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Label Sexo;
-        private System.Windows.Forms.ComboBox SexocomboBox;
+        private System.Windows.Forms.MaskedTextBox clienteIdMaskedTextBox;
+        private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.TextBox apellidosTextBox;
+        private System.Windows.Forms.TextBox direccionTextBox;
+        private System.Windows.Forms.MaskedTextBox telefonoMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox cedulaMaskedTextBox;
+        private System.Windows.Forms.ComboBox sexoComboBox;
         private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.MaskedTextBox ClienteIdmaskedTextBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Modificarbutton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox ApellidostextBox;
+        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.ErrorProvider ClienteerrorProvider;
     }
 }

@@ -11,8 +11,10 @@ namespace Entidades
     {
         [Key]
         public int cobroId { get; set; }
-        public string Nombres { get; set; }
-        public int Deuda { get; set; }
-        public int UltimoPago { get; set; }
+        public int ClienteId { get; set; }
+        public int PrestamoId { get; set; }
+        public int NumeroCuotas { get; set; }
+        public int Abono { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

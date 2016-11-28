@@ -10,110 +10,147 @@ namespace BLL
 {
     public class ClientesBLL
     {
-        //public static void Insertar(Clientes cliente)
-        //{
-        //    using (var Conn = new Conexion())
-        //    {
-        //        var con = Conn.clientes.Add(cliente);
-        //        foreach (var pre in cliente.ListPrestamo)
-        //        {
-        //            Conn.Entry(pre).State = EntityState.Unchanged;
-        //        }
-        //        Conn.SaveChanges();
-        //    }
-        //}
-        //public static Clientes Buscar(int id)
-        //{
-        //    var Cliente = new Clientes();
-
-        //    using (var context = new Conexion())
-        //    {
-        //        Cliente = context.clientes.Find(id);
-        //        if (Cliente != null)
-        //        {
-        //            Cliente.ListPrestamo.Count();
-        //        }
-        //    }
-        //    return Cliente;
-        //}
         public static bool Insertar(Clientes Cliente)
         {
-            bool retorno = false;
-
-            try
-            {
-                Conexion Conn = new Conexion();
-
-                Conn.clientes.Add(Cliente);
-
-                Conn.SaveChanges();
-                retorno = true;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return retorno;
-        }
-        public static bool Eliminar(int e)
-        {
-            bool r = false;
-            using (var db = new Conexion())
+            bool resultado = false;
+            using (var conexion = new Conexion())
             {
                 try
                 {
-                    Clientes c = db.clientes.Find(e);
-                    db.clientes.Remove(c);
-                    db.SaveChanges();
-                    r = true;
+                    conexion.clientes.Add(Cliente);
+                    conexion.SaveChanges();
+                    resultado = true;
                 }
                 catch (Exception)
                 {
 
                     throw;
                 }
-                return r;
             }
+            return resultado;
+        }
+        public static bool Eliminar(Clientes existente)
+        {
+            bool resultado = false;
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    conexion.Entry(existente).State = EntityState.Deleted;
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+            return resultado;
         }
         public static Clientes Buscar(int id)
         {
-            var Client = new Clientes();
-            var d = new Conexion();
+            var Cliente = new Clientes();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    Cliente = conexion.clientes.Find(id);
+                }
+                catch (Exception)
+                {
 
-            Client = d.clientes.Find(id);
-            return Client;
+                    throw;
+                }
+            }
+            return Cliente;
         }
         public static Clientes Buscar(string Nombre)
         {
-            var Client = new Clientes();
-            var d = new Conexion();
+            var Cliente = new Clientes();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    Cliente = conexion.clientes.Where(c => c.Nombre.Equals(Nombre)).FirstOrDefault();
+                }
+                catch (Exception)
+                {
 
-            Client = d.clientes.Where(c => c.Nombre.Equals(Nombre)).FirstOrDefault();
-            return Client;
+                    throw;
+                }
+            }
+            return Cliente;
         }
         public static List<Clientes> GetLista()
         {
-            List<Clientes> lista = new List<Clientes>();
+            var lista = new List<Clientes>();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    lista = conexion.clientes.ToList();
+                }
+                catch (Exception)
+                {
 
-            var db = new Conexion();
-
-            lista = db.clientes.ToList();
-
+                    throw;
+                }
+            }
             return lista;
 
         }
         public static List<Clientes> GetLista(int usuarioId)
         {
             List<Clientes> lista = new List<Clientes>();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    lista = conexion.clientes.Where(p => p.ClienteId == usuarioId).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+
+        }
+        public static List<Clientes> GetListaM(string aux)
+        {
+            List<Clientes> lista = new List<Clientes>();
 
             var db = new Conexion();
 
-            lista = db.clientes.Where(p => p.ClienteId == usuarioId).ToList();
+            lista = db.clientes.Where(p => p.Nombre== aux).ToList();
 
             return lista;
 
+        }
+        public static void Modificar(int id, Clientes cliente)
+        {
+            using (var db = new Conexion())
+            {
+                try
+                {
+                    Clientes cc = db.clientes.Find(id);
+                    cc.Nombre = cliente.Nombre;
+                    cc.Apellidos = cliente.Apellidos;
+                    cc.Direccion = cliente.Direccion;
+                    cc.Telefono = cliente.Telefono;
+                    cc.Cedula = cliente.Cedula;
+                    cc.Sexo = cliente.Sexo;
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
     }
 }

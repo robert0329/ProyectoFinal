@@ -52,5 +52,11 @@ namespace ProyectoFinal
             ConsultasGarante cg = new ConsultasGarante();
             cg.Show();
         }
+
+        private void consultaPrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaPrestamos cp = new ConsultaPrestamos();
+            cp.Show();
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace ProyectoFinal.RegistroGarantes
 {
     public partial class RegistroGarante : Form
     {
+        Garantes gar = new Garantes();
         public RegistroGarante()
         {
             InitializeComponent();
@@ -24,29 +25,32 @@ namespace ProyectoFinal.RegistroGarantes
 
             garantes.Nombres = nombresTextBox.Text;
             garantes.Direccion = direccionTextBox.Text;
-            garantes.Telefono = telefonoTextBox.Text;
-            garantes.Cedula = cedulaTextBox.Text;
-            garantes.Sexo = SexocomboBox.Text;
+            garantes.Telefono = telefonoMaskedTextBox.Text;
+            garantes.Cedula = cedulaMaskedTextBox.Text;
+            garantes.Sexo = sexoComboBox.Text;
             
             return garantes;
         }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Garantes garantes = new Garantes();
+            Garantes gar = new Garantes();
+            
+            gar.Nombres = nombresTextBox.Text;
+            gar.Direccion = direccionTextBox.Text;
+            gar.Telefono = telefonoMaskedTextBox.Text;
+            gar.Cedula = cedulaMaskedTextBox.Text;
+            gar.Sexo = sexoComboBox.Text;
 
-            garantes = Llenar();
-
-            if (GaranteBLL.Guardar(garantes))
+            if (ValidarTextbox() && ValidarExiste(nombresTextBox.Text))
             {
-                Nuevobutton.PerformClick();
-
-                MessageBox.Show("Guardado con exito");
+                GaranteBLL.Insertar(gar);
+                MessageBox.Show("Se Registrado Un Garante", "<- Proceso Exitosa ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            int d = Convert.ToInt32(garanteIdTextBox.Text);
-            var cc = GaranteBLL.Eliminar(d);
+            nombresTextBox.Text = direccionTextBox.Text = telefonoMaskedTextBox.Text = cedulaMaskedTextBox.Text = sexoComboBox.Text = "";
         }
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
@@ -57,10 +61,114 @@ namespace ProyectoFinal.RegistroGarantes
             {
                 nombresTextBox.Text = cc.Nombres;
             }
+            if (!string.IsNullOrEmpty(garanteIdTextBox.Text))
+            {
+                var garante = BLL.GaranteBLL.Buscar(Utilidades.ToInt(garanteIdTextBox.Text));
+                if (garante != null)
+                {
+                    nombresTextBox.Text = garante.Nombres;
+                    direccionTextBox.Text = garante.Direccion;
+                    telefonoMaskedTextBox.Text = garante.Telefono;
+                    cedulaMaskedTextBox.Text = garante.Cedula;
+                    sexoComboBox.Text = garante.Sexo;
+                }
+                else
+                {
+                    MessageBox.Show("Este Id no contiene un garante", "<- Busqueda Fallida ->", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            nombresTextBox.Text = direccionTextBox.Text = telefonoTextBox.Text = cedulaTextBox.Text = SexocomboBox.Text = "";
+            var cc = BLL.GaranteBLL.Buscar(Utilidades.ToInt(garanteIdTextBox.Text));
+            if (cc != null)
+            {
+                if (BLL.GaranteBLL.Eliminar(cc))
+                {
+                    MessageBox.Show("Garante Eliminado", "<- Proceso Exitoso ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha eliminado", "<- Proceso Fallido ->", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void RegistroGarante_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void Modificarbutton_Click(object sender, EventArgs e)
+        {
+            if (validarId("Favor Buscar el cliente"))
+            {
+                LlenarClase(gar);
+                if (ValidarExiste(nombresTextBox.Text))
+                {
+                    GaranteBLL.Modificar(Utilidades.ToInt(garanteIdTextBox.Text), gar);
+                    MessageBox.Show("Actualizado con exito");
+                }
+
+            }
+        }
+        private bool ValidarExiste(string aux)
+        {
+            if (GaranteBLL.GetListaM(aux).Count() > 0)
+            {
+                MessageBox.Show("Este Equipo ya existe." + "\n" + "Verifique que el serial esta ingresado correctamente");
+                return false;
+            }
+            return true;
+        }
+        private bool ValidarTextbox()
+        {
+            if (string.IsNullOrEmpty(nombresTextBox.Text))
+            {
+                ClienteerrorProvider.SetError(nombresTextBox, "Favor ingresar el nombre");
+                return false;
+            }
+            if (string.IsNullOrEmpty(direccionTextBox.Text))
+            {
+                ClienteerrorProvider.SetError(direccionTextBox, "Favor ingresar la direccion");
+                return false;
+            }
+            if (string.IsNullOrEmpty(telefonoMaskedTextBox.Text))
+            {
+                ClienteerrorProvider.SetError(telefonoMaskedTextBox, "Favor ingresar el telefono");
+                return false;
+            }
+            if (string.IsNullOrEmpty(cedulaMaskedTextBox.Text))
+            {
+                ClienteerrorProvider.SetError(cedulaMaskedTextBox, "Favor ingresar la cedula");
+                return false;
+            }
+            if (string.IsNullOrEmpty(sexoComboBox.Text))
+            {
+                ClienteerrorProvider.SetError(sexoComboBox, "Favor ingresar el sexo");
+                return false;
+            }
+            return true;
+        }
+        private bool validarId(string message)
+        {
+            if (string.IsNullOrEmpty(garanteIdTextBox.Text))
+            {
+                ClienteerrorProvider.SetError(garanteIdTextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void LlenarClase(Garantes E)
+        {
+            E.Nombres = nombresTextBox.Text;
+            E.Direccion = direccionTextBox.Text;
+            E.Telefono = telefonoMaskedTextBox.Text;
+            E.Cedula = cedulaMaskedTextBox.Text;
+            E.Sexo = sexoComboBox.Text;
         }
     }
 }
+

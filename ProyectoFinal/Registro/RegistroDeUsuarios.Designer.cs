@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.RegistrarB = new System.Windows.Forms.Button();
@@ -37,7 +38,9 @@
             this.textConfirmar = new System.Windows.Forms.TextBox();
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.textContraseña = new System.Windows.Forms.TextBox();
+            this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -126,6 +129,10 @@
             this.textContraseña.Size = new System.Drawing.Size(313, 20);
             this.textContraseña.TabIndex = 35;
             // 
+            // UsuarioerrorProvider
+            // 
+            this.UsuarioerrorProvider.ContainerControl = this;
+            // 
             // RegistroDeUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +145,7 @@
             this.Text = "RegistroDeUsuarios";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,5 +160,6 @@
         private System.Windows.Forms.TextBox textConfirmar;
         private System.Windows.Forms.TextBox textUsuario;
         private System.Windows.Forms.TextBox textContraseña;
+        private System.Windows.Forms.ErrorProvider UsuarioerrorProvider;
     }
 }

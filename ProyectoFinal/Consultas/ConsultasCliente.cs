@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using BLL;
 
 namespace ProyectoFinal.Consultas
 {
@@ -17,24 +18,55 @@ namespace ProyectoFinal.Consultas
         {
             InitializeComponent();
         }
-        public List<PrestamoClientes> lista = new List<PrestamoClientes>();
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        Clientes cliente = new Clientes();       
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(FiltrotextBox.Text))
-            {
-
-                //lista = BLL.PrestamoClienteBLL.GetLis(Convert.ToInt32(FiltrotextBox.Text));
-            }
-            else
-            {
-                //lista = BLL.PrestamoClienteBLL.GetLista();
-            }
-
-            ConsultaClientedataGridView.DataSource = lista;
+            if (validar() == true)
+                BuscarSeleccion();
         }
-        private void FiltrotextBox_TextChanged(object sender, EventArgs e)
+        private void Cargar()
         {
+            FiltrocomboBox.Items.Insert(0, "ID");
+            FiltrocomboBox.Items.Insert(1, "Nombre");
+            FiltrocomboBox.DataSource = FiltrocomboBox.Items;
+            FiltrocomboBox.DisplayMember = "ID";
+            ClientedataGridView.DataSource = ClientesBLL.GetLista();
 
+        }
+        private void BuscarSeleccion()
+        {
+            if (FiltrocomboBox.SelectedIndex == 0)
+                ClientedataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text));
+            if (FiltrocomboBox.SelectedIndex == 1)
+                ClientedataGridView.DataSource = PrestamosBLL.GetListaNombre(FiltrotextBox.Text);
+        }
+        private bool validar()
+        {
+            if (string.IsNullOrEmpty(FiltrotextBox.Text))
+            {
+                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
+                return false;
+            }
+
+            if (FiltrocomboBox.SelectedIndex == 1 && PrestamosBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
+            }
+            if (FiltrocomboBox.SelectedIndex == 0 && PrestamosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
+            }
+
+            BuscarerrorProvider.Clear();
+            return true;
+        }
+        private void ConsultasCliente_Load(object sender, EventArgs e)
+        {
+            Cargar();
         }
     }
 }
