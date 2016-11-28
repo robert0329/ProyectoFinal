@@ -70,16 +70,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDatosDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BaseDatosDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDatosDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Consultas\ConsultaCobros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,28 +188,6 @@
     <EmbeddedResource Include="Registro\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BaseDatosDataSet.xsc">
-      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BaseDatosDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaseDatosDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BaseDatosDataSet.xss">
-      <DependentUpon>BaseDatosDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BaseDatosDataSet1.xsc">
-      <DependentUpon>BaseDatosDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="BaseDatosDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaseDatosDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BaseDatosDataSet1.xss">
-      <DependentUpon>BaseDatosDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -263,12 +231,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\BaseDatos.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Database\DataBase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database\BaseDatos_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>BaseDatos.mdf</DependentUpon>
+    <Content Include="Database\DataBase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

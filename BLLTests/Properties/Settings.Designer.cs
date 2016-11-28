@@ -27,8 +27,8 @@ namespace BLLTests.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Robert\\Desktop\\Proye" +
-            "ctoFinal\\ProyectoFinal\\Database\\BaseDatos.mdf;Integrated Security=True;Connect T" +
-            "imeout=30")]
+            "ctoFinal\\ProyectoFinal\\Database\\DataBase.mdf;Integrated Security=True;Connect Ti" +
+            "meout=30")]
         public string ConStr {
             get {
                 return ((string)(this["ConStr"]));

@@ -10,7 +10,7 @@ namespace Entidades
     public class Prestamos
     {
         [Key]
-        public int PrestamoID { get; set; }
+        public int PrestamoId { get; set; }
         public int ClienteId { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
@@ -28,7 +28,7 @@ namespace Entidades
         public Prestamos(int PrestamoId, int ClienteId, string Nombre, string Apellidos, int Prestamo, int Interes, int Meses,
             string FormaPago, DateTime Fecha, string Garante, int MontoFinal, Double InteresFinal, int NumeroCuotas, Double ValorCuotas)
         {
-            this.PrestamoID = PrestamoID;
+            this.PrestamoId = this.PrestamoId;
             this.ClienteId = ClienteId;
             this.Nombre = Nombre;
             this.Apellidos = Apellidos;
@@ -45,7 +45,7 @@ namespace Entidades
         }
         public Prestamos()
         {
-            this.LClientes = new List<Clientes>();
+
         }
     }
 }

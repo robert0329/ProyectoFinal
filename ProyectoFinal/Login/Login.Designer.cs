@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.BCancelar = new System.Windows.Forms.Button();
             this.BEntrar = new System.Windows.Forms.Button();
             this.ContraseñaTextBox = new System.Windows.Forms.TextBox();
@@ -42,21 +43,27 @@
             // 
             // BCancelar
             // 
+            this.BCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BCancelar.Image")));
+            this.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BCancelar.Location = new System.Drawing.Point(217, 154);
             this.BCancelar.Name = "BCancelar";
             this.BCancelar.Size = new System.Drawing.Size(113, 46);
             this.BCancelar.TabIndex = 19;
             this.BCancelar.Text = "Cancelar";
+            this.BCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BCancelar.UseVisualStyleBackColor = true;
             this.BCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // BEntrar
             // 
+            this.BEntrar.Image = ((System.Drawing.Image)(resources.GetObject("BEntrar.Image")));
+            this.BEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BEntrar.Location = new System.Drawing.Point(14, 154);
             this.BEntrar.Name = "BEntrar";
             this.BEntrar.Size = new System.Drawing.Size(113, 46);
             this.BEntrar.TabIndex = 18;
             this.BEntrar.Text = "Iniciar Secion";
+            this.BEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEntrar.UseVisualStyleBackColor = true;
             this.BEntrar.Click += new System.EventHandler(this.BEntrar_Click);
             // 

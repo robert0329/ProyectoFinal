@@ -29,33 +29,6 @@ namespace BLL
             }
             return retorno;
         }
-
-        //public static void Insertar(Prestamos Prestamo)
-        //{
-        //    using (var Conn = new Conexion())
-        //    {
-        //        var con = Conn.Prestamos.Add(Prestamo);
-        //        foreach(var pre in Prestamo.LClientes)
-        //        {
-        //            Conn.Entry(pre).State = EntityState.Unchanged;
-        //        }
-        //        Conn.SaveChanges();
-        //    }
-        //}
-        //public static Prestamos Buscar(int id)
-        //{
-        //    var prestamo = new Prestamos();
-
-        //    using (var context = new Conexion())
-        //    {
-        //        prestamo = context.Prestamos.Find(id);
-        //        if(prestamo != null)
-        //        {
-        //            prestamo.LClientes.Count();
-        //        } 
-        //    }
-        //    return prestamo;
-        //}
         public static bool Eliminar(Prestamos id)
         {
             try
@@ -108,7 +81,7 @@ namespace BLL
 
             var db = new Conexion();
 
-            list = db.Prestamos.Where(p => p.PrestamoID == PrestamosId).ToList();
+            list = db.Prestamos.Where(p => p.PrestamoId == PrestamosId).ToList();
 
             return list;
 

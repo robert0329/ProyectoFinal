@@ -52,6 +52,7 @@
     <Compile Include="Cobros.cs" />
     <Compile Include="Garantes.cs" />
     <Compile Include="Clientes.cs" />
+    <Compile Include="PrestamoClientes.cs" />
     <Compile Include="Prestamos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />

@@ -15,33 +15,44 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Clientes Cliente = new Clientes();
-
-            Assert.IsTrue(ClientesBLL.Insertar(Cliente));
+            
+            Assert.IsTrue(ClientesBLL.Insertar(new Clientes(1,"asdsa","sasfsd","wfsfs","sffsdf","sdfsdfs","sfsf")));
         }
-
-        //[TestMethod()]
-        //public void EliminarTest()
-        //{
-        //    Assert.IsTrue(ClientesBLL.Eliminar(3));
-        //}
 
         [TestMethod()]
-        //public void BuscarTest()
-        //{
-        //    Assert.IsTrue(ClientesBLL.Buscar(1));
-        //}
-
-        ////[TestMethod()]
-        public void GetListaTest()
+        public void EliminarTest()
         {
-            Assert.IsTrue(ClientesBLL.GetLista().Count != 0);
+            Assert.Fail();
         }
 
-        //[TestMethod()]
-        //public void GetListaTest1()
-        //{
-        //    Assert.IsTrue(ClientesBLL.GetLista(1).Count == 0);
-        //}
+        [TestMethod()]
+        public void BuscarTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void BuscarTest1()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void GetListaTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void GetListaIdTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void GetListaNombreTest()
+        {
+            Assert.Fail();
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace ProyectoFinal.Prestamos
         {
             var cc = BLL.PrestamosBLL.Buscar(NombrecomboBox.Text);
             ClienteIdtextBox.Text = Convert.ToString(cc.ClienteId);
-            PrestamoIdtextBox.Text = Convert.ToString(cc.PrestamoID);
+            PrestamoIdtextBox.Text = Convert.ToString(cc.PrestamoId);
             CuotastextBox.Text = Convert.ToString(cc.NumeroCuotas);
             FechadateTimePicker.Value = Convert.ToDateTime(cc.Fecha);
             ValortextBox.Text = Convert.ToString(cc.valorCuotas);

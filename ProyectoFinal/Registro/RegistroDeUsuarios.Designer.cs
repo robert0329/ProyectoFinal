@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroDeUsuarios));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.RegistrarB = new System.Windows.Forms.Button();
@@ -70,11 +71,14 @@
             // 
             // RegistrarB
             // 
+            this.RegistrarB.Image = ((System.Drawing.Image)(resources.GetObject("RegistrarB.Image")));
+            this.RegistrarB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RegistrarB.Location = new System.Drawing.Point(12, 175);
             this.RegistrarB.Name = "RegistrarB";
             this.RegistrarB.Size = new System.Drawing.Size(102, 47);
             this.RegistrarB.TabIndex = 38;
             this.RegistrarB.Text = "Registrar";
+            this.RegistrarB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RegistrarB.UseVisualStyleBackColor = true;
             this.RegistrarB.Click += new System.EventHandler(this.RegistrarB_Click);
             // 
@@ -89,11 +93,14 @@
             // 
             // CancelarB
             // 
+            this.CancelarB.Image = ((System.Drawing.Image)(resources.GetObject("CancelarB.Image")));
+            this.CancelarB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelarB.Location = new System.Drawing.Point(223, 175);
             this.CancelarB.Name = "CancelarB";
             this.CancelarB.Size = new System.Drawing.Size(102, 47);
             this.CancelarB.TabIndex = 37;
             this.CancelarB.Text = "Cancelar";
+            this.CancelarB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelarB.UseVisualStyleBackColor = true;
             this.CancelarB.Click += new System.EventHandler(this.CancelarB_Click);
             // 
