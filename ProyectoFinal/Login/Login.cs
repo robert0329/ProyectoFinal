@@ -29,7 +29,7 @@ namespace ProyectoFinal.Login
             Validar();
             if (ValidarSesion() == DialogResult.OK)
             {
-                this.Visible = false;
+                //this.Close();
                 FormularioPrincipal f = new FormularioPrincipal();
                 f.Show();
             }
@@ -72,10 +72,11 @@ namespace ProyectoFinal.Login
         {
             this.Close();
         }
-        private void RegistrarlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
-            RegistroUsuarios.RegistroDeUsuarios r = new RegistroDeUsuarios();
-            r.Show();
+            Usuarios user = new Usuarios();
+
+            BLL.UsuariosBLL.Guardar(new Usuarios("Admin ", "0329"));
         }
     }
 }

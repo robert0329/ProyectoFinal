@@ -13,6 +13,7 @@ using BLL;
 using ProyectoFinal.RegistroCliente;
 using ProyectoFinal.RegistroGarantes;
 using ProyectoFinal.Consultas;
+using ProyectoFinal.RegistroUsuarios;
 
 namespace ProyectoFinal
 {
@@ -63,6 +64,12 @@ namespace ProyectoFinal
         {
             ConsultaCobros r = new ConsultaCobros();
             r.Show();
+        }
+
+        private void nuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProyectoFinal.RegistroUsuarios.RegistroDeUsuarios re = new ProyectoFinal.RegistroUsuarios.RegistroDeUsuarios();
+            re.Show();
         }
     }
 }

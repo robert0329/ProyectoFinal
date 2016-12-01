@@ -12,5 +12,14 @@ namespace Entidades
         [Key]
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
+        public Usuarios(string Usuario , string contraseña)
+        {
+            this.Usuario = Usuario;
+            this.Contraseña = contraseña;
+        }
+        public Usuarios()
+        {
+
+        }
     }
 }

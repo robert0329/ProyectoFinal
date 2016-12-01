@@ -212,12 +212,13 @@ namespace ProyectoFinal.Prestamos
             if (CodigoClientetextBox.Text == string.Empty)
             {
                 PrestamodataGridView.DataSource = null;
-                PrestamodataGridView.DataSource = PrestamosBLL.GetLista();
-                
+                //PrestamodataGridView.DataSource = PrestamosBLL.GetLista();
+                PrestamodataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text));
             }
             else
             {
-                PrestamodataGridView.DataSource = null; PrestamodataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text)); }  
+                PrestamodataGridView.DataSource = null;
+                PrestamodataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text)); }  
         }
     }
 }

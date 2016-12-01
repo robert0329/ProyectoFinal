@@ -27,11 +27,11 @@ namespace Entidades
             this.Telefono = Telefono;
             this.Cedula = Cedula;
             this.Sexo = Sexo;
-            this.ListPrestamos = new HashSet<Prestamos>();
+            //this.ListPrestamos = new HashSet<Prestamos>();
         }
         public Clientes()
         {
-            this.ListPrestamos = new HashSet<Prestamos>();
+            //this.ListPrestamos = new HashSet<Prestamos>();
         }
     }
 }

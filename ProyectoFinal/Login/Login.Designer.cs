@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.RegistrarlinkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,25 +106,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // RegistrarlinkLabel
-            // 
-            this.RegistrarlinkLabel.AutoSize = true;
-            this.RegistrarlinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistrarlinkLabel.Location = new System.Drawing.Point(118, 226);
-            this.RegistrarlinkLabel.Name = "RegistrarlinkLabel";
-            this.RegistrarlinkLabel.Size = new System.Drawing.Size(107, 20);
-            this.RegistrarlinkLabel.TabIndex = 21;
-            this.RegistrarlinkLabel.TabStop = true;
-            this.RegistrarlinkLabel.Text = "Crear Usuario";
-            this.RegistrarlinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RegistrarlinkLabel_LinkClicked);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(346, 255);
-            this.Controls.Add(this.RegistrarlinkLabel);
             this.Controls.Add(this.BCancelar);
             this.Controls.Add(this.BEntrar);
             this.Controls.Add(this.ContraseñaTextBox);
@@ -135,6 +121,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,6 +136,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.LinkLabel RegistrarlinkLabel;
     }
 }

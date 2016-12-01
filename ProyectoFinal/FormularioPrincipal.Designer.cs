@@ -41,6 +41,7 @@
             this.consultaGaranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCobrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             // 
             this.prestariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPrestarioToolStripMenuItem,
-            this.nuevoGaranteToolStripMenuItem});
+            this.nuevoGaranteToolStripMenuItem,
+            this.nuevoUsuarioToolStripMenuItem});
             this.prestariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("prestariosToolStripMenuItem.Image")));
             this.prestariosToolStripMenuItem.Name = "prestariosToolStripMenuItem";
             this.prestariosToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
@@ -64,7 +66,7 @@
             // nuevoGaranteToolStripMenuItem
             // 
             this.nuevoGaranteToolStripMenuItem.Name = "nuevoGaranteToolStripMenuItem";
-            this.nuevoGaranteToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.nuevoGaranteToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.nuevoGaranteToolStripMenuItem.Text = "Nuevo Garante";
             this.nuevoGaranteToolStripMenuItem.Click += new System.EventHandler(this.nuevoGaranteToolStripMenuItem_Click);
             // 
@@ -88,8 +90,8 @@
             // nuevoDesembolsoToolStripMenuItem
             // 
             this.nuevoDesembolsoToolStripMenuItem.Name = "nuevoDesembolsoToolStripMenuItem";
-            this.nuevoDesembolsoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.nuevoDesembolsoToolStripMenuItem.Text = "Nuevo Desembolso";
+            this.nuevoDesembolsoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.nuevoDesembolsoToolStripMenuItem.Text = "Nuevo Cobro";
             this.nuevoDesembolsoToolStripMenuItem.Click += new System.EventHandler(this.nuevoDesembolsoToolStripMenuItem_Click);
             // 
             // menuStrip1
@@ -120,7 +122,7 @@
             // 
             this.consultaPrestarioToolStripMenuItem.Name = "consultaPrestarioToolStripMenuItem";
             this.consultaPrestarioToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.consultaPrestarioToolStripMenuItem.Text = "Consulta Prestario";
+            this.consultaPrestarioToolStripMenuItem.Text = "Consulta Clientes";
             this.consultaPrestarioToolStripMenuItem.Click += new System.EventHandler(this.consultaPrestarioToolStripMenuItem_Click_1);
             // 
             // consultaGaranteToolStripMenuItem
@@ -143,6 +145,13 @@
             this.consultarCobrosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.consultarCobrosToolStripMenuItem.Text = "Consultar cobros";
             this.consultarCobrosToolStripMenuItem.Click += new System.EventHandler(this.consultarCobrosToolStripMenuItem_Click);
+            // 
+            // nuevoUsuarioToolStripMenuItem
+            // 
+            this.nuevoUsuarioToolStripMenuItem.Name = "nuevoUsuarioToolStripMenuItem";
+            this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.nuevoUsuarioToolStripMenuItem.Text = "Nuevo Usuario";
+            this.nuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem_Click);
             // 
             // FormularioPrincipal
             // 
@@ -175,6 +184,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaGaranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaPrestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarCobrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
     }
 }
 

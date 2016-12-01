@@ -17,7 +17,8 @@ namespace BLL
             {
                 try
                 {
-                    if (Buscar(nuevo.ClienteId) == null)
+                    var c = Buscar(nuevo.ClienteId);
+                    if (c == null)
                         conexion.clientes.Add(nuevo);
                     else
                         conexion.Entry(nuevo).State = EntityState.Modified;

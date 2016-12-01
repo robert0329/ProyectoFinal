@@ -26,7 +26,7 @@ namespace ProyectoFinal.RegistroCliente
         {
             Clientes cc = new Clientes();
             cc = CrearCliente();
-
+            cc.ClienteId = Utilidades.ToInt(clienteIdMaskedTextBox.Text);
             if (!ValidarTextbox())
             {
                 MessageBox.Show("Todos los campos deben estar llenos");
@@ -34,6 +34,7 @@ namespace ProyectoFinal.RegistroCliente
             else
                 if (BLL.ClientesBLL.Insertar(cc))
             {
+                Nuevobutton.PerformClick();
                 MessageBox.Show("Proceso Realizado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -53,7 +54,7 @@ namespace ProyectoFinal.RegistroCliente
         }
         private void Nuevobutton_Click_1(object sender, EventArgs e)
         {
-            nombreTextBox.Text = direccionTextBox.Text = telefonoMaskedTextBox.Text = cedulaMaskedTextBox.Text = sexoComboBox.Text = "";
+            nombreTextBox.Text  = apellidosTextBox.Text = direccionTextBox.Text = telefonoMaskedTextBox.Text = cedulaMaskedTextBox.Text = sexoComboBox.Text = "";
         }
         private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
@@ -66,6 +67,7 @@ namespace ProyectoFinal.RegistroCliente
             }
             if (!string.IsNullOrEmpty(clienteIdMaskedTextBox.Text))
             {
+                ClientedataGridView.DataSource = PrestamosBLL.GetListaIdD(Utilidades.StringToInt(clienteIdMaskedTextBox.Text));
                 var Cliente = BLL.ClientesBLL.Buscar(Utilidades.ToInt(clienteIdMaskedTextBox.Text));
                 if (Cliente != null)
                 {
@@ -95,6 +97,7 @@ namespace ProyectoFinal.RegistroCliente
                 {
                     MessageBox.Show("No se ha eliminado", "<- Proceso Fallido ->", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                Nuevobutton.PerformClick();
             }
         }
         private bool ValidarExiste(string aux)

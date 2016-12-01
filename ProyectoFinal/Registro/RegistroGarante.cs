@@ -34,7 +34,7 @@ namespace ProyectoFinal.RegistroGarantes
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Garantes gar = new Garantes();
-            
+            gar.GaranteId = Utilidades.ToInt(garanteIdTextBox.Text);
             gar.Nombres = nombresTextBox.Text;
             gar.Direccion = direccionTextBox.Text;
             gar.Telefono = telefonoMaskedTextBox.Text;
@@ -44,9 +44,9 @@ namespace ProyectoFinal.RegistroGarantes
             if (ValidarTextbox())
             {
                 GaranteBLL.Insertar(gar);
-                MessageBox.Show("Se Registrado Un Garante", "<- Proceso Exitosa ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
+                MessageBox.Show("Proceso realizado", "<- Proceso Exitosa ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Nuevobutton.PerformClick();
+            }  
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
@@ -83,6 +83,7 @@ namespace ProyectoFinal.RegistroGarantes
             var cc = BLL.GaranteBLL.Buscar(Utilidades.ToInt(garanteIdTextBox.Text));
             if (cc != null)
             {
+                Nuevobutton.PerformClick();
                 if (BLL.GaranteBLL.Eliminar(cc))
                 {
                     MessageBox.Show("Garante Eliminado", "<- Proceso Exitoso ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -141,8 +142,9 @@ namespace ProyectoFinal.RegistroGarantes
         }
         public void Validar()
         {
-            var u1 = new Utilidades(nombresTextBox, "L");
             var u = new Utilidades(garanteIdTextBox, "N");
+            var u1 = new Utilidades(nombresTextBox, "L");
+            var u2 = new Utilidades(garanteIdTextBox, "N");
             var u3 = new Utilidades(direccionTextBox, "LN");
 
         }

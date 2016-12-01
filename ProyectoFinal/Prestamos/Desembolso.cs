@@ -52,7 +52,7 @@ namespace ProyectoFinal.Prestamos
             CuotastextBox.Text = Convert.ToString(cc.NumeroCuotas);
             FechadateTimePicker.Value = Convert.ToDateTime(cc.Fecha);
             ValortextBox.Text = Convert.ToString(cc.valorCuotas);
-            MontotextBox.Text = Convert.ToString(cc.Prestamo);
+            MontotextBox.Text = Convert.ToString(cc.MontoFinal);
         }
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
@@ -65,12 +65,12 @@ namespace ProyectoFinal.Prestamos
             {
                 if (AbonomaskedTextBox.Text == String.Empty)
                 {
-                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas);
+                    r = cc.MontoFinal - Convert.ToInt32(cc.valorCuotas);
                     c = cc.NumeroCuotas - 1;             
                 }
                 else
                 {
-                    r = cc.Prestamo - Convert.ToInt32(cc.valorCuotas + p);
+                    r = cc.MontoFinal - Convert.ToInt32(cc.valorCuotas + p);
                     c = cc.NumeroCuotas - 1;
                 }
                 BLL.CobrosBLL.Modificar(r, NombrecomboBox.Text , c);

@@ -49,6 +49,7 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guargarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.ClientedataGridView = new System.Windows.Forms.DataGridView();
             clienteIdLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             cedulaLabel = new System.Windows.Forms.Label();
             sexoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientedataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteIdLabel
@@ -135,21 +137,21 @@
             // 
             this.nombreTextBox.Location = new System.Drawing.Point(71, 50);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(254, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(360, 20);
             this.nombreTextBox.TabIndex = 4;
             // 
             // apellidosTextBox
             // 
             this.apellidosTextBox.Location = new System.Drawing.Point(71, 76);
             this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(254, 20);
+            this.apellidosTextBox.Size = new System.Drawing.Size(360, 20);
             this.apellidosTextBox.TabIndex = 6;
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(71, 102);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(254, 20);
+            this.direccionTextBox.Size = new System.Drawing.Size(360, 20);
             this.direccionTextBox.TabIndex = 8;
             // 
             // telefonoMaskedTextBox
@@ -157,7 +159,7 @@
             this.telefonoMaskedTextBox.Location = new System.Drawing.Point(71, 128);
             this.telefonoMaskedTextBox.Mask = "(999)000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
-            this.telefonoMaskedTextBox.Size = new System.Drawing.Size(254, 20);
+            this.telefonoMaskedTextBox.Size = new System.Drawing.Size(360, 20);
             this.telefonoMaskedTextBox.TabIndex = 10;
             // 
             // cedulaMaskedTextBox
@@ -165,7 +167,7 @@
             this.cedulaMaskedTextBox.Location = new System.Drawing.Point(71, 154);
             this.cedulaMaskedTextBox.Mask = "000-0000000-0";
             this.cedulaMaskedTextBox.Name = "cedulaMaskedTextBox";
-            this.cedulaMaskedTextBox.Size = new System.Drawing.Size(254, 20);
+            this.cedulaMaskedTextBox.Size = new System.Drawing.Size(360, 20);
             this.cedulaMaskedTextBox.TabIndex = 12;
             // 
             // sexoComboBox
@@ -176,7 +178,7 @@
             "Mujer"});
             this.sexoComboBox.Location = new System.Drawing.Point(71, 180);
             this.sexoComboBox.Name = "sexoComboBox";
-            this.sexoComboBox.Size = new System.Drawing.Size(254, 21);
+            this.sexoComboBox.Size = new System.Drawing.Size(360, 21);
             this.sexoComboBox.TabIndex = 14;
             // 
             // ClienteerrorProvider
@@ -187,7 +189,7 @@
             // 
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(241, 208);
+            this.Nuevobutton.Location = new System.Drawing.Point(323, 306);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(88, 40);
             this.Nuevobutton.TabIndex = 24;
@@ -200,7 +202,7 @@
             // 
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(124, 207);
+            this.Eliminarbutton.Location = new System.Drawing.Point(176, 305);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(88, 40);
             this.Eliminarbutton.TabIndex = 23;
@@ -213,7 +215,7 @@
             // 
             this.Guargarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guargarbutton.Image")));
             this.Guargarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guargarbutton.Location = new System.Drawing.Point(10, 207);
+            this.Guargarbutton.Location = new System.Drawing.Point(24, 304);
             this.Guargarbutton.Name = "Guargarbutton";
             this.Guargarbutton.Size = new System.Drawing.Size(84, 41);
             this.Guargarbutton.TabIndex = 22;
@@ -226,21 +228,30 @@
             // 
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(237, 1);
+            this.Buscarbutton.Location = new System.Drawing.Point(114, 12);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(88, 43);
+            this.Buscarbutton.Size = new System.Drawing.Size(88, 32);
             this.Buscarbutton.TabIndex = 21;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click_1);
             // 
+            // ClientedataGridView
+            // 
+            this.ClientedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClientedataGridView.Location = new System.Drawing.Point(13, 209);
+            this.ClientedataGridView.Name = "ClientedataGridView";
+            this.ClientedataGridView.Size = new System.Drawing.Size(418, 90);
+            this.ClientedataGridView.TabIndex = 25;
+            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(344, 251);
+            this.ClientSize = new System.Drawing.Size(443, 358);
+            this.Controls.Add(this.ClientedataGridView);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guargarbutton);
@@ -265,6 +276,7 @@
             this.Text = "Registro De Cliente";
             this.Load += new System.EventHandler(this.RegistroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientedataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +296,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guargarbutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.DataGridView ClientedataGridView;
     }
 }

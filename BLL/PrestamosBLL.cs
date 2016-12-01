@@ -86,6 +86,17 @@ namespace BLL
             return list;
 
         }
+        public static List<Prestamos> GetListaIdD(int PrestamosId)
+        {
+            List<Prestamos> list = new List<Prestamos>();
+
+            var db = new Conexion();
+
+            list = db.Prestamos.Where(p => p.ClienteId == PrestamosId).ToList();
+
+            return list;
+
+        }
         public static List<Prestamos> GetListaNombre(string m)
         {
             List<Prestamos> lista = new List<Prestamos>();

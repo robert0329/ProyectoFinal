@@ -30,6 +30,7 @@ namespace ProyectoFinal.Consultas
             FiltrocomboBox.Items.Insert(1, "Nombre");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
+            ClientedataGridView.DataSource = BLL.ClientesBLL.GetLista();
 
         }
         private void BuscarSeleccion()
