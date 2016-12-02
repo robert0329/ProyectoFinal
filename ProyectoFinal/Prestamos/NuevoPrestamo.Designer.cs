@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CodigoClientetextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GaranteActualcomboBox = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.Calcularbutton = new System.Windows.Forms.Button();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FormadePagocomboBox = new System.Windows.Forms.ComboBox();
@@ -69,23 +71,21 @@
             this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.garantedataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.NuevocheckBox = new System.Windows.Forms.CheckBox();
             this.Deletedbutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
             this.GarantegroupBox = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.NombrestextBox = new System.Windows.Forms.TextBox();
-            this.DirecciontextBox = new System.Windows.Forms.TextBox();
-            this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.SexocomboBox = new System.Windows.Forms.ComboBox();
             this.Savebutton = new System.Windows.Forms.Button();
-            this.NuevocheckBox = new System.Windows.Forms.CheckBox();
-            this.GaranteActualcomboBox = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.SexocomboBox = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.DirecciontextBox = new System.Windows.Forms.TextBox();
+            this.NombrestextBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.PrestamosIdtextBox = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
@@ -183,6 +183,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Terminos del Prestamo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // GaranteActualcomboBox
+            // 
+            this.GaranteActualcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GaranteActualcomboBox.FormattingEnabled = true;
+            this.GaranteActualcomboBox.Location = new System.Drawing.Point(524, 68);
+            this.GaranteActualcomboBox.Name = "GaranteActualcomboBox";
+            this.GaranteActualcomboBox.Size = new System.Drawing.Size(183, 21);
+            this.GaranteActualcomboBox.TabIndex = 17;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(472, 67);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(45, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Garante";
             // 
             // Calcularbutton
             // 
@@ -446,9 +464,9 @@
             // 
             this.Buscar.Image = ((System.Drawing.Image)(resources.GetObject("Buscar.Image")));
             this.Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscar.Location = new System.Drawing.Point(757, 416);
+            this.Buscar.Location = new System.Drawing.Point(203, 6);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(94, 42);
+            this.Buscar.Size = new System.Drawing.Size(85, 29);
             this.Buscar.TabIndex = 7;
             this.Buscar.Text = "Buscar";
             this.Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -462,9 +480,9 @@
             // garantedataGridView
             // 
             this.garantedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.garantedataGridView.Location = new System.Drawing.Point(6, 55);
+            this.garantedataGridView.Location = new System.Drawing.Point(6, 48);
             this.garantedataGridView.Name = "garantedataGridView";
-            this.garantedataGridView.Size = new System.Drawing.Size(303, 103);
+            this.garantedataGridView.Size = new System.Drawing.Size(720, 132);
             this.garantedataGridView.TabIndex = 4;
             // 
             // groupBox4
@@ -472,19 +490,28 @@
             this.groupBox4.Controls.Add(this.NuevocheckBox);
             this.groupBox4.Controls.Add(this.GarantecomboBox);
             this.groupBox4.Controls.Add(this.Garante);
-            this.groupBox4.Controls.Add(this.Deletedbutton);
-            this.groupBox4.Controls.Add(this.Addbutton);
             this.groupBox4.Controls.Add(this.garantedataGridView);
             this.groupBox4.Location = new System.Drawing.Point(13, 320);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(425, 164);
+            this.groupBox4.Size = new System.Drawing.Size(732, 186);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Garantes";
             // 
+            // NuevocheckBox
+            // 
+            this.NuevocheckBox.AutoSize = true;
+            this.NuevocheckBox.Location = new System.Drawing.Point(272, 20);
+            this.NuevocheckBox.Name = "NuevocheckBox";
+            this.NuevocheckBox.Size = new System.Drawing.Size(58, 17);
+            this.NuevocheckBox.TabIndex = 15;
+            this.NuevocheckBox.Text = "Nuevo";
+            this.NuevocheckBox.UseVisualStyleBackColor = true;
+            this.NuevocheckBox.CheckedChanged += new System.EventHandler(this.NuevocheckBox_CheckedChanged);
+            // 
             // Deletedbutton
             // 
-            this.Deletedbutton.Location = new System.Drawing.Point(329, 77);
+            this.Deletedbutton.Location = new System.Drawing.Point(75, 136);
             this.Deletedbutton.Name = "Deletedbutton";
             this.Deletedbutton.Size = new System.Drawing.Size(75, 26);
             this.Deletedbutton.TabIndex = 6;
@@ -493,7 +520,7 @@
             // 
             // Addbutton
             // 
-            this.Addbutton.Location = new System.Drawing.Point(329, 48);
+            this.Addbutton.Location = new System.Drawing.Point(75, 107);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(75, 26);
             this.Addbutton.TabIndex = 5;
@@ -506,7 +533,9 @@
             this.GarantegroupBox.Controls.Add(this.Savebutton);
             this.GarantegroupBox.Controls.Add(this.SexocomboBox);
             this.GarantegroupBox.Controls.Add(this.label19);
+            this.GarantegroupBox.Controls.Add(this.Deletedbutton);
             this.GarantegroupBox.Controls.Add(this.CedulamaskedTextBox);
+            this.GarantegroupBox.Controls.Add(this.Addbutton);
             this.GarantegroupBox.Controls.Add(this.TelefonomaskedTextBox);
             this.GarantegroupBox.Controls.Add(this.DirecciontextBox);
             this.GarantegroupBox.Controls.Add(this.NombrestextBox);
@@ -522,87 +551,6 @@
             this.GarantegroupBox.Text = "Nuevo Garante";
             this.GarantegroupBox.Visible = false;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Nombres";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 52);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Direccion";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 78);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 13);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Telefono";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 107);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 13);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Cedula";
-            // 
-            // NombrestextBox
-            // 
-            this.NombrestextBox.Location = new System.Drawing.Point(61, 17);
-            this.NombrestextBox.Name = "NombrestextBox";
-            this.NombrestextBox.Size = new System.Drawing.Size(139, 20);
-            this.NombrestextBox.TabIndex = 4;
-            // 
-            // DirecciontextBox
-            // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(61, 45);
-            this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(139, 20);
-            this.DirecciontextBox.TabIndex = 5;
-            // 
-            // TelefonomaskedTextBox
-            // 
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(61, 71);
-            this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
-            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(139, 20);
-            this.TelefonomaskedTextBox.TabIndex = 6;
-            // 
-            // CedulamaskedTextBox
-            // 
-            this.CedulamaskedTextBox.Location = new System.Drawing.Point(60, 97);
-            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(140, 20);
-            this.CedulamaskedTextBox.TabIndex = 7;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 128);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(31, 13);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Sexo";
-            // 
-            // SexocomboBox
-            // 
-            this.SexocomboBox.FormattingEnabled = true;
-            this.SexocomboBox.Location = new System.Drawing.Point(61, 125);
-            this.SexocomboBox.Name = "SexocomboBox";
-            this.SexocomboBox.Size = new System.Drawing.Size(139, 21);
-            this.SexocomboBox.TabIndex = 9;
-            // 
             // Savebutton
             // 
             this.Savebutton.Location = new System.Drawing.Point(206, 118);
@@ -613,34 +561,86 @@
             this.Savebutton.UseVisualStyleBackColor = true;
             this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
             // 
-            // NuevocheckBox
+            // SexocomboBox
             // 
-            this.NuevocheckBox.AutoSize = true;
-            this.NuevocheckBox.Location = new System.Drawing.Point(272, 20);
-            this.NuevocheckBox.Name = "NuevocheckBox";
-            this.NuevocheckBox.Size = new System.Drawing.Size(58, 17);
-            this.NuevocheckBox.TabIndex = 15;
-            this.NuevocheckBox.Text = "Nuevo";
-            this.NuevocheckBox.UseVisualStyleBackColor = true;
-            this.NuevocheckBox.CheckedChanged += new System.EventHandler(this.NuevocheckBox_CheckedChanged);
+            this.SexocomboBox.FormattingEnabled = true;
+            this.SexocomboBox.Location = new System.Drawing.Point(61, 125);
+            this.SexocomboBox.Name = "SexocomboBox";
+            this.SexocomboBox.Size = new System.Drawing.Size(139, 21);
+            this.SexocomboBox.TabIndex = 9;
             // 
-            // GaranteActualcomboBox
+            // label19
             // 
-            this.GaranteActualcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GaranteActualcomboBox.FormattingEnabled = true;
-            this.GaranteActualcomboBox.Location = new System.Drawing.Point(524, 68);
-            this.GaranteActualcomboBox.Name = "GaranteActualcomboBox";
-            this.GaranteActualcomboBox.Size = new System.Drawing.Size(183, 21);
-            this.GaranteActualcomboBox.TabIndex = 17;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 128);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(31, 13);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Sexo";
             // 
-            // label20
+            // CedulamaskedTextBox
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(472, 67);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(45, 13);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "Garante";
+            this.CedulamaskedTextBox.Location = new System.Drawing.Point(60, 97);
+            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
+            this.CedulamaskedTextBox.Size = new System.Drawing.Size(140, 20);
+            this.CedulamaskedTextBox.TabIndex = 7;
+            // 
+            // TelefonomaskedTextBox
+            // 
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(61, 71);
+            this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
+            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(139, 20);
+            this.TelefonomaskedTextBox.TabIndex = 6;
+            // 
+            // DirecciontextBox
+            // 
+            this.DirecciontextBox.Location = new System.Drawing.Point(61, 45);
+            this.DirecciontextBox.Name = "DirecciontextBox";
+            this.DirecciontextBox.Size = new System.Drawing.Size(139, 20);
+            this.DirecciontextBox.TabIndex = 5;
+            // 
+            // NombrestextBox
+            // 
+            this.NombrestextBox.Location = new System.Drawing.Point(61, 17);
+            this.NombrestextBox.Name = "NombrestextBox";
+            this.NombrestextBox.Size = new System.Drawing.Size(139, 20);
+            this.NombrestextBox.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 107);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Cedula";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 78);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Telefono";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 52);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Direccion";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Nombres";
             // 
             // label21
             // 
@@ -663,7 +663,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(859, 486);
+            this.ClientSize = new System.Drawing.Size(859, 518);
             this.Controls.Add(this.PrestamosIdtextBox);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.NombrecomboBox);

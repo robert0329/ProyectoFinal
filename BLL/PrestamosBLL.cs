@@ -65,6 +65,23 @@ namespace BLL
             return Retorno;
 
         }
+        public static Prestamos Buscar(string Nombre)
+        {
+            var Pre = new Prestamos();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    Pre = conexion.Prestamos.Where(c => c.Nombre.Equals(Nombre)).FirstOrDefault();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return Pre;
+        }
         public static List<Prestamos> GetLista()
         {
             List<Prestamos> lista = new List<Prestamos>();

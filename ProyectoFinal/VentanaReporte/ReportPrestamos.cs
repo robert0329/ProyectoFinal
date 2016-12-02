@@ -16,5 +16,11 @@ namespace ProyectoFinal.VentanaReporte
         {
             InitializeComponent();
         }
+
+        private void ReportPrestamos_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
