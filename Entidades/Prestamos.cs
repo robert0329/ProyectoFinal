@@ -19,14 +19,14 @@ namespace Entidades
         public int Meses { get; set; }
         public string FormaPago { get; set; }
         public DateTime Fecha { get; set; }
-        public string Garante { get; set; }
+        public int GaranteId { get; set; }
         public int MontoFinal{ get; set; }
         public Double InteresFinal { get; set; }
         public int NumeroCuotas { get; set; }
         public Double valorCuotas { get; set; }
-        public virtual List<Clientes> LClientes { get; set; }
+
         public Prestamos(int PrestamoId, int ClienteId, string Nombre, string Apellidos, int Prestamo, int Interes, int Meses,
-            string FormaPago, DateTime Fecha, string Garante, int MontoFinal, Double InteresFinal, int NumeroCuotas, Double ValorCuotas)
+            string FormaPago, DateTime Fecha, int GaranteId, int MontoFinal, Double InteresFinal, int NumeroCuotas, Double ValorCuotas)
         {
             this.PrestamoId = this.PrestamoId;
             this.ClienteId = ClienteId;
@@ -37,7 +37,7 @@ namespace Entidades
             this.Meses = Meses;
             this.FormaPago = FormaPago;
             this.Fecha = Fecha;
-            this.Garante = Garante;
+            this.GaranteId = GaranteId;
             this.MontoFinal = MontoFinal;
             this.InteresFinal = InteresFinal;
             this.NumeroCuotas = NumeroCuotas;
@@ -45,7 +45,6 @@ namespace Entidades
         }
         public Prestamos()
         {
-
         }
     }
 }

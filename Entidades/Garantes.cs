@@ -20,6 +20,20 @@ namespace Entidades
 
         public string Cedula { get; set; }
 
+        public int PrestamoId { get; set; }
+
         public string Sexo { get; set; }
+        public Garantes(int GaranteId , string Nombre , string Direccion , string Telefono , string Cedula , string Sexo)
+        {
+            this.GaranteId = GaranteId;
+            this.Nombres = Nombres;
+            this.Direccion = Direccion;
+            this.Telefono = Telefono;
+            this.Cedula = Cedula;
+            this.Sexo = Sexo;
+        }
+        public Garantes()
+        {
+        }
     }
 }

@@ -15,23 +15,26 @@ namespace ProyectoFinal.Prestamos
 {
     public partial class NuevoPrestamo : Form
     {
-        public List<Garantes> lista = new List<Garantes>();
-        public List<Clientes> lis = new List<Clientes>();
-        public List<Entidades.Prestamos> Listaprestamo = new List<Entidades.Prestamos>();
+        public List<Garantes> garantes = new List<Garantes>();
+        Entidades.Prestamos Pre = new Entidades.Prestamos();
         public NuevoPrestamo()
         {
             InitializeComponent();
         }
         private void ListarComboBox()
         {
-            Conexion conn = new Conexion();
-            var lista = conn.garante.ToList();
-            var lis = conn.clientes.ToList();
+            var lista = BLL.GaranteBLL.GetLista();
+            var lis = BLL.ClientesBLL.GetLista();
             GarantecomboBox.DataSource = lista;
             NombrecomboBox.DataSource = lis;
+
             GarantecomboBox.DisplayMember = "Nombres";
+            GarantecomboBox.ValueMember = "GaranteId";
             NombrecomboBox.DisplayMember = "Nombre";
 
+            GaranteActualcomboBox.DataSource = lista;
+            GaranteActualcomboBox.DisplayMember = "Nombres";
+            GaranteActualcomboBox.ValueMember = "GaranteId";
         }
         private void NuevoPrestamo_Load(object sender, EventArgs e)
         {
@@ -41,25 +44,22 @@ namespace ProyectoFinal.Prestamos
             FormadePagocomboBox.Items.Add("Quincenal");
             FormadePagocomboBox.Items.Add("Mensual");
         }
-        private Entidades.Prestamos LlenarClase()
+        private void LlenarClase(Entidades.Prestamos prestamos)
         {
-            Entidades.Prestamos Prestamos = new Entidades.Prestamos();
 
-            Prestamos.ClienteId = Utilidades.ToInt(CodigoClientetextBox.Text);
-            Prestamos.Nombre = NombrecomboBox.Text;
-            Prestamos.Apellidos = ApellidoTextBox.Text;
-            Prestamos.Prestamo = Utilidades.ToInt(PrestamotextBox.Text);
-            Prestamos.Interes = Utilidades.ToInt(InteresnumericUpDown.Text);
-            Prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
-            Prestamos.FormaPago = FormadePagocomboBox.Text;
-            Prestamos.Fecha = Convert.ToDateTime(FechadateTimePicker.Text);
-            Prestamos.Garante = GarantecomboBox.Text;
-            Prestamos.MontoFinal = Utilidades.ToInt(MontoFinaltextBox.Text);
-            Prestamos.InteresFinal = Convert.ToDouble(InteresFinaltextBox.Text);
-            Prestamos.NumeroCuotas = Utilidades.ToInt(NumeroCuotastextBox.Text);
-            Prestamos.valorCuotas = Convert.ToDouble(ValorPorCuotastextBox.Text);
+            prestamos.ClienteId = Utilidades.ToInt(CodigoClientetextBox.Text);
+            prestamos.Nombre = NombrecomboBox.Text;
+            prestamos.Apellidos = ApellidoTextBox.Text;
+            prestamos.Prestamo = Utilidades.ToInt(PrestamotextBox.Text);
+            prestamos.Interes = Utilidades.ToInt(InteresnumericUpDown.Text);
+            prestamos.Meses = Utilidades.ToInt(MesesnumericUpDown.Text);
+            prestamos.FormaPago = FormadePagocomboBox.Text;
+            prestamos.Fecha = Convert.ToDateTime(FechadateTimePicker.Text);
+            prestamos.MontoFinal = Utilidades.ToInt(MontoFinaltextBox.Text);
+            prestamos.InteresFinal = Convert.ToDouble(InteresFinaltextBox.Text);
+            prestamos.NumeroCuotas = Utilidades.ToInt(NumeroCuotastextBox.Text);
+            prestamos.valorCuotas = Convert.ToDouble(ValorPorCuotastextBox.Text);
 
-            return Prestamos;
         }
         private void Calcularbutton_Click(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace ProyectoFinal.Prestamos
                     var p = Condiciones.CondicionesMensual(Convert.ToInt32(MesesnumericUpDown.Text));
                     Mensual(p);
                 }
-            }      
+            }
         }
         public void Semanal(Double N)
         {
@@ -138,7 +138,7 @@ namespace ProyectoFinal.Prestamos
         }
         public void ActivarTexto()
         {
-            PrestamotextBox.Enabled = InteresnumericUpDown.Enabled = MesesnumericUpDown.Enabled = FormadePagocomboBox.Enabled = FechadateTimePicker.Enabled = GarantecomboBox.Enabled = Calcularbutton.Enabled= true;
+            PrestamotextBox.Enabled = InteresnumericUpDown.Enabled = MesesnumericUpDown.Enabled = FormadePagocomboBox.Enabled = FechadateTimePicker.Enabled = GarantecomboBox.Enabled = Calcularbutton.Enabled = true;
         }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -146,21 +146,30 @@ namespace ProyectoFinal.Prestamos
         }
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Entidades.Prestamos Prestamos = new Entidades.Prestamos();
-
-            Prestamos = LlenarClase();
+            LlenarClase(Pre);
 
             if (ValidarTextbox())
             {
-                PrestamosBLL.Guardar(Prestamos);
-                MessageBox.Show("Prestamo Realizado", "<- Proceso Exitoso ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Pre.PrestamoId = Utilidades.ToInt(PrestamosIdtextBox.Text);
+                if (PrestamosBLL.Guardar(Pre))
+                {
+
+                    if (BLL.GaranteBLL.Insertar(garantes))
+                        MessageBox.Show("Prestamo Realizado", "<- Proceso Exitoso ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 Nuevobutton.PerformClick();
             }
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            //PrestamodataGridView = null;
-            NombrecomboBox.Text = ApellidoTextBox.Text = CodigoClientetextBox.Text = PrestamotextBox.Text = Prestamos2textBox.Text = NumeroCuotastextBox.Text = ValorPorCuotastextBox.Text = InteresnumericUpDown.Text =MontoFinaltextBox.Text= InteresFinaltextBox.Text = MesesnumericUpDown.Text = FormadePagocomboBox.Text = FechadateTimePicker.Text = GarantecomboBox.Text = "";
+            NombrecomboBox.Text = ApellidoTextBox.Text = CodigoClientetextBox.Text = PrestamotextBox.Text = Prestamos2textBox.Text =
+                NumeroCuotastextBox.Text = ValorPorCuotastextBox.Text = InteresnumericUpDown.Text = MontoFinaltextBox.Text =
+                InteresFinaltextBox.Text = MesesnumericUpDown.Text = FormadePagocomboBox.Text = FechadateTimePicker.Text =
+                GarantecomboBox.Text = "";
+            Pre = new Entidades.Prestamos();
+            garantes = new List<Garantes>();
+            NuevocheckBox.Checked = false;
+            garantedataGridView.DataSource = null;
         }
         private void NombrecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -172,9 +181,27 @@ namespace ProyectoFinal.Prestamos
                 ApellidoTextBox.Text = cc.Apellidos;
             }
         }
-        private void Agregarbutton_Click(object sender, EventArgs e)
+        public void rellenar(Entidades.Prestamos presta)
         {
-            
+            if (presta != null)
+            {
+                NombrecomboBox.Text = presta.Nombre;
+                ApellidoTextBox.Text = presta.Apellidos;
+                CodigoClientetextBox.Text = presta.ClienteId.ToString();
+                PrestamotextBox.Text = presta.Prestamo.ToString();
+                InteresnumericUpDown.Text = presta.Interes.ToString();
+                MesesnumericUpDown.Text = presta.Meses.ToString();
+                FormadePagocomboBox.SelectedText = presta.FormaPago;
+                GaranteActualcomboBox.SelectedValue = presta.GaranteId;
+                FechadateTimePicker.Value = presta.Fecha;
+                MontoFinaltextBox.Text = presta.MontoFinal.ToString();
+                InteresFinaltextBox.Text = presta.InteresFinal.ToString();
+                Prestamos2textBox.Text = presta.Prestamo.ToString();
+                NumeroCuotastextBox.Text = presta.NumeroCuotas.ToString();
+                ValorPorCuotastextBox.Text = presta.valorCuotas.ToString();
+                garantedataGridView.DataSource = null;
+                garantedataGridView.DataSource = garantes;
+            }
         }
         private bool ValidarTextbox()
         {
@@ -204,21 +231,74 @@ namespace ProyectoFinal.Prestamos
                 ClienteerrorProvider.SetError(FormadePagocomboBox, "Favor ingresar la forma de pago");
                 return false;
             }
-            
+
             return true;
         }
         private void Buscar_Click(object sender, EventArgs e)
         {
-            if (CodigoClientetextBox.Text == string.Empty)
+            Nuevobutton.PerformClick();
+            var p = Convert.ToInt32(PrestamosIdtextBox.Text);
+            if (PrestamosIdtextBox.Text != string.Empty)
             {
-                PrestamodataGridView.DataSource = null;
-                //PrestamodataGridView.DataSource = PrestamosBLL.GetLista();
-                PrestamodataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text));
+                garantedataGridView.DataSource = null;
+                Pre = BLL.PrestamosBLL.Buscar(p);
+                if (Pre != null)
+                {
+                    garantes.AddRange(BLL.GaranteBLL.GetLista(p));
+                    rellenar(Pre);
+                }
+
+            }
+            //else
+            //{
+            //    garantedataGridView.DataSource = null;
+            //    garantedataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text));
+            //}  
+        }
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            if (true)
+            {
+                Garantes G = BLL.GaranteBLL.Buscar((int)GarantecomboBox.SelectedValue);
+                Pre.GaranteId = G.GaranteId;
+                garantes.Add(G);
+                garantedataGridView.DataSource = null;
+                garantedataGridView.DataSource = garantes;
             }
             else
             {
-                PrestamodataGridView.DataSource = null;
-                PrestamodataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text)); }  
+
+            }
+        }
+        private void Savebutton_Click(object sender, EventArgs e)
+        {
+            Garantes G = new Garantes();
+
+            G.Nombres = NombrestextBox.Text;
+            G.Direccion = DirecciontextBox.Text;
+            G.Telefono = TelefonomaskedTextBox.Text;
+            G.Cedula = CedulamaskedTextBox.Text;
+            G.Sexo = SexocomboBox.Text;
+
+            if (GaranteBLL.Insertar(G))
+            {
+                NombrestextBox.Text = DirecciontextBox.Text = TelefonomaskedTextBox.Text = CedulamaskedTextBox.Text = SexocomboBox.Text = "";
+                ListarComboBox();
+                GarantegroupBox.Visible = false;
+                NuevocheckBox.Checked = false;
+            }
+
+        }
+        private void NuevocheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (NuevocheckBox.Checked)
+            {
+                GarantegroupBox.Visible = true;
+            }
+            else
+            {
+                GarantegroupBox.Visible = false;
+            }
         }
     }
 }

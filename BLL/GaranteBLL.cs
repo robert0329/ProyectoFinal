@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Entidades;
 using DAL;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -27,6 +29,30 @@ namespace BLL
                 }
                 catch (Exception)
                 {
+                    throw;
+                }
+            }
+            return resultado;
+        }
+        public static bool Insertar(List<Garantes> lista)
+        {
+            bool resultado = false;
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    int id = BLL.PrestamosBLL.Identity();
+                    foreach (var garante in lista)
+                    {
+                        garante.PrestamoId = id;
+                    }
+                    conexion.garante.AddRange(lista);
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception e )
+                {
+                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }
@@ -103,14 +129,14 @@ namespace BLL
             return lista;
 
         }
-        public static List<Garantes> GetLista(int usuarioId)
+        public static List<Garantes> GetLista(int prestamoId)
         {
             List<Garantes> lista = new List<Garantes>();
             using (var conexion = new Conexion())
             {
                 try
                 {
-                    lista = conexion.garante.Where(p => p.GaranteId == usuarioId).ToList();
+                    lista.AddRange(conexion.garante.Where(g => g.PrestamoId == prestamoId));
                 }
                 catch (Exception)
                 {
@@ -153,6 +179,17 @@ namespace BLL
                     throw;
                 }
             }
+        }
+
+        public static int Identity()
+        {
+            int UltimoId = 0;
+            SqlConnection conn = new SqlConnection(@"C:\Users\Robert\Desktop\ProyectoFinal\ProyectoFinal\Database\DataBase.mdf");
+            SqlCommand comando = new SqlCommand("Select IDENT_CURRENT('Garantes')", conn);
+            conn.Open();
+            UltimoId = Convert.ToInt32(comando.ExecuteReader());
+            conn.Close();
+            return UltimoId;
         }
     }
 }

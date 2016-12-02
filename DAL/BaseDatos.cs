@@ -19,6 +19,5 @@ namespace DAL
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Prestamos> Prestamos { get; set; }
         public virtual DbSet<Cobros> cobros { get; set; }
-        
     }
 }

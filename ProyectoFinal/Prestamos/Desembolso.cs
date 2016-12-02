@@ -35,24 +35,24 @@ namespace ProyectoFinal.Prestamos
         }
         private void NombrecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var d = new Conexion();
-            var cc = BLL.PrestamosBLL.Buscar(NombrecomboBox.Text);
-            if (cc != null)
-            {
+            //var d = new Conexion();
+            //var cc = BLL.PrestamosBLL.Buscar(Utilidades.ToInt());
+            //if (cc != null)
+            //{
 
-                Retornar();
+            //    Retornar();
 
-            }
+            //}
         }
         public void Retornar()
         {
-            var cc = BLL.PrestamosBLL.Buscar(NombrecomboBox.Text);
-            ClienteIdtextBox.Text = Convert.ToString(cc.ClienteId);
-            PrestamoIdtextBox.Text = Convert.ToString(cc.PrestamoId);
-            CuotastextBox.Text = Convert.ToString(cc.NumeroCuotas);
-            FechadateTimePicker.Value = Convert.ToDateTime(cc.Fecha);
-            ValortextBox.Text = Convert.ToString(cc.valorCuotas);
-            MontotextBox.Text = Convert.ToString(cc.MontoFinal);
+        //    //var cc = B/*LL.PrestamosBLL.Buscar(NombrecomboBox.Text);*/
+        //    ClienteIdtextBox.Text = Convert.ToString(cc.ClienteId);
+        //    PrestamoIdtextBox.Text = Convert.ToString(cc.PrestamoId);
+        //    CuotastextBox.Text = Convert.ToString(cc.NumeroCuotas);
+        //    FechadateTimePicker.Value = Convert.ToDateTime(cc.Fecha);
+        //    ValortextBox.Text = Convert.ToString(cc.valorCuotas);
+        //    MontotextBox.Text = Convert.ToString(cc.MontoFinal);
         }
         private void Agregarbutton_Click(object sender, EventArgs e)
         {

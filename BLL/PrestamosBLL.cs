@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DAL;
 using Entidades;
 using System.Data.Entity;
+using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BLL
 {
@@ -22,9 +24,9 @@ namespace BLL
 
                 retorno = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                MessageBox.Show(e.ToString());
                 throw;
             }
             return retorno;
@@ -47,15 +49,13 @@ namespace BLL
                 throw;
             }
         }
-        public static bool Buscar(int id)
+        public static Prestamos Buscar(int id)
         {
-            bool Retorno = false;
+            Prestamos Retorno = null;
             try
             {
-                Prestamos p = new Prestamos();
                 Conexion d = new Conexion();
-                p = d.Prestamos.Find(id);
-                Retorno = true;
+                Retorno = d.Prestamos.Find(id);
             }
             catch (Exception)
             {
@@ -119,13 +119,16 @@ namespace BLL
             return lista;
 
         }
-        public static Prestamos Buscar(string Nombre)
+        public static int Identity()
         {
-            var Client = new Prestamos();
-            var d = new Conexion();
-
-            Client = d.Prestamos.Where(c => c.Nombre.Equals(Nombre)).FirstOrDefault();
-            return Client;
+            int UltimoId = 0;
+            string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robert\Desktop\ProyectoFinal\ProyectoFinal\Database\DataBase.mdf;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(connection);
+            SqlCommand comando = new SqlCommand("Select IDENT_CURRENT('Prestamos')", conn);
+            conn.Open();
+            UltimoId = Convert.ToInt32(comando.ExecuteScalar());
+            conn.Close();
+            return UltimoId;
         }
     }
 }
