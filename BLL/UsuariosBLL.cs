@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Entidades;
+using System.Data.Entity;
 
 namespace BLL
 {
@@ -12,21 +13,63 @@ namespace BLL
     {
         public static bool Guardar(Usuarios usuario)
         {
-            bool retorno = false;
-            try
+            bool resultado = false;
+            using (var conexion = new Conexion())
             {
-                Conexion db = new Conexion();
-                db.Usuarios.Add(usuario);
-                db.SaveChanges();
-
-                retorno = true;
+                try
+                {
+                    var c = Buscar(usuario.UsuarioId);
+                    if (c == null)
+                        conexion.Usuarios.Add(usuario);
+                    else
+                        conexion.Entry(usuario).State = EntityState.Modified;
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-            catch (Exception)
+            return resultado;
+        }
+        public static bool Eliminar(Usuarios existente)
+        {
+            bool resultado = false;
+            using (var conexion = new Conexion())
             {
+                try
+                {
+                    conexion.Entry(existente).State = EntityState.Deleted;
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
 
-                throw;
+                    throw;
+                }
             }
-            return retorno;
+
+            return resultado;
+        }
+        public static Usuarios Buscar(int Id)
+        {
+            var cc = new Usuarios();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    cc = conexion.Usuarios.Find(Id);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+            return cc;
         }
         public static List<Usuarios> GetListaNombreUsuario(string Usuario)
         {
