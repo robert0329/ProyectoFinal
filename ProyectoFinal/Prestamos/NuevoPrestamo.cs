@@ -161,7 +161,8 @@ namespace ProyectoFinal.Prestamos
             }
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
-        {
+        {           
+            Id();
             NombrecomboBox.Text = ApellidoTextBox.Text = CodigoClientetextBox.Text = PrestamotextBox.Text = Prestamos2textBox.Text =
                 NumeroCuotastextBox.Text = ValorPorCuotastextBox.Text = InteresnumericUpDown.Text = MontoFinaltextBox.Text =
                 InteresFinaltextBox.Text = MesesnumericUpDown.Text = FormadePagocomboBox.Text = FechadateTimePicker.Text =
@@ -169,7 +170,7 @@ namespace ProyectoFinal.Prestamos
             Pre = new Entidades.Prestamos();
             garantes = new List<Garantes>();
             NuevocheckBox.Checked = false;
-            garantedataGridView.DataSource = null;
+            garantedataGridView.DataSource = null;            
         }
         private void NombrecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -238,26 +239,27 @@ namespace ProyectoFinal.Prestamos
 
             return true;
         }
+        public void Id()
+        {
+            int id = BLL.PrestamosBLL.Identity();
+            if (id > 1 || BLL.PrestamosBLL.GetLista().Count > 0)
+                PrestamosIdtextBox.Text = (id + 1).ToString();
+            else
+                PrestamosIdtextBox.Text = id.ToString();
+        }
         private void Buscar_Click(object sender, EventArgs e)
         {
-            Nuevobutton.PerformClick();
             var p = Convert.ToInt32(PrestamosIdtextBox.Text);
             if (PrestamosIdtextBox.Text != string.Empty)
             {
-                garantedataGridView.DataSource = null;
+                Nuevobutton.PerformClick();
                 Pre = BLL.PrestamosBLL.Buscar(p);
                 if (Pre != null)
                 {
                     garantes.AddRange(BLL.GaranteBLL.GetLista(p));
                     rellenar(Pre);
-                }
-
+                }               
             }
-            //else
-            //{
-            //    garantedataGridView.DataSource = null;
-            //    garantedataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.ToInt(CodigoClientetextBox.Text));
-            //}  
         }
         private void Addbutton_Click(object sender, EventArgs e)
         {
@@ -308,7 +310,6 @@ namespace ProyectoFinal.Prestamos
         {
             PrestamosBLL.Eliminar(GarantecomboBox.Text);
         }
-
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
             var reporte = new VentanaReporte.ReportePrestamos();
