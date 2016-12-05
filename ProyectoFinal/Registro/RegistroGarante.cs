@@ -41,12 +41,18 @@ namespace ProyectoFinal.RegistroGarantes
             gar.Cedula = cedulaMaskedTextBox.Text;
             gar.Sexo = sexoComboBox.Text;
 
-            if (ValidarTextbox())
+            if (telefonoMaskedTextBox.MaskFull)
             {
-                GaranteBLL.Insertar(gar);
-                MessageBox.Show("Proceso realizado", "<- Proceso Exitosa ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Nuevobutton.PerformClick();
-            }  
+                if (cedulaMaskedTextBox.MaskFull)
+                {
+                    if (ValidarTextbox())
+                    {
+                        GaranteBLL.Insertar(gar);
+                        MessageBox.Show("Proceso realizado", "<- Proceso Exitosa ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Nuevobutton.PerformClick();
+                    }
+                }
+            }
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {

@@ -14,7 +14,7 @@ using ProyectoFinal.RegistroUsuarios;
 
 namespace ProyectoFinal.Login
 {
-    public partial class    Login : Form
+    public partial class Login : Form
     {
         public Login()
         {
@@ -76,7 +76,7 @@ namespace ProyectoFinal.Login
         {
             Usuarios user = new Usuarios();
 
-            BLL.UsuariosBLL.Guardar(new Usuarios("Admin ", "0329"));
+            UsuariosBLL.Guardar(new Usuarios(1 , "Admin ", "123"));
         }
     }
 }

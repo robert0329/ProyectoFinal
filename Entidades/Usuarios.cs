@@ -10,10 +10,12 @@ namespace Entidades
     public class Usuarios
     {
         [Key]
+        public int UsuarioId { get; set; }
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
-        public Usuarios(string Usuario , string contraseña)
+        public Usuarios(int UsuarioId ,string Usuario , string contraseña)
         {
+            this.UsuarioId = UsuarioId;
             this.Usuario = Usuario;
             this.Contraseña = contraseña;
         }

@@ -28,9 +28,10 @@ namespace ProyectoFinal.Consultas
         {
             FiltrocomboBox.Items.Insert(0, "ID");
             FiltrocomboBox.Items.Insert(1, "Nombre");
+            FiltrocomboBox.Items.Insert(2, "Todo");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
-            ClientedataGridView.DataSource = BLL.ClientesBLL.GetLista();
+            //ClientedataGridView.DataSource = BLL.ClientesBLL.GetLista();
 
         }
         private void BuscarSeleccion()
@@ -39,26 +40,31 @@ namespace ProyectoFinal.Consultas
                 ClientedataGridView.DataSource = ClientesBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text));
             if (FiltrocomboBox.SelectedIndex == 1)
                 ClientedataGridView.DataSource = ClientesBLL.GetListaNombre(FiltrotextBox.Text);
+            if (FiltrocomboBox.SelectedIndex == 2)
+                ClientedataGridView.DataSource = ClientesBLL.GetLista();
         }
         private bool validar()
         {
-            if (string.IsNullOrEmpty(FiltrotextBox.Text))
+            if (FiltrocomboBox.Text != "Todo")
             {
-                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
-                return false;
-            }
+                if (string.IsNullOrEmpty(FiltrotextBox.Text))
+                {
+                    BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
+                    return false;
+                }
 
-            if (FiltrocomboBox.SelectedIndex == 1 && ClientesBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
-            {
-                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
-                return false;
+                if (FiltrocomboBox.SelectedIndex == 1 && ClientesBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
+                {
+                    MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                    return false;
 
-            }
-            if (FiltrocomboBox.SelectedIndex == 0 && ClientesBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
-            {
-                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
-                return false;
+                }
+                if (FiltrocomboBox.SelectedIndex == 0 && ClientesBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
+                {
+                    MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                    return false;
 
+                }
             }
 
             BuscarerrorProvider.Clear();

@@ -35,59 +35,63 @@ namespace ProyectoFinal.Consultas
             FiltrocomboBox.Items.Insert(0, "ID");
             FiltrocomboBox.Items.Insert(1, "Nombre");
             FiltrocomboBox.Items.Insert(2, "Fecha de ingreso");
+            FiltrocomboBox.Items.Insert(3, "Todo");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
-            PrestamosdataGridView.DataSource = PrestamosBLL.GetLista();
+            //PrestamosdataGridView.DataSource = PrestamosBLL.GetLista();
 
         }
         private void BuscarSeleccion()
         {
             if (FiltrocomboBox.SelectedIndex == 0)
                 PrestamosdataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.StringToInt(FiltrotextBox.Text));
+
             if (FiltrocomboBox.SelectedIndex == 1)
                 PrestamosdataGridView.DataSource = PrestamosBLL.GetListaNombre(FiltrotextBox.Text);
+
             if (FiltrocomboBox.SelectedIndex == 2)
                 PrestamosdataGridView.DataSource = PrestamosBLL.GetListaFecha(DesdeDateTimePicke.Value, HastadateTimePicker.Value);
+
+            if (FiltrocomboBox.SelectedIndex == 3)
+                PrestamosdataGridView.DataSource = PrestamosBLL.GetLista();
         }
         private bool validar()
         {
-
-            if (FiltrocomboBox.SelectedIndex == 3)
+            if (FiltrocomboBox.Text != "Todo")
             {
-                if (DesdeDateTimePicke.Value == HastadateTimePicker.Value)
+                if (FiltrocomboBox.SelectedIndex == 3)
                 {
-                    MessageBox.Show("Favor colocar un intervalo entre las dos fechas");
+                    if (DesdeDateTimePicke.Value == HastadateTimePicker.Value)
+                    {
+                        MessageBox.Show("Favor colocar un intervalo entre las dos fechas");
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                if (string.IsNullOrEmpty(FiltrotextBox.Text))
+                {
+                    BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                     return false;
                 }
-                else
+
+                if (FiltrocomboBox.SelectedIndex == 1 && PrestamosBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
                 {
-                    return true;
+                    MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                    return false;
+
+                }
+                if (FiltrocomboBox.SelectedIndex == 0 && PrestamosBLL.GetListaId(Utilidades.StringToInt(FiltrotextBox.Text)).Count == 0)
+                {
+                    MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                    return false;
+
                 }
             }
-            if (string.IsNullOrEmpty(FiltrotextBox.Text))
-            {
-                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
-                return false;
-            }
-
-            if (FiltrocomboBox.SelectedIndex == 1 && PrestamosBLL.GetListaNombre(FiltrotextBox.Text).Count == 0)
-            {
-                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
-                return false;
-
-            }
-            if (FiltrocomboBox.SelectedIndex == 0 && PrestamosBLL.GetListaId(Utilidades.StringToInt(FiltrotextBox.Text)).Count == 0)
-            {
-                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
-                return false;
-
-            }
-
             BuscarerrorProvider.Clear();
-
-
             return true;
         }
-
     }
 }

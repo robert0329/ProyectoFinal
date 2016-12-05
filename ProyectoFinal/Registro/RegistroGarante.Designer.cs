@@ -151,6 +151,7 @@ namespace ProyectoFinal.RegistroGarantes
             // 
             // sexoComboBox
             // 
+            this.sexoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sexoComboBox.FormattingEnabled = true;
             this.sexoComboBox.Items.AddRange(new object[] {
             "Hombre",

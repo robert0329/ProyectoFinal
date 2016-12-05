@@ -95,23 +95,6 @@ namespace BLL
             }
             return gar;
         }
-        public static Garantes Buscar(string Nombre)
-        {
-            var gar = new Garantes();
-            using (var conexion = new Conexion())
-            {
-                try
-                {
-                    gar = conexion.garante.Where(c => c.Nombres.Equals(Nombre)).FirstOrDefault();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-            return gar;
-        }
         public static List<Garantes> GetLista()
         {
             var lista = new List<Garantes>();
@@ -147,40 +130,6 @@ namespace BLL
             return lista;
 
         }
-        public static List<Garantes> GetListaM(string aux)
-        {
-            List<Garantes> lista = new List<Garantes>();
-
-            var db = new Conexion();
-
-            lista = db.garante.Where(p => p.Nombres == aux).ToList();
-
-            return lista;
-
-        }
-        public static void Modificar(int id)
-        {
-            Garantes cliente = new Garantes();
-            using (var db = new Conexion())
-            {
-                try
-                {
-                    Garantes cc = db.garante.Find(id);
-                    cc.Nombres = cliente.Nombres;
-                    cc.Direccion = cliente.Direccion;
-                    cc.Telefono = cliente.Telefono;
-                    cc.Cedula = cliente.Cedula;
-                    cc.Sexo = cliente.Sexo;
-                    db.SaveChanges();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-        }
-
         public static int Identity()
         {
             int UltimoId = 0;
@@ -190,6 +139,28 @@ namespace BLL
             UltimoId = Convert.ToInt32(comando.ExecuteReader());
             conn.Close();
             return UltimoId;
+        }
+        public static List<Garantes> GetListaId(int PrestamosId)
+        {
+            List<Garantes> list = new List<Garantes>();
+
+            var db = new Conexion();
+
+            list = db.garante.Where(p => p.GaranteId == PrestamosId).ToList();
+
+            return list;
+
+        }
+        public static List<Garantes> GetListaNombre(string m)
+        {
+            List<Garantes> lista = new List<Garantes>();
+
+            var db = new Conexion();
+
+            lista = db.garante.Where(p => string.Equals(p.Nombres, m)).ToList();
+
+            return lista;
+
         }
     }
 }

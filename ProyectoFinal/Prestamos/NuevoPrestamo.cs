@@ -147,11 +147,11 @@ namespace ProyectoFinal.Prestamos
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             LlenarClase(Pre);
-
+            Pre.PrestamoId = Utilidades.ToInt(PrestamosIdtextBox.Text);
             if (ValidarTextbox())
             {
                 Pre.PrestamoId = Utilidades.ToInt(PrestamosIdtextBox.Text);
-                if (PrestamosBLL.Guardar(Pre))
+                if (PrestamosBLL.Insertar(Pre))
                 {
 
                     if (BLL.GaranteBLL.Insertar(garantes))
@@ -205,6 +205,10 @@ namespace ProyectoFinal.Prestamos
         }
         private bool ValidarTextbox()
         {
+            var u1 = new Utilidades(NombrestextBox, "L");
+            var u2 = new Utilidades(DirecciontextBox, "LN");
+            var u3 = new Utilidades(PrestamosIdtextBox, "N");
+            var u4 = new Utilidades(PrestamotextBox, "N");
             if (string.IsNullOrEmpty(NombrecomboBox.Text))
             {
                 ClienteerrorProvider.SetError(NombrecomboBox, "Favor ingresar el nombre");
@@ -299,6 +303,17 @@ namespace ProyectoFinal.Prestamos
             {
                 GarantegroupBox.Visible = false;
             }
+        }
+        private void Deletedbutton_Click(object sender, EventArgs e)
+        {
+            PrestamosBLL.Eliminar(GarantecomboBox.Text);
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            var reporte = new VentanaReporte.ReportePrestamos();
+            reporte.Id = Utilidades.ToInt(PrestamosIdtextBox.Text);
+            reporte.Show();
         }
     }
 }

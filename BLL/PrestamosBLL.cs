@@ -13,23 +13,27 @@ namespace BLL
 {
     public class PrestamosBLL
     {
-        public static bool Guardar(Prestamos Prestamo)
+        public static bool Insertar(Prestamos nuevo)
         {
-            bool retorno = false;
-            try
+            bool resultado = false;
+            using (var conexion = new Conexion())
             {
-                Conexion db = new Conexion();
-                db.Prestamos.Add(Prestamo);
-                db.SaveChanges();
-
-                retorno = true;
+                try
+                {
+                    var c = Buscar(nuevo.PrestamoId);
+                    if (c == null)
+                        conexion.Prestamos.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                throw;
-            }
-            return retorno;
+            return resultado;
         }
         public static bool Eliminar(Prestamos id)
         {
@@ -39,6 +43,24 @@ namespace BLL
                 Prestamos c = db.Prestamos.Find(id);
                 {
                     db.Prestamos.Remove(c);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return true;
+                throw;
+            }
+        }
+        public static bool Eliminar(string nombre)
+        {
+            try
+            {
+                Conexion db = new Conexion();
+                Prestamos Pre = db.Prestamos.Where(c => c.Nombre.Equals(nombre)).FirstOrDefault();
+                {
+                    db.Prestamos.Remove(Pre);
                     db.SaveChanges();
                     return true;
                 }
@@ -92,6 +114,23 @@ namespace BLL
 
             return lista;
         }
+        public static List<Prestamos> GetLista(int Id)
+        {
+            var lista = new List<Prestamos>();
+            using (var conexion = new Conexion())
+            {
+                try
+                {
+                    lista.AddRange(conexion.Prestamos.Where(c => c.PrestamoId == Id));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+        }
         public static List<Prestamos> GetListaId(int PrestamosId)
         {
             List<Prestamos> list = new List<Prestamos>();
@@ -99,17 +138,6 @@ namespace BLL
             var db = new Conexion();
 
             list = db.Prestamos.Where(p => p.PrestamoId == PrestamosId).ToList();
-
-            return list;
-
-        }
-        public static List<Prestamos> GetListaIdD(int PrestamosId)
-        {
-            List<Prestamos> list = new List<Prestamos>();
-
-            var db = new Conexion();
-
-            list = db.Prestamos.Where(p => p.ClienteId == PrestamosId).ToList();
 
             return list;
 

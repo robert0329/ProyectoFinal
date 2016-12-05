@@ -71,5 +71,11 @@ namespace ProyectoFinal
             ProyectoFinal.RegistroUsuarios.RegistroDeUsuarios re = new ProyectoFinal.RegistroUsuarios.RegistroDeUsuarios();
             re.Show();
         }
+
+        private void consultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProyectoFinal.Consultas.ConsultaUsuarios re = new ConsultaUsuarios();
+            re.Show();
+        }
     }
 }

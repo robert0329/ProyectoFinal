@@ -83,28 +83,6 @@ namespace BLL
             return lista;
 
         }
-        public static List<Cobros> GetLista(string usuarioId)
-        {
-            List<Cobros> lista = new List<Cobros>();
-
-            var db = new Conexion();
-
-            lista = db.cobros.Where(p => Convert.ToString( p.cobroId) == usuarioId).ToList();
-
-            return lista;
-
-        }
-        public static List<Prestamos> GetListaC()
-        {
-            List<Prestamos> lista = new List<Prestamos>();
-
-            var db = new Conexion();
-
-            lista = db.Prestamos.ToList();
-
-            return lista;
-
-        }
         public static List<Cobros> GetListaId(int PrestamosId)
         {
             List<Cobros> list = new List<Cobros>();

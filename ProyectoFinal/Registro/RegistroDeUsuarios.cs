@@ -29,30 +29,83 @@ namespace ProyectoFinal.RegistroUsuarios
         }
         private void RegistrarB_Click(object sender, EventArgs e)
         { 
-            if ((textContraseña.Text == "") || (textConfirmar.Text == "") || (textUsuario.Text == ""))
-            {
-                MessageBox.Show("No Puedes Dejar Campos Vacios");
-            }
-            else
-            if (textContraseña.Text == textConfirmar.Text)
+            if(ValidarTextbox())
             {
                 Usuarios usuario = new Usuarios();
                 usuario = LlenarClase();
 
+                usuario.UsuarioId = Utilidades.ToInt(UsuarioidmaskedTextBox.Text);
                 if (UsuariosBLL.Guardar(usuario))
                 {
-                     MessageBox.Show("Guardado con exito");
+                    MessageBox.Show("Guardado con exito");
+                    ValidarTextbox();
                 }
             }
-            if (textContraseña.Text != textConfirmar.Text)
+                
+        }
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            var cc = BLL.UsuariosBLL.Buscar(Utilidades.ToInt(UsuarioidmaskedTextBox.Text));
+            if (cc != null)
             {
-                MessageBox.Show("Contraseña Invalida");
+                if (BLL.UsuariosBLL.Eliminar(cc))
+                {
+                    MessageBox.Show("usuario Eliminado", "<- Proceso Exitoso ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha eliminado", "<- Proceso Fallido ->", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Nuevobutton.PerformClick();
             }
         }
-
-        private void CancelarB_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            UsuarioidmaskedTextBox.Text = textContraseña.Text = textConfirmar.Text = textUsuario.Text = "";
+        }
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            ValidarId();
+            if(ValidarId())
+            {
+                int d = Convert.ToInt32(UsuarioidmaskedTextBox.Text);
+                var cc = UsuariosBLL.Buscar(d);
+
+                if (cc != null)
+                {
+                    textUsuario.Text = cc.Usuario;
+                    textContraseña.Text = cc.Contraseña;
+                }
+            }
+            
+        }
+        private bool ValidarTextbox()
+        {
+            if (string.IsNullOrEmpty(textUsuario.Text))
+            {
+                UsuarioerrorProvider.SetError(textUsuario, "Favor ingresar el usuario");
+                return false;
+            }
+            if (string.IsNullOrEmpty(textContraseña.Text))
+            {
+                UsuarioerrorProvider.SetError(textContraseña, "Favor ingresar la contraseña");
+                return false;
+            }
+            if (string.IsNullOrEmpty(textConfirmar.Text))
+            {
+                UsuarioerrorProvider.SetError(textConfirmar, "Favor ingresar la contraseña");
+                return false;
+            }            
+            return true;
+        }
+        private bool ValidarId()
+        {
+            if (string.IsNullOrEmpty(UsuarioidmaskedTextBox.Text))
+            {
+                UsuarioerrorProvider.SetError(UsuarioidmaskedTextBox, "Favor ingresar el Id");
+                return false;
+            }
+            return true;
         }
     }
 }

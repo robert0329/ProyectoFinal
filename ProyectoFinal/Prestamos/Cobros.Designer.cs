@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         #region Windows Form Designer generated code
 
@@ -64,6 +64,7 @@
             // 
             // NombrecomboBox
             // 
+            this.NombrecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NombrecomboBox.FormattingEnabled = true;
             this.NombrecomboBox.Location = new System.Drawing.Point(57, 19);
             this.NombrecomboBox.Name = "NombrecomboBox";
@@ -77,10 +78,9 @@
             this.groupBox1.Controls.Add(this.FechadateTimePicker);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.Agregarbutton);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(646, 194);
+            this.groupBox1.Size = new System.Drawing.Size(646, 172);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cobros";
@@ -91,6 +91,7 @@
             this.groupBox2.Controls.Add(this.AbonomaskedTextBox);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.ValortextBox);
+            this.groupBox2.Controls.Add(this.Agregarbutton);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.MontotextBox);
             this.groupBox2.Controls.Add(this.label9);
@@ -103,7 +104,7 @@
             this.groupBox2.Controls.Add(this.CuotastextBox);
             this.groupBox2.Location = new System.Drawing.Point(6, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(627, 100);
+            this.groupBox2.Size = new System.Drawing.Size(627, 122);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Cliente";
@@ -237,7 +238,7 @@
             // 
             this.Agregarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Agregarbutton.Image")));
             this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregarbutton.Location = new System.Drawing.Point(558, 137);
+            this.Agregarbutton.Location = new System.Drawing.Point(535, 74);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(75, 43);
             this.Agregarbutton.TabIndex = 9;
@@ -246,15 +247,15 @@
             this.Agregarbutton.UseVisualStyleBackColor = true;
             this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
-            // Desembolso
+            // Cobros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(671, 204);
+            this.ClientSize = new System.Drawing.Size(671, 189);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "Desembolso";
+            this.Name = "Cobros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Desembolso";
             this.Load += new System.EventHandler(this.Desembolso_Load);

@@ -72,8 +72,6 @@
             this.garantedataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.NuevocheckBox = new System.Windows.Forms.CheckBox();
-            this.Deletedbutton = new System.Windows.Forms.Button();
-            this.Addbutton = new System.Windows.Forms.Button();
             this.GarantegroupBox = new System.Windows.Forms.GroupBox();
             this.Savebutton = new System.Windows.Forms.Button();
             this.SexocomboBox = new System.Windows.Forms.ComboBox();
@@ -86,8 +84,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.Deletedbutton = new System.Windows.Forms.Button();
+            this.Addbutton = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.PrestamosIdtextBox = new System.Windows.Forms.TextBox();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MesesnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InteresnumericUpDown)).BeginInit();
@@ -109,6 +110,7 @@
             // 
             // NombrecomboBox
             // 
+            this.NombrecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NombrecomboBox.FormattingEnabled = true;
             this.NombrecomboBox.Location = new System.Drawing.Point(590, 63);
             this.NombrecomboBox.Name = "NombrecomboBox";
@@ -226,6 +228,7 @@
             // 
             // FormadePagocomboBox
             // 
+            this.FormadePagocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FormadePagocomboBox.Enabled = false;
             this.FormadePagocomboBox.Location = new System.Drawing.Point(273, 68);
             this.FormadePagocomboBox.Name = "FormadePagocomboBox";
@@ -438,7 +441,7 @@
             // 
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(757, 320);
+            this.Guardarbutton.Location = new System.Drawing.Point(761, 320);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(90, 42);
             this.Guardarbutton.TabIndex = 5;
@@ -451,9 +454,9 @@
             // 
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(757, 368);
+            this.Nuevobutton.Location = new System.Drawing.Point(761, 368);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(94, 42);
+            this.Nuevobutton.Size = new System.Drawing.Size(90, 42);
             this.Nuevobutton.TabIndex = 6;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -482,7 +485,7 @@
             this.garantedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.garantedataGridView.Location = new System.Drawing.Point(6, 48);
             this.garantedataGridView.Name = "garantedataGridView";
-            this.garantedataGridView.Size = new System.Drawing.Size(720, 132);
+            this.garantedataGridView.Size = new System.Drawing.Size(536, 132);
             this.garantedataGridView.TabIndex = 4;
             // 
             // groupBox4
@@ -490,10 +493,13 @@
             this.groupBox4.Controls.Add(this.NuevocheckBox);
             this.groupBox4.Controls.Add(this.GarantecomboBox);
             this.groupBox4.Controls.Add(this.Garante);
+            this.groupBox4.Controls.Add(this.GarantegroupBox);
+            this.groupBox4.Controls.Add(this.Deletedbutton);
             this.groupBox4.Controls.Add(this.garantedataGridView);
-            this.groupBox4.Location = new System.Drawing.Point(13, 320);
+            this.groupBox4.Controls.Add(this.Addbutton);
+            this.groupBox4.Location = new System.Drawing.Point(13, 311);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(732, 186);
+            this.groupBox4.Size = new System.Drawing.Size(742, 207);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Garantes";
@@ -509,33 +515,12 @@
             this.NuevocheckBox.UseVisualStyleBackColor = true;
             this.NuevocheckBox.CheckedChanged += new System.EventHandler(this.NuevocheckBox_CheckedChanged);
             // 
-            // Deletedbutton
-            // 
-            this.Deletedbutton.Location = new System.Drawing.Point(75, 136);
-            this.Deletedbutton.Name = "Deletedbutton";
-            this.Deletedbutton.Size = new System.Drawing.Size(75, 26);
-            this.Deletedbutton.TabIndex = 6;
-            this.Deletedbutton.Text = "Eliminar";
-            this.Deletedbutton.UseVisualStyleBackColor = true;
-            // 
-            // Addbutton
-            // 
-            this.Addbutton.Location = new System.Drawing.Point(75, 107);
-            this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(75, 26);
-            this.Addbutton.TabIndex = 5;
-            this.Addbutton.Text = "Agregar";
-            this.Addbutton.UseVisualStyleBackColor = true;
-            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
-            // 
             // GarantegroupBox
             // 
             this.GarantegroupBox.Controls.Add(this.Savebutton);
             this.GarantegroupBox.Controls.Add(this.SexocomboBox);
             this.GarantegroupBox.Controls.Add(this.label19);
-            this.GarantegroupBox.Controls.Add(this.Deletedbutton);
             this.GarantegroupBox.Controls.Add(this.CedulamaskedTextBox);
-            this.GarantegroupBox.Controls.Add(this.Addbutton);
             this.GarantegroupBox.Controls.Add(this.TelefonomaskedTextBox);
             this.GarantegroupBox.Controls.Add(this.DirecciontextBox);
             this.GarantegroupBox.Controls.Add(this.NombrestextBox);
@@ -543,9 +528,9 @@
             this.GarantegroupBox.Controls.Add(this.label17);
             this.GarantegroupBox.Controls.Add(this.label16);
             this.GarantegroupBox.Controls.Add(this.label14);
-            this.GarantegroupBox.Location = new System.Drawing.Point(461, 323);
+            this.GarantegroupBox.Location = new System.Drawing.Point(551, 19);
             this.GarantegroupBox.Name = "GarantegroupBox";
-            this.GarantegroupBox.Size = new System.Drawing.Size(290, 161);
+            this.GarantegroupBox.Size = new System.Drawing.Size(187, 183);
             this.GarantegroupBox.TabIndex = 9;
             this.GarantegroupBox.TabStop = false;
             this.GarantegroupBox.Text = "Nuevo Garante";
@@ -553,7 +538,7 @@
             // 
             // Savebutton
             // 
-            this.Savebutton.Location = new System.Drawing.Point(206, 118);
+            this.Savebutton.Location = new System.Drawing.Point(105, 152);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(75, 23);
             this.Savebutton.TabIndex = 10;
@@ -563,10 +548,14 @@
             // 
             // SexocomboBox
             // 
+            this.SexocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SexocomboBox.FormattingEnabled = true;
+            this.SexocomboBox.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
             this.SexocomboBox.Location = new System.Drawing.Point(61, 125);
             this.SexocomboBox.Name = "SexocomboBox";
-            this.SexocomboBox.Size = new System.Drawing.Size(139, 21);
+            this.SexocomboBox.Size = new System.Drawing.Size(119, 21);
             this.SexocomboBox.TabIndex = 9;
             // 
             // label19
@@ -581,29 +570,31 @@
             // CedulamaskedTextBox
             // 
             this.CedulamaskedTextBox.Location = new System.Drawing.Point(60, 97);
+            this.CedulamaskedTextBox.Mask = "000-0000000-0";
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(140, 20);
+            this.CedulamaskedTextBox.Size = new System.Drawing.Size(120, 20);
             this.CedulamaskedTextBox.TabIndex = 7;
             // 
             // TelefonomaskedTextBox
             // 
             this.TelefonomaskedTextBox.Location = new System.Drawing.Point(61, 71);
+            this.TelefonomaskedTextBox.Mask = "(999)000-0000";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
-            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(139, 20);
+            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(119, 20);
             this.TelefonomaskedTextBox.TabIndex = 6;
             // 
             // DirecciontextBox
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(61, 45);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(139, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(119, 20);
             this.DirecciontextBox.TabIndex = 5;
             // 
             // NombrestextBox
             // 
             this.NombrestextBox.Location = new System.Drawing.Point(61, 17);
             this.NombrestextBox.Name = "NombrestextBox";
-            this.NombrestextBox.Size = new System.Drawing.Size(139, 20);
+            this.NombrestextBox.Size = new System.Drawing.Size(119, 20);
             this.NombrestextBox.TabIndex = 4;
             // 
             // label18
@@ -642,6 +633,26 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nombres";
             // 
+            // Deletedbutton
+            // 
+            this.Deletedbutton.Location = new System.Drawing.Point(467, 21);
+            this.Deletedbutton.Name = "Deletedbutton";
+            this.Deletedbutton.Size = new System.Drawing.Size(75, 26);
+            this.Deletedbutton.TabIndex = 6;
+            this.Deletedbutton.Text = "Eliminar";
+            this.Deletedbutton.UseVisualStyleBackColor = true;
+            this.Deletedbutton.Click += new System.EventHandler(this.Deletedbutton_Click);
+            // 
+            // Addbutton
+            // 
+            this.Addbutton.Location = new System.Drawing.Point(376, 20);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(75, 26);
+            this.Addbutton.TabIndex = 5;
+            this.Addbutton.Text = "Agregar";
+            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -658,16 +669,26 @@
             this.PrestamosIdtextBox.Size = new System.Drawing.Size(100, 20);
             this.PrestamosIdtextBox.TabIndex = 11;
             // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Location = new System.Drawing.Point(775, 12);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(75, 23);
+            this.Imprimirbutton.TabIndex = 12;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
             // NuevoPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(859, 518);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.PrestamosIdtextBox);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.NombrecomboBox);
-            this.Controls.Add(this.GarantegroupBox);
             this.Controls.Add(this.ApellidoTextBox);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label3);
@@ -761,5 +782,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox PrestamosIdtextBox;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button Imprimirbutton;
     }
 }

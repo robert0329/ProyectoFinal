@@ -32,11 +32,17 @@ namespace ProyectoFinal.RegistroCliente
                 MessageBox.Show("Todos los campos deben estar llenos");
             }
             else
-                if (BLL.ClientesBLL.Insertar(cc))
+            if(telefonoMaskedTextBox.MaskFull)
             {
-                Nuevobutton.PerformClick();
-                MessageBox.Show("Proceso Realizado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                if (cedulaMaskedTextBox.MaskFull)
+                {
+                    if (BLL.ClientesBLL.Insertar(cc))
+                    {
+                        Nuevobutton.PerformClick();
+                        MessageBox.Show("Proceso Realizado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }           
             else
                 MessageBox.Show("No se pudo realizar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -67,7 +73,7 @@ namespace ProyectoFinal.RegistroCliente
             }
             if (!string.IsNullOrEmpty(clienteIdMaskedTextBox.Text))
             {
-                ClientedataGridView.DataSource = PrestamosBLL.GetListaIdD(Utilidades.StringToInt(clienteIdMaskedTextBox.Text));
+                ClientedataGridView.DataSource = PrestamosBLL.GetListaId(Utilidades.StringToInt(clienteIdMaskedTextBox.Text));
                 var Cliente = BLL.ClientesBLL.Buscar(Utilidades.ToInt(clienteIdMaskedTextBox.Text));
                 if (Cliente != null)
                 {

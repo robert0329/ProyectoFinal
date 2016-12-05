@@ -17,7 +17,6 @@ namespace ProyectoFinal.Consultas
         {
             InitializeComponent();
         }
-
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             if (validar() == true)
@@ -27,9 +26,10 @@ namespace ProyectoFinal.Consultas
         {
             FiltrocomboBox.Items.Insert(0, "ID");
             FiltrocomboBox.Items.Insert(1, "Fecha de ingreso");
+            FiltrocomboBox.Items.Insert(2, "Todo");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
-            CobrosdataGridView.DataSource = CobrosBLL.GetLista();
+            //CobrosdataGridView.DataSource = CobrosBLL.GetLista();
 
         }
         private void BuscarSeleccion()
@@ -38,41 +38,40 @@ namespace ProyectoFinal.Consultas
                 CobrosdataGridView.DataSource = CobrosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text));
             if (FiltrocomboBox.SelectedIndex == 1)
                 CobrosdataGridView.DataSource = CobrosBLL.GetListaFecha(DesdeDateTimePicke.Value, HastadateTimePicker.Value);
+            if (FiltrocomboBox.SelectedIndex == 2)
+                CobrosdataGridView.DataSource = CobrosBLL.GetLista();
         }
         private bool validar()
         {
-
-            if (FiltrocomboBox.SelectedIndex == 1)
+            if (FiltrocomboBox.Text != "Todo")
             {
-                if (DesdeDateTimePicke.Value == HastadateTimePicker.Value)
+                if (FiltrocomboBox.SelectedIndex == 1)
                 {
-                    MessageBox.Show("Favor colocar un intervalo entre las dos fechas");
+                    if (DesdeDateTimePicke.Value == HastadateTimePicker.Value)
+                    {
+                        MessageBox.Show("Favor colocar un intervalo entre las dos fechas");
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                if (string.IsNullOrEmpty(FiltrotextBox.Text))
+                {
+                    BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                     return false;
                 }
-                else
+
+                if (FiltrocomboBox.SelectedIndex == 0 && CobrosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
                 {
-                    return true;
+                    MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                    return false;
                 }
             }
-            if (string.IsNullOrEmpty(FiltrotextBox.Text))
-            {
-                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
-                return false;
-            }
-            
-            if (FiltrocomboBox.SelectedIndex == 0 && CobrosBLL.GetListaId(Utilidades.ToInt(FiltrotextBox.Text)).Count == 0)
-            {
-                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
-                return false;
-
-            }
-
             BuscarerrorProvider.Clear();
-
-
             return true;
         }
-
         private void ConsultaCobros_Load(object sender, EventArgs e)
         {
             Cargar();
